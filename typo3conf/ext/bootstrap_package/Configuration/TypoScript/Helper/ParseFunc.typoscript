@@ -63,8 +63,8 @@ lib.parseFunc {
 #######################
 lib.parseFunc_RTE < lib.parseFunc
 lib.parseFunc_RTE {
-    externalBlocks := addToList(article, aside, blockquote, div, dd, dl, footer)
-    externalBlocks := addToList(header, nav, ol, section, table, ul, pre)
+    externalBlocks := addToList(article, aside, blockquote, div, dd, dl, footer, iframe)
+    externalBlocks := addToList(header, nav, ol, section, table, ul, pre, iframe)
     externalBlocks {
         ol {
             stripNL = 1
@@ -113,6 +113,7 @@ lib.parseFunc_RTE {
         section < .div
         dl < .div
         dd < .div
+        iframe < .div
     }
     nonTypoTagStdWrap {
         encapsLines {

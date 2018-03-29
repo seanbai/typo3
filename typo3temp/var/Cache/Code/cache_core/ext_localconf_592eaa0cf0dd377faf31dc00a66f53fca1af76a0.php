@@ -1347,6 +1347,9 @@ if (!class_exists('TYPO3\CMS\Frontend\DataProcessing\MenuProcessor')) {
  */
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['bootstrap'] = 'EXT:bootstrap_package/Configuration/RTE/Default.yaml';
 
+
+
+
 /***************
  * Extend TYPO3 upgrade wizards to handle boostrap package specific upgrades
  */
@@ -1536,7 +1539,7 @@ $boot = function () {
     /***************
     * Add default RTE configuration for bootstrap package
     */
-    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:news/Configuration/RTE/Default.yaml';
+//    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:news/Configuration/RTE/Default.yaml';
     
     
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \GeorgRinger\News\Command\NewsImportCommandController::class;

@@ -1,0 +1,20 @@
+# Register wordcount plugin for ckeditor
+editor:
+  externalPlugins:
+    notification:
+      resource: "EXT:rte_ckeditor_wordcount/Resources/Public/JavaScript/Plugins/notification/plugin.js"
+    wordcount:
+      resource: "EXT:rte_ckeditor_wordcount/Resources/Public/JavaScript/Plugins/wordcount/plugin.js"
+      showCharCount: true
+    youtube:
+      resource: "EXT:rte_ckeditor_wordcount/Resources/Public/JavaScript/Plugins/youtube/plugin.js"
+
+
+
+
+
+editor:
+  config:
+    youtube_width: '550'
+
+    extraAllowedContent: '*(*)[data-*]; iframe'

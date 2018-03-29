@@ -2,13 +2,21 @@ imports:
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-
+    - { resource: "EXT:rte_ckeditor_image/Configuration/RTE/Plugin.yaml" }
+    - { resource: "EXT:rte_ckeditor_wordcount/Configuration/RTE/Plugin.yaml" }
+    
 editor:
     config:
+        allowedContent : true
+        
+        extraAllowedContent : "span;iframe" 
+        
+        autoParagraph : false
+        
         contentsCss: "EXT:bootstrap_package/Resources/Public/Css/rte.min.css"
-
         stylesSet:
             - { name: "Lead", element: "p", attributes: { 'class': 'lead' } }
+            - { name: "Rise", element: "p", attributes: { 'class': 'ant2' } }
             - { name: "Table", element: "table", attributes: { 'class': 'table table-hover' } }
             - { name: "Table Striped", element: "table", attributes: { 'class': 'table table-hover table-striped' } }
             - { name: "Table Bordered", element: "table", attributes: { 'class': 'table table-hover table-bordered' } }
@@ -25,6 +33,7 @@ editor:
             - { name: "Button Warning", element: "a", attributes: { 'class': 'btn btn-warning' } }
             - { name: "Button Danger", element: "a", attributes: { 'class': 'btn btn-danger' } }
 
+    
         toolbarGroups:
             - { name: styles, groups: [ format, styles ] }
             - { name: basicstyles, groups: [ basicstyles ] }
@@ -37,7 +46,7 @@ editor:
             - { name: tools, groups: [ table, specialchar ] }
             - { name: document, groups: [ mode ] }
 
-        format_tags: "p;h1;h2;h3;h4;h5;pre"
+        format_tags: "p;h1;h2;h3;h4;h5;pre;div"
 
         justifyClasses:
             - text-left
@@ -48,10 +57,35 @@ editor:
         extraPlugins:
             - justify
 
-        removePlugins:
-            - image
+        removePlugins: null
 
         removeButtons:
             - Anchor
             - Underline
             - Strike
+          
+        youtube_width: "766" 
+        youtube_height: "360" 
+        
+        
+processing:
+    HTMLparser_db:
+      tags:
+        svg:
+            allowedAttribs: class
+            fixAttrib:
+                style:
+                    unset : true
+        span:
+            allowedAttribs: 
+            fixAttrib:
+                style:
+                    unset : false
+        iframe:
+
+              
+editor:
+  externalPlugins:
+      typo3image:
+        allowedExtensions: "jpg,jpeg,png"
+              

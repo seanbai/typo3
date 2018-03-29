@@ -119,6 +119,9 @@ return [
         'rte_ckeditor_image' => [
             'packagePath' => 'typo3conf/ext/rte_ckeditor_image/',
         ],
+        'rte_ckeditor_wordcount' => [
+            'packagePath' => 'typo3conf/ext/rte_ckeditor_wordcount/',
+        ],
         'bootstrap_package' => [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
         ],

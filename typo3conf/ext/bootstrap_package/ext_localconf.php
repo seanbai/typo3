@@ -96,6 +96,9 @@ if (!class_exists('TYPO3\CMS\Frontend\DataProcessing\MenuProcessor')) {
  */
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['bootstrap'] = 'EXT:bootstrap_package/Configuration/RTE/Default.yaml';
 
+
+
+
 /***************
  * Extend TYPO3 upgrade wizards to handle boostrap package specific upgrades
  */
