@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+    
+<div class="item">
+    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="preview">
+        <div style="background-image: url('<f:uri.image image='{newsItem.falMedia.0}'/>');" class="news-pic"></div> 
+    </n:link>
+    <div class="weak">
+        <p>{newsItem.title}</p>
+    </div>
+    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="read-more fadeIn">
+        Read More
+    </n:link>
+    <div class="layer"></div>
+</div>
+
+</html>

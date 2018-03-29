@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+
+    <div class="grid">
+        <div class="item">
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="preview">
+                <img src="<f:uri.image image='{newsItem.falMedia.0}'/>" alt="" width="100%" height="363px"/>
+            </n:link>
+            <div class="box">
+                <div class="head">
+                    <f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
+                </div>
+                <h3 class="tl">{newsItem.title}</h3>
+                <p class="msg">{newsItem.teaser}</p>
+            </div>
+        </div>
+    </div>
+    
+
+</html>

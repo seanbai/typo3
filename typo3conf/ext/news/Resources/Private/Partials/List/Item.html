@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+
+    <div class="module-updates__item">
+        <div class="module-updates__item__inner animation-delay-random-1">
+            <div class="shortcut__item js-href-click is-hovered">
+                <img src="<f:uri.image image='{newsItem.falMedia.0}'/>" width="440" height="280" class="module-updates__item__img" alt="">
+                <div class="shortcut__item__content">
+                    <p class="shortcut__item__byline">
+                        <time datetime="{f:format.date(date:newsItem.datetime, format:'l d, Y')}">
+                            <f:format.date format="l d, Y">{newsItem.datetime}</f:format.date>
+                            <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'l d, Y')}" />
+                        </time>
+                    </p>
+                    <h2 class="shortcut__item__title">
+                        {newsItem.title}
+                    </h2>
+                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="shortcut__item__link js-href">Read the story</n:link>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</html>

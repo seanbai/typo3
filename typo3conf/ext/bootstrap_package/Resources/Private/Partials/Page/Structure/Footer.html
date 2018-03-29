@@ -1,40 +1,79 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{showFooter}">
-    <footer>
-        <section class="section footer-section footer-section-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '10'}" />
-                    </div>
-                    <div class="col-sm-4">
-                        <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '11'}" />
-                    </div>
-                    <div class="col-sm-4">
-                        <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '12'}" />
+    <f:if condition="{showFooter}">
+<!--        <footer>
+            <section class="section footer-section footer-section-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '10'}" />
+                        </div>
+                        <div class="col-sm-4">
+                            <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '11'}" />
+                        </div>
+                        <div class="col-sm-4">
+                            <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '12'}" />
+                        </div>
                     </div>
                 </div>
+            </section>
+            <section class="section section-small footer-section footer-section-meta">
+                <div class="container">
+                    <f:if condition="{settings.meta.enable}">
+                        <div class="frame frame-small default meta">
+                            <f:render partial="Navigation/Meta" arguments="{_all}" />
+                        </div>
+                    </f:if>
+                    <f:if condition="{settings.language.enable}">
+                        <div class="frame frame-small default language">
+                            <f:render partial="Navigation/Language" arguments="{_all}" />
+                        </div>
+                    </f:if>
+                    <f:if condition="{settings.copyright.enable}">
+                        <div class="frame frame-small default copyright">
+                            <f:format.html>{settings.copyright.text}</f:format.html>
+                        </div>
+                    </f:if>
+                </div>
+            </section>
+        </footer>-->
+    </f:if>
+    
+    <f:if condition="{showFooter}">
+        <div class="page-footer">
+            <div class="container--small">
+                <div class="page-footer__action">
+                    <div class="grid">
+                        <div class="grid__50">
+                            <a href="https://cevalogistics.careers/ajax/jobmail" class="button--continue-boxed js-modal js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Jobmail">Sign up for jobmail</a>
+                        </div>
+                        <div class="grid__50">
+                            <div class="social t-right">
+                                <a href="https://www.facebook.com/CEVALogistics" class="social__item social__item--facebook js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Social - Facebook">Facebook</a>
+                                <a href="https://twitter.com/cevalogistics" class="social__item social__item--twitter js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Social - Twitter">Twitter</a>
+                                <a href="https://www.linkedin.com/company/ceva-logistics" class="social__item social__item--linkedin js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Social - Linkedin">Linkedin</a>
+                                <a href="https://www.youtube.com/user/CEVALogistics" class="social__item social__item--youtube js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Social - Youtube">Youtube</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="page-footer__payoff">
+                        How far do you want to go?
+                    </p>
+                </div>
+                <ul class="page-footer__nav">
+                    <li>
+                        © Copyright 2018 CEVA Logistics
+                    </li>
+                    <li>
+                        <a href="https://cevalogistics.careers/contact" class="">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="http://www.cevalogistics.com/privacy-policy" class="">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="http://www.cevalogistics.com/terms-and-conditions" class="">Terms and Conditions</a>
+                    </li>
+                </ul>
             </div>
-        </section>
-        <section class="section section-small footer-section footer-section-meta">
-            <div class="container">
-                <f:if condition="{settings.meta.enable}">
-                    <div class="frame frame-small default meta">
-                        <f:render partial="Navigation/Meta" arguments="{_all}" />
-                    </div>
-                </f:if>
-                <f:if condition="{settings.language.enable}">
-                    <div class="frame frame-small default language">
-                        <f:render partial="Navigation/Language" arguments="{_all}" />
-                    </div>
-                </f:if>
-                <f:if condition="{settings.copyright.enable}">
-                    <div class="frame frame-small default copyright">
-                        <f:format.html>{settings.copyright.text}</f:format.html>
-                    </div>
-                </f:if>
-            </div>
-        </section>
-    </footer>
-</f:if>
+        </div>  
+    </f:if>
 </html>

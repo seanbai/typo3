@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+
+    <div class="thumble">
+        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="img">
+            <img src="<f:uri.image image='{newsItem.falMedia.0}'/>" alt="" />
+        </n:link>
+    </div>
+    <div class="content">
+        <div class="head">
+            <span class="green">
+                <f:if condition="{newsItem.selecttype} == 0">
+                    <f:then>
+                        <span class="green">News</span>
+                    </f:then>
+                    <f:else if="{newsItem.selecttype} == 1">
+                        <span class="green">Events</span>
+                    </f:else>
+                </f:if>
+            </span>
+            <span class="date">
+                <time datetime="{f:format.date(date:newsItem.datetime, format:'l d, Y')}">
+                    <f:format.date format="l d, Y">{newsItem.datetime}</f:format.date>
+                    <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'l d, Y')}" />
+                </time>
+            </span>
+            <p class="share">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdevcarlcare.mez100.com.cn%2Fabout-carlcare%2Fnews-and-events%2Fnews%2F{newsItem.uid}%2F&amp;src=sdkpreparse" target="_blank" >
+                    <svg class="icon-svg" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
+                    </svg>
+                </a>
+
+                <a href="https://twitter.com/intent/tweet?hashtags=&original_referer=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&ref_src=twsrc%5Etfw&related=twitterapi%2Ctwitter&text=Carlcare-News&tw_p=tweetbutton&url=http://devcarlcare.mez100.com.cn/about-carlcare/news-and-events/news/{newsItem.uid}/" target="_blank">
+                    <svg class="icon-svg" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </p>
+        </div>
+        <h1 class="title">{newsItem.title}</h1>
+        <div class="text">
+            <p>{newsItem.teaser}</p>
+        </div>
+        <div class="group">
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="read-more">
+                Read More
+            </n:link>
+        </div>
+    </div>
+</html>

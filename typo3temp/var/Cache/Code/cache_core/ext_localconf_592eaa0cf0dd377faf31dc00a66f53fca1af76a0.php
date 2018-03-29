@@ -1225,6 +1225,23 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1433089350] = [
 
 
 /**
+ * Extension: rte_ckeditor_image
+ * File: F:/xampp2/htdocs/typo3-src-8.7.4/typo3conf/ext/rte_ckeditor_image/ext_localconf.php
+ */
+
+$_EXTKEY = 'rte_ckeditor_image';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    'rte_ckeditor_image', 'setup',
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:rte_ckeditor_image/Configuration/TypoScript/ImageRendering/setup.txt">'
+);
+
+
+/**
  * Extension: bootstrap_package
  * File: F:/xampp2/htdocs/typo3-src-8.7.4/typo3conf/ext/bootstrap_package/ext_localconf.php
  */
@@ -1356,31 +1373,277 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update'][\BK2K\Bootstr
 
 
 /**
- * Extension: introduction
- * File: F:/xampp2/htdocs/typo3-src-8.7.4/typo3conf/ext/introduction/ext_localconf.php
+ * Extension: news
+ * File: F:/xampp2/htdocs/typo3-src-8.7.4/typo3conf/ext/news/ext_localconf.php
  */
 
-$_EXTKEY = 'introduction';
+$_EXTKEY = 'news';
 $_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
 
 
-defined('TYPO3_MODE') or die('Access denied.');
+defined('TYPO3_MODE') or die();
 
-if (TYPO3_MODE === 'BE') {
-    /**
-     * Register custom EXT:form configuration
-     */
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(
-        trim('
-                module.tx_form {
-                    settings {
-                        yamlConfigurations {
-                            100 = EXT:introduction/Configuration/Form/CustomFormSetup.yaml
-                        }
-                    }
-                }
-            ')
+
+
+$boot = function () {
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'GeorgRinger.news',
+        'Pi1',
+        [
+            'News' => 'list,detail,selectedList,dateMenu,searchForm,searchResult',
+            'Category' => 'list',
+            'Tag' => 'list',
+        ],
+        [
+            'News' => 'searchForm,searchResult',
+        ]
     );
+
+    // Page module hook
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['news' . '_pi1']['news'] =
+        \GeorgRinger\News\Hooks\PageLayoutView::class . '->getExtensionSummary';
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc']['news_clearcache'] =
+        \GeorgRinger\News\Hooks\DataHandler::class . '->clearCachePostProc';
+
+    // Edit restriction for news records
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass']['news'] =
+        \GeorgRinger\News\Hooks\DataHandler::class;
+
+    // FormEngine: Rendering of fields
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getSingleFieldClass']['news'] =
+        \GeorgRinger\News\Hooks\FormEngine::class;
+
+    // FormEngine: Rendering of the whole FormEngine
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getMainFieldsClass']['news'] =
+        \GeorgRinger\News\Hooks\FormEngine::class;
+
+    // Modify flexform values
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['getFlexFormDSClass']['news'] =
+        \GeorgRinger\News\Hooks\BackendUtility::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools::class]['flexParsing']['news']
+        = \GeorgRinger\News\Hooks\BackendUtility::class;
+
+    // Modify flexform fields since core 8.5 via formEngine: Inject a data provider between TcaFlexPrepare and TcaFlexProcess
+    if (\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 8005000) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][\GeorgRinger\News\Backend\FormDataProvider\NewsFlexFormManipulation::class] = [
+            'depends' => [
+                \TYPO3\CMS\Backend\Form\FormDataProvider\TcaFlexPrepare::class,
+            ],
+            'before' => [
+                \TYPO3\CMS\Backend\Form\FormDataProvider\TcaFlexProcess::class,
+            ],
+        ];
+    }
+
+    // Hide content elements in page module for 7
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/class.db_list.inc']['makeQueryArray']['news'] =
+        \GeorgRinger\News\Hooks\Backend\RecordListQueryHook::class;
+    // Hide content elements in page module for 8
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['TYPO3\\CMS\\Recordlist\\RecordList\\DatabaseRecordList']['buildQueryParameters'][]
+        = \GeorgRinger\News\Hooks\Backend\RecordListQueryHook8::class;
+
+    // Inline records hook
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms_inline.php']['tceformsInlineHook']['news'] =
+        \GeorgRinger\News\Hooks\InlineElementHook::class;
+
+    // Xclass InlineRecordContainer
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\InlineRecordContainer::class] = [
+        'className' => \GeorgRinger\News\Xclass\InlineRecordContainerForNews::class,
+    ];
+
+    /* ===========================================================================
+        Custom cache, done with the caching framework
+    =========================================================================== */
+    if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category'])) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category'] = [];
+    }
+    // Define string frontend as default frontend, this must be set with TYPO3 4.5 and below
+    // and overrides the default variable frontend of 4.6
+    if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category']['frontend'])) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category']['frontend'] = \TYPO3\CMS\Core\Cache\Frontend\StringFrontend::class;
+    }
+
+    /* ===========================================================================
+        Add TSconfig
+    =========================================================================== */
+    // For linkvalidator
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('linkvalidator')) {
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TSconfig/Page/mod.linkvalidator.txt">');
+    }
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('guide')) {
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('  <INCLUDE_TYPOSCRIPT: source="DIR:EXT:news/Configuration/TSconfig/Tours" extensions="ts">');
+    }
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TSconfig/ContentElementWizard.txt">
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TSconfig/Administration.txt">
+    ');
+
+    /* ===========================================================================
+        Hooks
+    =========================================================================== */
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('realurl')) {
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news'] =
+            \GeorgRinger\News\Hooks\RealUrlAutoConfiguration::class . '->addNewsConfig';
+    }
+
+    // Register cache frontend for proxy class generation
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['news'] = [
+        'frontend' => \TYPO3\CMS\Core\Cache\Frontend\PhpFrontend::class,
+        'backend' => \TYPO3\CMS\Core\Cache\Backend\FileBackend::class,
+        'groups' => [
+            'all',
+            'system',
+        ],
+        'options' => [
+            'defaultLifetime' => 0,
+        ]
+    ];
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][\GeorgRinger\News\Backend\FormDataProvider\NewsRowInitializeNew::class] = [
+        'depends' => [
+            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowInitializeNew::class,
+        ]
+    ];
+    \GeorgRinger\News\Utility\ClassLoader::registerAutoloader();
+
+    if (TYPO3_MODE === 'BE') {
+        $icons = [
+            'apps-pagetree-folder-contains-news' => 'ext-news-folder-tree.svg',
+            'ext-news-wizard-icon' => 'plugin_wizard.svg',
+            'ext-news-type-default' => 'news_domain_model_news.svg',
+            'ext-news-type-internal' => 'news_domain_model_news_internal.svg',
+            'ext-news-type-external' => 'news_domain_model_news_external.svg',
+            'ext-news-tag' => 'news_domain_model_tag.svg',
+            'ext-news-link' => 'news_domain_model_link.svg'
+        ];
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+        foreach ($icons as $identifier => $path) {
+            $iconRegistry->registerIcon(
+                $identifier,
+                \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                ['source' => 'EXT:news/Resources/Public/Icons/' . $path]
+            );
+        }
+    }
+
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('dd_googlesitemap')) {
+        $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['dd_googlesitemap']['sitemap']['txnews']
+            = \GeorgRinger\News\Hooks\TxNewsSitemapGenerator::class . '->main';
+    }
+
+    /***************
+    * Add default RTE configuration for bootstrap package
+    */
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:news/Configuration/RTE/Default.yaml';
+    
+    
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \GeorgRinger\News\Command\NewsImportCommandController::class;
+};
+
+
+
+
+$boot();
+unset($boot);
+
+
+/**
+ * Extension: vhs
+ * File: F:/xampp2/htdocs/typo3-src-8.7.4/typo3conf/ext/vhs/ext_localconf.php
+ */
+
+$_EXTKEY = 'vhs';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die('Access denied.');
+}
+
+/**
+ * Polyfill ext-mbstring if not present. Can be removed with TYPO3 8.7 minimum-compatibility.
+ */
+if (false === function_exists('mb_strlen') || false === function_exists('mb_chr')) {
+    if (!function_exists('mb_strlen')) {
+        define('MB_CASE_UPPER', 0);
+        define('MB_CASE_LOWER', 1);
+        define('MB_CASE_TITLE', 2);
+
+        function mb_convert_encoding($s, $to, $from = null) { return FluidTYPO3\Vhs\Mbstring::mb_convert_encoding($s, $to, $from); }
+        function mb_decode_mimeheader($s) { return FluidTYPO3\Vhs\Mbstring::mb_decode_mimeheader($s); }
+        function mb_encode_mimeheader($s, $charset = null, $transferEnc = null, $lf = null, $indent = null) { return FluidTYPO3\Vhs\Mbstring::mb_encode_mimeheader($s, $charset, $transferEnc, $lf, $indent); }
+        function mb_convert_case($s, $mode, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_convert_case($s, $mode, $enc); }
+        function mb_internal_encoding($enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_internal_encoding($enc); }
+        function mb_language($lang = null) { return FluidTYPO3\Vhs\Mbstring::mb_language($lang); }
+        function mb_list_encodings() { return FluidTYPO3\Vhs\Mbstring::mb_list_encodings(); }
+        function mb_encoding_aliases($encoding) { return FluidTYPO3\Vhs\Mbstring::mb_encoding_aliases($encoding); }
+        function mb_check_encoding($var = null, $encoding = null) { return FluidTYPO3\Vhs\Mbstring::mb_check_encoding($var, $encoding); }
+        function mb_detect_encoding($str, $encodingList = null, $strict = false) { return FluidTYPO3\Vhs\Mbstring::mb_detect_encoding($str, $encodingList, $strict); }
+        function mb_detect_order($encodingList = null) { return FluidTYPO3\Vhs\Mbstring::mb_detect_order($encodingList); }
+        function mb_parse_str($s, &$result = array()) { parse_str($s, $result); }
+        function mb_strlen($s, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strlen($s, $enc); }
+        function mb_strpos($s, $needle, $offset = 0, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strpos($s, $needle, $offset, $enc); }
+        function mb_strtolower($s, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strtolower($s, $enc); }
+        function mb_strtoupper($s, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strtoupper($s, $enc); }
+        function mb_substitute_character($char = null) { return FluidTYPO3\Vhs\Mbstring::mb_substitute_character($char); }
+        function mb_substr($s, $start, $length = 2147483647, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_substr($s, $start, $length, $enc); }
+        function mb_stripos($s, $needle, $offset = 0, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_stripos($s, $needle, $offset, $enc); }
+        function mb_stristr($s, $needle, $part = false, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_stristr($s, $needle, $part, $enc); }
+        function mb_strrchr($s, $needle, $part = false, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strrchr($s, $needle, $part, $enc); }
+        function mb_strrichr($s, $needle, $part = false, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strrichr($s, $needle, $part, $enc); }
+        function mb_strripos($s, $needle, $offset = 0, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strripos($s, $needle, $offset, $enc); }
+        function mb_strrpos($s, $needle, $offset = 0, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strrpos($s, $needle, $offset, $enc); }
+        function mb_strstr($s, $needle, $part = false, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strstr($s, $needle, $part, $enc); }
+        function mb_get_info($type = 'all') { return FluidTYPO3\Vhs\Mbstring::mb_get_info($type); }
+        function mb_http_output($enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_http_output($enc); }
+        function mb_strwidth($s, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_strwidth($s, $enc); }
+        function mb_substr_count($haystack, $needle, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_substr_count($haystack, $needle, $enc); }
+        function mb_output_handler($contents, $status) { return FluidTYPO3\Vhs\Mbstring::mb_output_handler($contents, $status); }
+        function mb_http_input($type = '') { return FluidTYPO3\Vhs\Mbstring::mb_http_input($type); }
+        function mb_convert_variables($toEncoding, $fromEncoding, &$a = null, &$b = null, &$c = null, &$d = null, &$e = null, &$f = null) { return FluidTYPO3\Vhs\Mbstring::mb_convert_variables($toEncoding, $fromEncoding, $a, $b, $c, $d, $e, $f); }
+    }
+
+    if (!function_exists('mb_chr')) {
+        function mb_ord($s, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_ord($s, $enc); }
+        function mb_chr($code, $enc = null) { return FluidTYPO3\Vhs\Mbstring::mb_chr($code, $enc); }
+        function mb_scrub($s, $enc = null) { $enc = null === $enc ? mb_internal_encoding() : $enc; return mb_convert_encoding($s, $enc, $enc); }
+    }
+}
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['vhs']['setup'] = unserialize($_EXTCONF);
+if (!isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['vhs']['setup']['disableAssetHandling']) || !$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['vhs']['setup']['disableAssetHandling']) {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['usePageCache'][] = 'FluidTYPO3\\Vhs\\Service\\AssetService';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][] = 'FluidTYPO3\\Vhs\\Service\\AssetService->buildAllUncached';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] = 'FluidTYPO3\\Vhs\\Service\\AssetService->clearCacheCommand';
+}
+
+if (FALSE === is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['vhs_main'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['vhs_main'] = [
+		'frontend' => 'TYPO3\\CMS\\Core\\Cache\\Frontend\\StringFrontend',
+		'options' => [
+			'defaultLifetime' => 804600
+		],
+		'groups' => ['pages', 'all']
+	];
+}
+
+if (FALSE === is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['vhs_markdown'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['vhs_markdown'] = [
+		'frontend' => 'TYPO3\\CMS\\Core\\Cache\\Frontend\\StringFrontend',
+		'options' => [
+			'defaultLifetime' => 804600
+		],
+		'groups' => ['pages', 'all']
+	];
+}
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['v'] = ['FluidTYPO3\\Vhs\\ViewHelpers'];
+
+// add navigtion hide, url and urltype to fix the rendering of external url doktypes
+if (isset($GLOBALS['TCA']['pages']['columns']['urltype'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] .= (TRUE === empty($GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields']) ? '' : ',') . 'nav_hide,url,urltype';
 }
 
 

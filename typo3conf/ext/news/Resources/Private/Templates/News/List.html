@@ -1,0 +1,94 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:layout name="General" />
+
+    <f:section name="content">
+        
+        <script>
+            $(document).ready(function() {
+                //blocksit define
+                $(window).load(function() {
+                    $('#list_holder').BlocksIt({
+                        numOfCol: 3,
+                        offsetX: 8,
+                        offsetY: 8,
+                        blockElement: '.module-updates__item'
+                    });
+                });
+                //window resize
+                var currentWidth = 1100;
+                $(window).resize(function() {
+                    var winWidth = $(window).width();
+                    var conWidth;
+                    if (winWidth < 660) {
+                        conWidth = 440;
+                        col = 1
+                    } else if (winWidth < 880) {
+                        conWidth = 660;
+                        col = 2
+                    } else if (winWidth < 1100) {
+                        conWidth = 880;
+                        col = 3;
+                    } else {
+                        conWidth = 1100;
+                        col = 3;
+                    }
+                    if (conWidth != currentWidth) {
+                        currentWidth = conWidth;
+                        $('#list_holder').width(conWidth);
+                        $('#list_holder').BlocksIt({
+                            numOfCol: col,
+                            offsetX: 8,
+                            offsetY: 8
+                        });
+                    }
+                });
+            });
+        </script>
+        
+        <div class="section--pri section--small">
+            <div class="container--small">
+                <div class="page-title  ">
+                    <h1 class="heading--1">
+                        Updates
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <f:if condition="{news}">
+            <f:then>
+                <div class="section--pri">
+                    <div class="container">
+                        <div class="module-updates">
+                            <div class="newgrid grid--gutter-40 js-updates-content" id="list_holder">
+                                    <f:if condition="{settings.hidePagination}">
+                                        <f:then>
+                                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                                <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                            </f:for>
+                                        </f:then>
+                                        <f:else>
+                                            <n:widget.paginate objects="{news}" as="paginatedNews"  initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                                <f:for each="{paginatedNews}" as="newsItem" iteration="iterator" >
+                                                    <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                </f:for>
+                                            </n:widget.paginate>
+                                        </f:else>
+                                    </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="no-news-found">
+                    <f:translate key="list_nonewsfound" />
+                </div>
+            </f:else>
+        </f:if>
+
+
+        
+    </f:section>
+</html>

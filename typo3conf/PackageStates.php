@@ -116,11 +116,17 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'rte_ckeditor_image' => [
+            'packagePath' => 'typo3conf/ext/rte_ckeditor_image/',
+        ],
         'bootstrap_package' => [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
         ],
-        'introduction' => [
-            'packagePath' => 'typo3conf/ext/introduction/',
+        'news' => [
+            'packagePath' => 'typo3conf/ext/news/',
+        ],
+        'vhs' => [
+            'packagePath' => 'typo3conf/ext/vhs/',
         ],
     ],
     'version' => 5,

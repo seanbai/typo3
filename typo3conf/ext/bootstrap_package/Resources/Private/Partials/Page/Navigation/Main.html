@@ -1,78 +1,73 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<header class="navbar navbar-{settings.navigation.style}{f:if(condition:settings.logo.file,then:' navbar-has-image')}{f:if(condition:settings.navigation.type, else:' navbar-top', then:' navbar-{settings.navigation.type} navbar-fixed-{settings.navigation.type}')}">
-    <div class="container">
-        <div class="navbar-header navbar-header-main">
-            <f:if condition="{settings.logo.file}">
-                <f:then>
-                    <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image" title="{settings.logo.linktitle}">
-                        <img class="navbar-brand-logo-normal" src="{f:uri.image(src: settings.logo.file)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
-                        <img class="navbar-brand-logo-inverted" src="{f:uri.image(src: settings.logo.fileInverted)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
-                    </f:link.page>
-                </f:then>
-                <f:else>
-                    <f:link.page pageUid="{rootPage}" class="navbar-brand" title="{settings.logo.linktitle}">{siteTitle}</f:link.page>
-                </f:else>
-            </f:if>
-            <f:if condition="{mainnavigation}">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </f:if>
-            <span class="navbar-header-border-bottom"></span>
-        </div>
-        <f:if condition="{mainnavigation}">
-            <nav class="navbar-collapse collapse" role="navigation">
-                <ul class="nav navbar-nav navbar-main">
-                    <f:for each="{mainnavigation}" as="mainnavigationItem">
-                        <f:if condition="{mainnavigationItem.spacer}">
-                            <f:then>
-                                </ul>
-                                <ul class="nav navbar-nav navbar-main">
-                            </f:then>
-                            <f:else>
-                                <li class="{f:if(condition: mainnavigationItem.active, then:'active')} {f:if(condition: mainnavigationItem.children, then:'dropdown dropdown-hover')}">
+
+    <div class="page-header">
+        <div class="container">
+            <f:link.page pageUid="{rootPage}" class="page-header__logo">
+                <img class="navbar-brand-logo-normal" src="{f:uri.image(src: settings.logo.file)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
+            </f:link.page>
+            <!--<a href="https://cevalogistics.careers/" class="page-header__logo">Logo</a>-->
+            <div class="page-nav">
+                <div class="page-nav__inner">
+                    <ul class="nav-main">
+                        <f:for each="{mainnavigation}" as="mainnavigationItem">
+                            <f:if condition="{mainnavigationItem.spacer}">
+                                <f:then>
+                                    <li class="nav-main__item">
+                                        <a class="nav-main__link">{mainnavigationItem.title}</a>
+                                    </li>
+                                </f:then>
+                                <f:else>
                                     <f:if condition="{mainnavigationItem.children}">
                                         <f:then>
-                                            <a href="{mainnavigationItem.link}"{f:if(condition: mainnavigationItem.target, then: ' target="{mainnavigationItem.target}"')} title="{mainnavigationItem.title}" class="dropdown-link">
-                                                <span>{mainnavigationItem.title}</span>
-                                                <b class="caret"></b>
-                                                <span class="bar"></span>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <f:for each="{mainnavigationItem.children}" as="child">
-                                                    <f:if condition="{child.spacer}">
-                                                        <f:then>
-                                                            <li class="dropdown-header">{child.title}</li>
-                                                        </f:then>
-                                                        <f:else>
-                                                            <li class="{f:if(condition: child.active, then:'active')}">
-                                                                <a href="{child.link}"{f:if(condition: child.target, then: ' target="{child.target}"')} title="{child.title}">
-                                                                    <span>{child.title}</span>
-                                                                </a>
-                                                            </li>
-                                                        </f:else>
-                                                    </f:if>
-                                                </f:for>
-                                            </ul>
+                                            <li class="nav-main__item">
+                                                <a href="https://cevalogistics.careers/job-areas" class="nav-main__link  nav-main__link--toggle js-nav-sub-open ">{mainnavigationItem.title}</a>
+                                                <div class="nav-main__sub js-nav-sub">
+                                                    <ul>
+                                                        <f:for each="{mainnavigationItem.children}" as="child">
+                                                            <f:if condition="{child.spacer}">
+                                                                <f:then>
+                                                                    <li>
+                                                                        <a class="nav-main__link nav-main__link--category ">{child.title}</a>
+                                                                    </li>
+                                                                </f:then>
+                                                                <f:else>
+                                                                    <li>
+                                                                        <a href="{child.link}" class="nav-main__link nav-main__link--category ">{child.title}</a>
+                                                                    </li>
+                                                                </f:else>
+                                                            </f:if>
+                                                        </f:for>
+                                                    </ul>
+                                                </div>
+                                            </li>
                                         </f:then>
                                         <f:else>
-                                            <a href="{mainnavigationItem.link}"{f:if(condition: mainnavigationItem.target, then: ' target="{mainnavigationItem.target}"')} title="{mainnavigationItem.title}">
-                                                <span>{mainnavigationItem.title}</span>
-
-                                                <span class="bar"></span>
-                                            </a>
+                                            <li class="nav-main__item">
+                                                <a href="{mainnavigationItem.link}" class="nav-main__link  ">{mainnavigationItem.title}</a>
+                                            </li>
                                         </f:else>
                                     </f:if>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </ul>
+                    <ul class="nav-top">
+                        <li class="nav-top__item nav-top__item--lan">
+                            <a href="/#" class="nav-top__link nav-top__link--lan hide-mobile">
+                                Language
+                            </a>
+                            <ul class="nav-top__content">
+                                <li>
+                                    <a href="#" class="nav-top__link " rel="alternate" hreflang="zh">中文</a>
                                 </li>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </ul>
-            </nav>
-        </f:if>
+                                <li>
+                                    <a href="#" class="nav-top__link is-active " rel="alternate" hreflang="en">English</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-</header>
 </html>

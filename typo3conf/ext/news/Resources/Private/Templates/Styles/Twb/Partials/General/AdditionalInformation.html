@@ -1,0 +1,20 @@
+<div class="extra" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    
+    
+        
+        <span class="pull-left">
+            <f:if condition="{newsItem.selecttype} == 0">
+                <f:then>News</f:then>
+            </f:if>
+            <f:if condition="{newsItem.selecttype} == 1">
+                <f:then>Events</f:then>
+            </f:if>
+        </span>
+        <span class="pull-right">
+            <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+		<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+		<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
+            </time>
+        </span>
+
+</div>

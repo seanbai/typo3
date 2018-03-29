@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="Detail" />
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+	<f:if condition="{newsItem}">
+		<div class="news-bar">
+                    <div class="news-bar-left">
+                        <span class="news-sort">
+                            <f:if condition="{newsItem.type} == 0">
+                                <f:then>News</f:then>
+                                <f:else></f:else>
+                            </f:if>
+                            <f:if condition="{newsItem.type} == 1">
+                                <f:then>
+                                    Events
+                                </f:then>
+                                <f:else></f:else>
+                            </f:if>
+                        </span>
+                        <span class="news-date">
+                            <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+                                <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+                                <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
+                            </time>
+                        </span>
+                    </div>
+                    <div class="news-bar-right">
+                        <a href="#">
+                            <svg class="icon-svg" aria-hidden="true">
+                                <use xlink:href="#icon-facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon-svg" aria-hidden="true">
+                                <use xlink:href="#icon-twitter"></use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon-svg" aria-hidden="true">
+                                <use xlink:href="#icon-youtube"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="news-content">
+                    <f:format.html>{newsItem.bodytext}</f:format.html>
+                </div>
+	</f:if>
+</f:section>
+
+
+</html>

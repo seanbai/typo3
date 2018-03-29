@@ -392,83 +392,18 @@ page {
         }
     }
 
-    includeCSSLibs {
-        googlewebfont = https://fonts.googleapis.com/css?family={$plugin.bootstrap_package.settings.less.google-webfont}:{$plugin.bootstrap_package.settings.less.google-webfont-weight}
-        googlewebfont {
-            external = 1
-            disableCompression = 1
-            excludeFromConcatenation = 1
-        }
-        ionicons = EXT:bootstrap_package/Resources/Public/Css/ionicons.min.css
-    }
-
+    
     includeCSS {
-        # bootstrap will be included in the themes.less file
-        # for standalone usage just uncomment the following line
-        # bootstrap = EXT:bootstrap_package/Resources/Public/Less/Bootstrap/bootstrap.less
-        theme = EXT:bootstrap_package/Resources/Public/Less/Theme/theme.less
+        theme = fileadmin/careers/css/main.min.css
     }
 
     includeJSLibs {
-        modernizr = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/modernizr.min.js
-        modernizr.forceOnTop = 1
-        modernizr.async = 1
+        jquery = fileadmin/careers/js/jquery.min.js
+        main = fileadmin/careers/js/main.min.js
+        blocksit = fileadmin/careers/js/blocksit.min.js
+        
     }
 
-    includeJSFooterlibs {
-        jquery = EXT:bootstrap_package/Resources/Public/JavaScript/Libs/jquery.min.js
-        jquery.forceOnTop = 1
-        responsiveimages = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/jquery.responsiveimages.min.js
-        bootstrap = EXT:bootstrap_package/Resources/Public/JavaScript/Libs/bootstrap.min.js
-        photoswipe_core = EXT:bootstrap_package/Resources/Public/JavaScript/Libs/photoswipe.min.js
-        photoswipe_ui = EXT:bootstrap_package/Resources/Public/JavaScript/Libs/photoswipe-ui-default.min.js
-
-        #### Add swipe support for boostrap components
-        hammerjs = EXT:bootstrap_package/Resources/Public/JavaScript/Libs/hammer.min.js
-        bootstrap_swipe = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.swipe.min.js
-        bootstrap_popover = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.popover.min.js
-        bootstrap_stickyheader = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.stickyheader.min.js
-        bootstrap_smoothscroll = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.smoothscroll.min.js
-        #### Basic lightbox implementation for bootstrap
-        bootstrap_lightbox = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.lightbox.min.js
-        #### Toggle collapsed CSS class on the navbar toggle button and fixes dropdown on touch devices
-        bootstrap_navbar = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.navbar.min.js
-    }
-
-    jsFooterInline {
-        # Google Analytics
-        10 = COA
-        10 {
-            if {
-                isTrue = {$page.tracking.google.trackingID}
-            }
-            10 = TEXT
-            10.value (
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{$page.tracking.google.trackingID}', 'auto');
-            )
-            20 = TEXT
-            20 {
-                if {
-                    isTrue = {$page.tracking.google.anonymizeIp}
-                }
-
-                value (
-
-    ga('set', 'anonymizeIp', true);
-                )
-            }
-
-            90 = TEXT
-            90.value (
-
-    ga('send', 'pageview');
-            )
-        }
-    }
 }
 
 
@@ -521,38 +456,3 @@ config {
     concatenateCss = {$config.concatenateCss}
 }
 
-
-#############################
-#### LANGUAGE CONDITIONS ####
-#############################
-[globalVar = GP:L = 1]
-    config {
-        sys_language_uid = 1
-        language = de
-        locale_all = de_DE.UTF-8
-        htmlTag_setParams = lang="de" dir="ltr" class="no-js"
-    }
-[global]
-[globalVar = GP:L = 2]
-    config {
-        sys_language_uid = 2
-        language = da
-        locale_all = da_DK.UTF-8
-        htmlTag_setParams = lang="da" dir="ltr" class="no-js"
-    }
-[global]
-
-
-########################
-#### PAGETYPE POPUP ####
-########################
-popup < page
-popup {
-    typeNum = 1000
-    10 {
-        variables {
-            showHeader.value = 0
-            showFooter.value = 0
-        }
-    }
-}

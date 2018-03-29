@@ -24,6 +24,10 @@ $renderingContext->getViewHelperResolver()->addNamespaces(array (
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
 }
 
