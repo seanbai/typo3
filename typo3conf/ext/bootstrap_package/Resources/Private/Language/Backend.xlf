@@ -223,14 +223,15 @@
             </trans-unit>
 
             <trans-unit id="content_element.listgroup">
-                <source>List Group</source>
+                <source>Find your career</source>
             </trans-unit>
+            
             <trans-unit id="content_element.listgroup.description">
                 <source>Insert simple Listgroupelement</source>
             </trans-unit>
 
             <trans-unit id="content_element.external_media">
-                <source>External Media</source>
+                <source>Sing up</source>
             </trans-unit>
             <trans-unit id="content_element.external_media.description">
                 <source>Insert external media from YouTube or Vimeo</source>
@@ -557,7 +558,15 @@
             <trans-unit id="palette.alignment">
                 <source>Alignment</source>
             </trans-unit>
-
+            
+            <trans-unit id="backend_layout.column.subpage">
+                <source>Menu Subpages</source>
+            </trans-unit>
+            
+            <trans-unit id="content_element.image">
+                <source>Image</source>
+            </trans-unit>
+            
         </body>
     </file>
 </xliff>

@@ -1,0 +1,24 @@
+######################
+#### CTYPE: IMAGE ####
+######################
+
+tt_content.menu_subpages >
+tt_content.menu_subpages =< lib.contentElement
+tt_content.menu_subpages {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Subpages
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = MenuSubpages
+        }
+    }
+
+}

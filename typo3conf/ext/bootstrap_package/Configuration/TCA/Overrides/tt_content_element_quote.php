@@ -11,7 +11,7 @@ $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['quote'] = 'content-qu
     [
         'LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:content_element.quote',
         'quote',
-        'content-quote'
+        'mimetypes-x-content-multimedia'
     ],
     'panel',
     'after'

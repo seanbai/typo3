@@ -1,14 +1,37 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-<f:section name="Main">
+<html 
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+    xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers"  data-namespace-typo3-fluid="true">
+    
+    <f:layout name="Default" />
+    <f:section name="Main">
 
-    <f:if condition="{items}">
-        <ul class="list-group">
-            <f:for each="{items}" as="content" iteration="iterateRow">
-                <li class="list-group-item">{content}</li>
+       <v:page.resources.fal table="tt_content" field="image" uid="{data.uid}" as="images">
+            <f:for each="{images}" as="image">
+                <f:variable name="backgroundimage">{image.url}</f:variable>
             </f:for>
-        </ul>
-    </f:if>
+        </v:page.resources.fal>
+        
+        <div class="section--pri section--small">
+            <div class="container--small">
+                <div class="promo js-href-click">
+                    <div class="promo__bg">
+                        <div class="promo__img js-load-bg-img is-loaded" data-backgroundimage="{backgroundimage}" style="background-image: url(&quot;{backgroundimage}&quot;);"></div>
+                    </div>
+                    <div class="promo__content">
+                        <h2 class="promo__title">
+                            <f:format.html>{data.bodytext}</f:format.html>
+                        </h2>
+                        <f:link.typolink parameter="{data.header_link}" class="promo__link js-href js-track" >
+                            {data.header}
+                        </f:link.typolink>
 
-</f:section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </f:section>
 </html>

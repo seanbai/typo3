@@ -5025,3 +5025,8 @@ hr:last-child {
 }
 
 .newgrid { width: 1440px;}
+
+.cms-content .lead {
+    font-size: 24px;
+    color: #000;
+}

@@ -1,33 +1,37 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-<f:section name="Main">
+    <f:layout name="Default" />
+    <f:section name="Main">
 
-    <f:if condition="{menu}">
-        <f:render partial="Menu/SkipNavigation" arguments="{_all}" />
-        <div class="thumbnail-menu">
-            <f:for each="{menu}" as="page">
-                <f:if condition="{page.files.0}">
-                    <f:if condition="{page.files.0.type} == 2">
+        <f:if condition="{menu}">
+            
+            <div class="section--pri">
+                <div class="container">
+                    <div class="shortcut shortcut--collapse">
+                        <div class="grid grid--gutter-40">
+                            <f:for each="{menu}" as="page">
+                                <f:variable name="itemImage">{f:uri.image(image:'{page.files.0}')}</f:variable>
+                                <div class="grid__33">
+                                    <div class="shortcut__item js-href-click js-eq-height" >
+                                        <div class="shortcut__item__img js-load-bg-img is-loaded" data-backgroundimage="{itemImage}" style="background-image: url(&quot;{itemImage}&quot;);"></div>
+                                        <div class="shortcut__item__content">
+                                            <h2 class="shortcut__item__link shortcut__item__link--large">
+                                                <a href="{page.link}" class="js-href" title="{page.title}">
+                                                    <f:format.crop maxCharacters="{settings.menuthumbnail.title.crop}">{page.data.title}</f:format.crop>
+                                                </a>
+                                            </h2>
+                                            <p class="shortcut__item__text">
+                                                <f:format.crop maxCharacters="{settings.menuthumbnail.abstract.crop}">{page.data.abstract}</f:format.crop>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </f:for>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} style="max-width: {settings.menuthumbnail.media.width as integer}px" title="{page.title}" class="thumbnail-menu-item" data-toggle="tooltip">
-                            <div class="thumbnail-menu-image">
-                                <f:media file="{page.files.0}" width="{settings.menuthumbnail.media.width}" height="{settings.menuthumbnail.media.height}" />
-                            </div>
-                            <div class="thumbnail-menu-caption">
-                                <f:if condition="{page.data.title}">
-                                    <h3 class="thumbnail-menu-caption-title"><f:format.crop maxCharacters="{settings.menuthumbnail.title.crop}">{page.data.title}</f:format.crop></h3>
-                                </f:if>
-                                <f:if condition="{page.data.abstract} && {settings.menuthumbnail.media.width as integer} > 300">
-                                    <p class="thumbnail-menu-caption-abstract"><f:format.crop maxCharacters="{settings.menuthumbnail.abstract.crop}">{page.data.abstract}</f:format.crop></p>
-                                </f:if>
-                            </div>
-                        </a>
+        </f:if>
 
-                    </f:if>
-                </f:if>
-            </f:for>
-        </div>
-    </f:if>
-
-</f:section>
+    </f:section>
 </html>

@@ -20,25 +20,7 @@
                                     <f:if condition="{mainnavigationItem.children}">
                                         <f:then>
                                             <li class="nav-main__item">
-                                                <a href="https://cevalogistics.careers/job-areas" class="nav-main__link  nav-main__link--toggle js-nav-sub-open ">{mainnavigationItem.title}</a>
-                                                <div class="nav-main__sub js-nav-sub">
-                                                    <ul>
-                                                        <f:for each="{mainnavigationItem.children}" as="child">
-                                                            <f:if condition="{child.spacer}">
-                                                                <f:then>
-                                                                    <li>
-                                                                        <a class="nav-main__link nav-main__link--category ">{child.title}</a>
-                                                                    </li>
-                                                                </f:then>
-                                                                <f:else>
-                                                                    <li>
-                                                                        <a href="{child.link}" class="nav-main__link nav-main__link--category ">{child.title}</a>
-                                                                    </li>
-                                                                </f:else>
-                                                            </f:if>
-                                                        </f:for>
-                                                    </ul>
-                                                </div>
+                                                <a href="{mainnavigationItem.link}" class="nav-main__link  nav-main__link--toggle js-nav-sub-open ">{mainnavigationItem.title}</a>
                                             </li>
                                         </f:then>
                                         <f:else>

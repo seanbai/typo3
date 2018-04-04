@@ -39,6 +39,8 @@ $GLOBALS['TCA']['tt_content']['types']['listgroup'] = array_replace_recursive(
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
                 bodytext,
+            --div--;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:content_element.image,
+                image,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -55,11 +57,64 @@ $GLOBALS['TCA']['tt_content']['types']['listgroup'] = array_replace_recursive(
         ',
         'columnsOverrides' => [
             'bodytext' => [
-                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.ALT.bulletlist_formlabel',
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel',
                 'config' => [
-                    'wrap' => 'off',
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'default'
                 ]
-            ]
+            ],
+            'image' => [
+                'exclude' => true,
+                'label' => 'LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:carousel_item.image',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                    'image',
+                    [
+                        'appearance' => [
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                        ],
+                        'overrideChildTca' => [
+                            'types' => [
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                                    'showitem' => '
+                                        --palette--;;filePalette
+                                    '
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                                    'showitem' => '
+                                        --palette--;;filePalette
+                                    '
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                    'showitem' => '
+                                        title,
+                                        alternative,
+                                        crop,
+                                        --palette--;;filePalette
+                                    '
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                                    'showitem' => '
+                                        --palette--;;filePalette
+                                    '
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                    'showitem' => '
+                                        --palette--;;filePalette
+                                    '
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                                    'showitem' => '
+                                        --palette--;;filePalette
+                                    '
+                                ],
+                            ],
+                        ],
+                        'minitems' => 0,
+                        'maxitems' => 1,
+                    ],
+                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                ),
+            ],
         ]
     ]
 );
