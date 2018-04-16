@@ -1,0 +1,138 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="main">
+
+
+
+        <div class="section--pri section--small">
+            <div class="container--small">
+                <div class="page-title page-title--left  ">
+                    <h1 class="heading--1">
+
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="section--pri">
+            <div class="container--small">
+                <div class="module-overview">
+                    <div class="grid grid--gutter-40">
+                        <div class="grid__30 module-overview__aside js-jobmail-aside">
+                            <div class="grid grid--gutter-40">
+                                <div class="grid__100 module-overview__location">
+                                    <a href="#location-filter" class="button--location js-modal-inline js-location-label js-track" data-track-category="Careers" data-track-action="Click" data-track-label="Open locations" rel="nofollow">
+                                        All locations
+                                    </a>
+                                </div>
+                                <div class="is-hidden">
+                                    <div id="location-filter" class="mfp-hide">
+                                        <div class="modal__main">
+                                            <div class="container--tiny">
+                                                <div class="modal__title">
+                                                    <h1 class="heading--1">Select a location</h1>
+                                                </div>
+                                                <div class="filter--list">
+                                                    <div class="grid grid--gutter-40">
+                                                        <div class="grid__33">&nbsp;</div>
+                                                        <div class="grid__33">
+                                                            <div class="filter--list__item">
+                                                                <a href="" class="filter--list__link is-active " data-label="All locations" rel="nofollow">All locations</a>
+                                                            </div>
+                                                        </div>
+                                                        <div> &nbsp;</div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter--list">
+                                                    <div class="grid grid--gutter-40">
+                                                        <div class="grid__33">
+                                                            <div class="filter--list__item filter--list__item--large">
+                                                                <a href="#" class="filter--list__link " data-label="Aalsmeer" rel="nofollow">Aalsmeer<span>(0)</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="grid__33">
+                                                            <div class="filter--list__item filter--list__item--large">
+                                                                <a href="#" class="filter--list__link " data-label="Eindhoven/Born" rel="nofollow">Eindhoven/Born<span>(0)</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="grid__33">
+                                                            <div class="filter--list__item filter--list__item--large">
+                                                                <a href="#" class="filter--list__link " data-label="Roosendaal" rel="nofollow">Roosendaal<span>(0)</span></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid__100 module-overview__filter">
+                                    <div class="filter js-filter module-overview__filter__desktop">
+                                        <ul class="filter__content" >
+                                            <f:for each="{jobCategoty}" as="item">
+                                                <li class="filter__item" data="{item.uid}" active="0">
+                                                    <a class="filter__link" rel="nofollow">
+                                                        <h4 class="filter__title">
+                                                            {item.title}
+                                                        </h4>
+                                                        <span class="filter__byline">
+                                                            {item.count} jobs
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </f:for>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__70 module-overview__main js-career-list" id="items">
+                            <div class="list">
+                                <f:for each="{jobOffers}" as="item">
+                                    <f:render partial="JobOffer/Item" arguments="{item:item}" />
+                                </f:for>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id='ajax' class='hide' url='<f:uri.action action="ajax" controller="JobOffer" />'></span>
+        <script>
+            
+            $('.filter__content .filter__item').click(function(){
+                var active = $(this).attr('active');
+                if(active=='1'){
+                    $(this).removeClass('is-active');
+                    $(this).attr('active','0');
+                }else{
+                    $(this).addClass('is-active');
+                    $(this).attr('active','1');
+                }
+                var arr = '';
+                $('.filter__content').find('li').each(function(index) {
+                    if($(this).attr('active')=='1'){
+                        arr += $(this).attr('data')+',';
+                    }
+                })
+                
+                var url = $('#ajax').attr('url');
+                $.ajax({
+                    type: "post",
+                    url: url,
+                    dataType: "json",
+                    data: 'data='+arr,
+                    success: function(data) {
+                        for (var i = 0, len = data.length; i < len; i++) {
+                            var item = '';
+                        }
+                    }
+                });
+                
+                
+                
+                
+            })
+        </script>
+    </f:section>
+</html>

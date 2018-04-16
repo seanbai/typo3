@@ -216,10 +216,10 @@
             </trans-unit>
 
             <trans-unit id="content_element.tab">
-                <source>Tab</source>
+                <source>Job Offers</source>
             </trans-unit>
             <trans-unit id="content_element.tab.description">
-                <source>Insert several Tabelement(s) with headline and text</source>
+                <source>Job Offers Description</source>
             </trans-unit>
 
             <trans-unit id="content_element.listgroup">
@@ -362,7 +362,7 @@
             </trans-unit>
 
             <trans-unit id="tab.options">
-                <source>Tab Options</source>
+                <source>Job Options</source>
             </trans-unit>
             <trans-unit id="tab.default_tab">
                 <source>Default Tab</source>

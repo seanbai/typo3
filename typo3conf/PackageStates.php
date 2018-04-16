@@ -101,6 +101,9 @@ return [
         'reports' => [
             'packagePath' => 'typo3/sysext/reports/',
         ],
+        'scheduler' => [
+            'packagePath' => 'typo3/sysext/scheduler/',
+        ],
         'sv' => [
             'packagePath' => 'typo3/sysext/sv/',
         ],
@@ -124,6 +127,12 @@ return [
         ],
         'bootstrap_package' => [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
+        ],
+        'tp3_jobs' => [
+            'packagePath' => 'typo3conf/ext/tp3_jobs/',
+        ],
+        'job_areas' => [
+            'packagePath' => 'typo3conf/ext/job_areas/',
         ],
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',

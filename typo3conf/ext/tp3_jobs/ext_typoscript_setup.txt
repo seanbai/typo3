@@ -1,0 +1,22 @@
+
+config.tx_extbase {
+  persistence {
+    classes {
+      Tp3\Tp3Jobs\Domain\Model\JobOffer {
+        mapping {
+          recordType = Tx_Tp3Jobs_JobOffer
+          columns {
+            date.mapOnProperty = tstamp
+          }
+        }
+      }
+      Tp3\Tp3Jobs\Domain\Model\Company {
+        mapping {
+          tableName = tt_address
+          recordType = Tx_Tp3Jobs_Company
+        }
+      }
+
+    }
+  }
+}

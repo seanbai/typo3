@@ -1,0 +1,2 @@
+# cat=General/130_features/10; type=boolean; label=LLL:EXT:tp3_jobs/Resources/Private/Language/locallang_db.xlf:tx_tp3jobs_offers.debug
+debug = 0

@@ -1,0 +1,11 @@
+
+plugin.tx_jobareas_job {
+	view {
+		# cat=plugin.tx_jobareas_job/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:job_areas/Resources/Private/Templates/
+		# cat=plugin.tx_jobareas_job/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:job_areas/Resources/Private/Partials/
+		# cat=plugin.tx_jobareas_job/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:job_areas/Resources/Private/Layouts/
+	}
+}

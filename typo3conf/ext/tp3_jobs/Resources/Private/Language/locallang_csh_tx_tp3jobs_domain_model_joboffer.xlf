@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-02-17T03:02:26Z" product-name="tp3_jobs">
+		<header/>
+		<body>
+			<trans-unit id="tx_tp3_jobs_domain_model_offers">
+				<source>JobOffers</source>
+			</trans-unit>
+			<trans-unit id="tx_tp3_jobs_domain_model_offers.description">
+				<source>Joboffer on tp3</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="descr.description">
+				<source>descr</source>
+			</trans-unit>
+			<trans-unit id="tasks.description">
+				<source>tasks</source>
+			</trans-unit>
+			<trans-unit id="qualification.description">
+				<source>qualification</source>
+			</trans-unit>
+			<trans-unit id="refid.description">
+				<source>refid</source>
+			</trans-unit>
+			<trans-unit id="contactname.description">
+				<source>contactname</source>
+			</trans-unit>
+			<trans-unit id="contactaddress.description">
+				<source>contactaddress</source>
+			</trans-unit>
+			<trans-unit id="contacttel.description">
+				<source>contacttel</source>
+			</trans-unit>
+			<trans-unit id="contactmail.description">
+				<source>contactmail</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

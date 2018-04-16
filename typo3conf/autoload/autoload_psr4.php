@@ -9,4 +9,5 @@ return array(
     'FluidTYPO3\\Vhs\\' => array($typo3InstallDir . 'typo3conf/ext/vhs/Classes'),
     'GeorgRinger\\News\\' => array($typo3InstallDir . 'typo3conf/ext/news/Classes'),
     'Netresearch\\RteCKEditorImage\\' => array($typo3InstallDir . 'typo3conf/ext/rte_ckeditor_image/Classes'),
+    'Tp3\\Tp3Jobs\\' => array($typo3InstallDir . 'typo3conf/ext/tp3_jobs/Classes'),
 );

@@ -1,0 +1,94 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="main">
+        
+        <div class="section--pri section--small">
+            <div class="container--small">
+                <div class="page-title">
+                    <h1 class="heading--1">
+                        {jobOffers.title}
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="section--pri">
+            <div class="container--small">
+                <div class="grid grid--gutter-40">
+                    <div class="grid__66 page-primary">
+                        <div class="article">
+                            <!-- {* Pre list *} -->
+                            <div class="detail-list">
+                                <ul>
+                                    <li>Job area - Commercial</li> 
+                                </ul>
+                            </div>
+                            <!-- {* Paragraph *} -->
+                            <div class="cms-content">
+                                <em>{jobOffers.descr}</em><br>&nbsp;
+                            </div>
+                            <!-- {* Accordion *} -->
+                            <ul class="accordion">
+                                <li class="accordion__item js-accordion is-open">
+                                    <a href="https://cevalogistics.careers/careers/vp-business-development-benelux-e24701#" class="accordion__title js-accordion-toggle">
+                                        Job description
+                                    </a>
+                                    <div class="accordion__content" style="max-height: none;">
+                                        <div class="js-accordion-content">
+                                            <div class="cms-content">
+                                                <f:format.html>{jobOffers.tasks}</f:format.html>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion__item js-accordion is-open">
+                                    <a href="https://cevalogistics.careers/careers/vp-business-development-benelux-e24701#" class="accordion__title js-accordion-toggle">
+                                        Requirements
+                                    </a>
+                                    <div class="accordion__content" style="max-height: none;">
+                                        <div class="js-accordion-content">
+                                            <div class="cms-content">
+                                                <f:format.html>{jobOffers.qualification}</f:format.html>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="cms-content hide-mobile">
+                                <a href="#" class="button--pri js-track" data-track-category="Careers" data-track-action="Apply" data-track-label="VP Business Development Benelux">Apply now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__33 page-secondary js-sticky-col">
+                        <!-- {* Card *} -->
+                        <div class="card js-sticky">
+                            <div class="card__top">
+                                <a href="#" class="button--pri js-track" data-track-category="Careers" data-track-action="Apply" data-track-label="VP Business Development Benelux">Apply now</a>
+                            </div>
+                            <div class="card__content">
+                                <p class="card__byline">
+                                    More information?
+                                </p>
+                                <h2 class="card__title">
+                                    {jobOffers.username}
+                                </h2>
+                                <ul class="card__list">
+                                    <li>
+                                        <a href="mailto:{jobOffers.useremail}">{jobOffers.useremail}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card__bottom">
+                                <p class="card__byline">Share job</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://cevalogistics.careers/careers/vp-business-development-benelux-e24701" class="social__item social__item--facebook js-track" data-track-category="Share" data-track-action="Click" data-track-label="Facebook - https://cevalogistics.careers/careers/vp-business-development-benelux-e24701">Facebook</a>
+                                    <a href="https://twitter.com/home?status=How+far+do+you+want+to+go%3F+View+vacancy+for+VP+Business+Development+Benelux+at+https%3A%2F%2Fcevalogistics.careers%2Fcareers%2Fvp-business-development-benelux-e24701" class="social__item social__item--twitter js-track" data-track-category="Share" data-track-action="Click" data-track-label="Twitter - https://cevalogistics.careers/careers/vp-business-development-benelux-e24701">Twitter</a>
+                                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://cevalogistics.careers/careers/vp-business-development-benelux-e24701&amp;title=VP+Business+Development+Benelux&amp;summary=How+far+do+you+want+to+go%3F+View+vacancy+at+https%3A%2F%2Fcevalogistics.careers%2Fcareers%2Fvp-business-development-benelux-e24701&amp;source=cevalogistics.careers" class="social__item social__item--linkedin js-track" data-track-category="Share" data-track-action="Click" data-track-label="Linkedin - https://cevalogistics.careers/careers/vp-business-development-benelux-e24701">Linkedin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:section>
+</html>

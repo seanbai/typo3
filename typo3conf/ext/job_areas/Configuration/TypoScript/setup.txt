@@ -1,0 +1,14 @@
+plugin.tx_find_career {
+	view {
+		templateRootPaths.0 = {$plugin.tx_find_career.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_find_career.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_find_career.view.layoutRootPath}
+	}
+	persistence {
+            storagePid = {$plugin.tx_find_career.persistence.storagePid}
+	}
+
+        settings{
+            storagePid = {$plugin.tx_find_career.persistence.storagePid}
+        }
+}

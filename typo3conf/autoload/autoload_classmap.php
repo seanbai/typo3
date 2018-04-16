@@ -387,6 +387,10 @@ return array(
     'GeorgRinger\\News\\ViewHelpers\\Widget\\Controller\\PaginateController' => $typo3InstallDir . 'typo3conf/ext/news/Classes/ViewHelpers/Widget/Controller/PaginateController.php',
     'GeorgRinger\\News\\ViewHelpers\\Widget\\PaginateViewHelper' => $typo3InstallDir . 'typo3conf/ext/news/Classes/ViewHelpers/Widget/PaginateViewHelper.php',
     'GeorgRinger\\News\\Xclass\\InlineRecordContainerForNews' => $typo3InstallDir . 'typo3conf/ext/news/Classes/Xclass/InlineRecordContainerForNews.php',
+    'Job\\JobAreas\\Controller\\JobController' => $typo3InstallDir . 'typo3conf/ext/job_areas/Classes/Controller/JobController.php',
     'Netresearch\\RteCKEditorImage\\Controller\\ImageRenderingController' => $typo3InstallDir . 'typo3conf/ext/rte_ckeditor_image/Classes/Controller/ImageRenderingController.php',
     'Netresearch\\RteCKEditorImage\\Controller\\SelectImageController' => $typo3InstallDir . 'typo3conf/ext/rte_ckeditor_image/Classes/Controller/SelectImageController.php',
+    'Tp3\\Tp3Jobs\\Controller\\JobOfferController' => $typo3InstallDir . 'typo3conf/ext/tp3_jobs/Classes/Controller/JobOfferController.php',
+    'Tp3\\Tp3Jobs\\Domain\\Model\\JobOffer' => $typo3InstallDir . 'typo3conf/ext/tp3_jobs/Classes/Domain/Model/JobOffer.php',
+    'Tp3\\Tp3Jobs\\Domain\\Repository\\JobOfferRepository' => $typo3InstallDir . 'typo3conf/ext/tp3_jobs/Classes/Domain/Repository/JobOfferRepository.php',
 );

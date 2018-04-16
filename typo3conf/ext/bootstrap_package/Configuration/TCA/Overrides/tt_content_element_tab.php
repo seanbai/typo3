@@ -38,9 +38,9 @@ $GLOBALS['TCA']['tt_content']['types']['tab'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
-                tx_bootstrappackage_tab_item,
+                bodytext,
             --div--;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:tab.options,
-                pi_flexform;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:advanced,
+                tx_bootstrappackage_tab_item,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -54,7 +54,16 @@ $GLOBALS['TCA']['tt_content']['types']['tab'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
+        'columnsOverrides' => [
+            'bodytext' => [
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel',
+                'config' => [
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'default'
+                ]
+            ]
+        ]
     ]
 );
 

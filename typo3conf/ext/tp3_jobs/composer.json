@@ -1,0 +1,19 @@
+{
+    "name": "Tp3/Tp3Jobs",
+    "type": "typo3-cms-extension",
+    "description" : "JobOffers & Postings with tp3",
+    "license": "GPL-2.0+",
+    "require": {
+        "php": ">=5.3 <7.3",
+        "typo3/cms-core": "^7.6|| ^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tp3\\Tp3Jobs\\": "Classes"
+        }
+    },
+    "replace": {
+        "tp3_jobs": "self.version"
+    }
+    
+}

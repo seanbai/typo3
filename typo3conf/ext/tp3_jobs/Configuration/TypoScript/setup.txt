@@ -1,0 +1,26 @@
+
+plugin.tx_tp3jobs_offers {
+  view {
+    templateRootPaths.0 = EXT:tp3_jobs/Resources/Private/Templates/
+    templateRootPaths.1 = {$plugin.tx_tp3jobs_offers.view.templateRootPath}
+    partialRootPaths.0 = EXT:tp3_jobs/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_tp3jobs_offers.view.partialRootPath}
+    layoutRootPaths.0 = EXT:tp3_jobs/Resources/Private/Layouts/
+    layoutRootPaths.1 = {$plugin.tx_tp3jobs_offers.view.layoutRootPath}
+  }
+  persistence {
+    storagePid = {$plugin.tx_tp3jobs_offers.persistence.storagePid}
+    recursive = 1
+  }
+  features {
+    skipDefaultArguments = 1
+  }
+  mvc {
+    callDefaultActionIfActionCantBeResolved = 1
+  }
+  settings{
+    debug = {$plugin.tx_tp3jobs_offers.settings.debug}
+    storagePid = {$plugin.tx_tp3jobs_offers.persistence.storagePid}
+
+  }
+}

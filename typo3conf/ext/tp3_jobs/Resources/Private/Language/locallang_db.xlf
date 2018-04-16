@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2018-02-17T03:02:26Z" product-name="tp3_jobs">
+        <header/>
+        <body>
+            <trans-unit id="tx_tp3_jobs_domain_model_offers">
+                <source>JobOffers</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3_jobs_domain_model_offers.description">
+                <source>Joboffer on tp3</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer">
+                <source>Job Offer</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.descr">
+                <source>Descr</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.tasks">
+                <source>Job description</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.qualification">
+                <source>Requirements</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.refid">
+                <source>Refid</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.contactname">
+                <source>Contactname</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.contactaddress">
+                <source>Contactaddress</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.contacttel">
+                <source>Contacttel</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.contactmail">
+                <source>Contactmail</source>
+            </trans-unit>
+            <trans-unit id="tx_tp3jobs_offers.debug">
+                <source>DebugMode</source>
+            </trans-unit>
+            <trans-unit id="categories">
+                <source>Categories</source>
+            </trans-unit>
+            
+            <trans-unit id="user">
+                <source>Contact Us</source>
+            </trans-unit>
+            
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.username">
+                <source>Contact Name</source>
+            </trans-unit>
+            
+            <trans-unit id="tx_tp3jobs_domain_model_joboffer.useremail">
+                <source>Contact Email</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
