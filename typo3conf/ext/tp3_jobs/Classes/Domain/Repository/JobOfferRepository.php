@@ -24,22 +24,35 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      *
      */
 
-    public function findOffers($pid = [2038]) {
-        $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
-        $querySettings->setRespectStoragePage(true);
-        $querySettings->setStoragePageIds(array($pid));
-        $this->setDefaultQuerySettings($querySettings);
-        //$queryResult = $this->findAll();
-        //return $queryResult;*/
-        $query = $this->createQuery();
-        $query->matching(
-                //$query->equals('ref', $customStoragePid),
-                $query->logicalAnd(
-                        $query->equals('hidden', 0), $query->equals('deleted', 0)
-                )
-        );
-        //$query->setOrderings($this->orderByField('uid', $uidArray));
-        return $query->execute();
+    public function findOffers($pid = [2038],$station) {
+        
+        $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
+        
+        if($station != 0){
+            $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+                'uid,title,hours,station,category', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0 AND station = '.$station.' AND pid='.$pid. '', 'uid asc'
+            );
+        }else{
+            $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+                'uid,title,hours,station,category', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0 AND pid='.$pid. '', 'uid asc'
+            );
+        }
+        
+        for ($i = 0; $i < count($data); $i++) {
+            $count[$i] = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow (
+                'title', 'sys_category', 'uid='.$data[$i]['station']
+            );
+            $data[$i]['station'] = $count[$i]['title'];
+            
+            $pages[$i] = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow (
+                'title', 'pages', 'uid='.$data[$i]['category']
+            );
+            $data[$i]['category'] = $pages[$i]['title'];
+        }
+        
+        
+        return $data;
+        
     }
 
     /*     * *
@@ -72,9 +85,18 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
     public function findShow($uid) {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
-        $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-            'uid,title,descr,tasks,qualification,username,useremail', 'tx_tp3jobs_domain_model_joboffer', 'uid='.$uid.''
+        $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
+            'uid,title,descr,tasks,qualification,category,username,useremail,hours,station', 'tx_tp3jobs_domain_model_joboffer', 'uid='.$uid.''
         );
+        $station = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow (
+            'title', 'sys_category', 'uid='.$data['station']
+        );
+        $data['station'] = $station['title'];
+        $pages = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow (
+            'title', 'pages', 'uid='.$data['category']
+        );
+        $data['category'] = $pages['title'];
+
         
         return $data;
     }
@@ -101,7 +123,6 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
             $data[$i]['count'] = $count[$i];
         }
         
-//            return $GLOBALS['TYPO3_DB']->debug_lastBuiltQuery;
         return $data;
     }
     
@@ -112,16 +133,79 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      * @return QueryResultInterface|array
      *
      */
-    public function findInJob($uid) {
+    public function findInJob($uid,$station) {
+        
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
+        if($station){
+            $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+                'uid,title,hours,station,category', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0 AND station='.$station.'  AND category in ('.$uid.')', 'uid asc'
+            );
+        }else{
+            $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+                'uid,title,hours,station,category', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0  AND category in ('.$uid.')', 'uid asc'
+            );
+        }
         
-        $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-            'uid,title', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0 AND category in ('.$uid.')', 'uid asc'
-        );
-        
-//        return $GLOBALS['TYPO3_DB']->debug_lastBuiltQuery;
+        for ($i = 0; $i < count($data); $i++) {
+            $count[$i] = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow (
+                'title', 'sys_category', 'uid='.$data[$i]['station']
+            );
+            $data[$i]['station'] = $count[$i]['title'];
+            
+            $pages[$i] = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow (
+                'title', 'pages', 'uid='.$data[$i]['category']
+            );
+            $data[$i]['category'] = $pages[$i]['title'];
+        }
+
         return $data;
     }
+    
+    
+    /*     * *
+     * Returns all objects of this categoty.
+     *
+     * @return QueryResultInterface|array
+     *
+     */
 
+    public function findPages($uid) {
+        $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
+
+        $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+            'uid,title', 'pages', 'deleted=0 AND hidden=0 AND uid='.$uid
+        );
+
+        return $data;
+    }
+    
+    public function findStation() {
+        $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
+
+        $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+            'uid,title', 'sys_category', 'deleted=0 AND hidden=0 AND parent=3', '', 'uid asc'
+        );
+        
+        for ($i = 0; $i < count($data); $i++) {
+            $count[$i] = $GLOBALS['TYPO3_DB']->exec_SELECTcountRows(
+                '*', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0 AND station='.$data[$i]['uid']
+            );
+            $data[$i]['count'] = $count[$i];
+        }
+        
+        
+//            return $GLOBALS['TYPO3_DB']->debug_lastBuiltQuery;
+        return $data;
+    }
+    
+    public function thisStation($uid){
+        $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
+
+        $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+            'uid,title', 'sys_category', 'deleted=0 AND hidden=0 AND uid='.$uid
+        );
+       return $data;
+    }
+    
 }

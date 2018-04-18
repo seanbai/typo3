@@ -2,18 +2,30 @@
 <f:layout name="Default" />
 <f:section name="Main">
 
-    <div class="section section-default">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 subcontent-wrap">
-                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '1'}" />
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '44'}" />
+        
+        <div class="section--pri">
+            <div class="container--small">
+                <div class="grid grid--gutter-40">
+                    <div class=" grid__66 page-primary  js-eq-height" >
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+                        <div class="widget__link js-href-click">
+                            <h2 class="widget__link__title">
+                                Sign up for our CEVAcancy updates
+                            </h2>
+                            <a href="/index.php?id=75123" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
+                                Sign up
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid__33 page-secondary js-sticky-col   js-eq-height" >
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}" />
+                    </div>
                 </div>
-                <main class="col-md-9 maincontent-wrap" role="main">
-                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
-                </main>
             </div>
         </div>
-    </div>
+       
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '45'}" />
 
 </f:section>
 </html>

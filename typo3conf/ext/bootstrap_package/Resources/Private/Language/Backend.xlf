@@ -19,10 +19,10 @@
                 <source>Default, 2 Columns</source>
             </trans-unit>
             <trans-unit id="backend_layout.default_2_columns_25_75">
-                <source>Default, 2 Columns 25/75</source>
+                <source>Job, areas</source>
             </trans-unit>
             <trans-unit id="backend_layout.default_2_columns_50_50">
-                <source>Default, 2 Columns 50/50</source>
+                <source>Default, Plugin</source>
             </trans-unit>
             <trans-unit id="backend_layout.default_2_columns_offset_right">
                 <source>Default, 2 Columns, Offset Right</source>
@@ -128,9 +128,11 @@
             <trans-unit id="menu.thumbnail_dir.description">
                 <source>Insert menu to display subpages as thumbnail</source>
             </trans-unit>
+            
             <trans-unit id="menu.thumbnail_list">
-                <source>Thumbnails</source>
+                <source>Home Select Job</source>
             </trans-unit>
+            
             <trans-unit id="menu.thumbnail_list.description">
                 <source>Insert menu to display selected pages as thumbnail</source>
             </trans-unit>
@@ -153,7 +155,7 @@
             </trans-unit>
 
             <trans-unit id="content_element.audio">
-                <source>Audio</source>
+                <source>Sing us</source>
             </trans-unit>
             <trans-unit id="content_element.audio.description">
                 <source>Insert Audio files</source>
@@ -195,8 +197,9 @@
             </trans-unit>
 
             <trans-unit id="content_element.textteaser">
-                <source>Text with Teaser</source>
+                <source>Jobmail Result</source>
             </trans-unit>
+            
             <trans-unit id="content_element.textteaser.description">
                 <source>Insert Text with Teaser</source>
             </trans-unit>
@@ -209,7 +212,7 @@
             </trans-unit>
 
             <trans-unit id="content_element.accordion">
-                <source>Accordion</source>
+                <source>Featured career</source>
             </trans-unit>
             <trans-unit id="content_element.accordion.description">
                 <source>Insert several Accordionelement(s) with headline and text</source>
@@ -334,10 +337,10 @@
             </trans-unit>
 
             <trans-unit id="accordion_item">
-                <source>Accordion Item</source>
+                <source>Featured career Item</source>
             </trans-unit>
             <trans-unit id="accordion_item.tt_content">
-                <source>Accordion</source>
+                <source>Featured career</source>
             </trans-unit>
             <trans-unit id="accordion_item.header">
                 <source>Header</source>

@@ -1,0 +1,15 @@
+
+plugin.tx_subscriptions_subscriptions {
+	view {
+		# cat=plugin.tx_subscriptions_subscriptions/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:subscriptions/Resources/Private/Templates/
+		# cat=plugin.tx_subscriptions_subscriptions/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:subscriptions/Resources/Private/Partials/
+		# cat=plugin.tx_subscriptions_subscriptions/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:subscriptions/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_subscriptions_subscriptions//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

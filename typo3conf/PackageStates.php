@@ -128,14 +128,23 @@ return [
         'bootstrap_package' => [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
         ],
-        'tp3_jobs' => [
-            'packagePath' => 'typo3conf/ext/tp3_jobs/',
+        'contact' => [
+            'packagePath' => 'typo3conf/ext/contact/',
         ],
         'job_areas' => [
             'packagePath' => 'typo3conf/ext/job_areas/',
         ],
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',
+        ],
+        'realurl' => [
+            'packagePath' => 'typo3conf/ext/realurl/',
+        ],
+        'subscriptions' => [
+            'packagePath' => 'typo3conf/ext/subscriptions/',
+        ],
+        'tp3_jobs' => [
+            'packagePath' => 'typo3conf/ext/tp3_jobs/',
         ],
         'vhs' => [
             'packagePath' => 'typo3conf/ext/vhs/',

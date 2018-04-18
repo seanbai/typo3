@@ -57,6 +57,24 @@
             <trans-unit id="tx_tp3jobs_domain_model_joboffer.useremail">
                 <source>Contact Email</source>
             </trans-unit>
+            
+            <trans-unit id="station">
+                <source>Station</source>
+            </trans-unit>
+            
+            <trans-unit id="hours">
+                <source>Operating Hours</source>
+            </trans-unit>
+            
+            <trans-unit id="content_hours">
+                <source>Operating Time</source>
+            </trans-unit>
+            
+            <trans-unit id="content_station">
+                <source>Location</source>
+            </trans-unit>
+            
+            
         </body>
     </file>
 </xliff>

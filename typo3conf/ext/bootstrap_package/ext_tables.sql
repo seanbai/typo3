@@ -79,6 +79,7 @@ CREATE TABLE tx_bootstrappackage_accordion_item (
 
     tt_content int(11) unsigned DEFAULT '0',
     header varchar(255) DEFAULT '' NOT NULL,
+    link  varchar(1024) DEFAULT '' NOT NULL,
     bodytext text,
     media int(11) unsigned DEFAULT '0',
     mediaorient tinyint(4) unsigned DEFAULT '0' NOT NULL,

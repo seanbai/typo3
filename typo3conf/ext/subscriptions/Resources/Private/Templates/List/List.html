@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="main">
+
+        <div class="modal__main">
+            <div class="container--mini">
+                <div class="modal__title">
+                    <h1 class="heading--1">
+                        Sign up <br /> for jobmail
+                    </h1>
+                </div>
+                <form method="POST" action="{f:uri.action(action: 'add')}" class="js-form-validate" novalidate="novalidate">
+                    <div class="form__group">
+                        <select class="form__select form__select--bordered " placeholder="Language" name="language" id="language" >
+                            <option value="zh">中文</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" placeholder="E-mail address" name="email" id="email" class="form__input form__input--bordered">
+                    </div>
+                    <div class="form__buttonrow--center">
+                        <button type="submit" class="button--pri">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </f:section>
+</html>

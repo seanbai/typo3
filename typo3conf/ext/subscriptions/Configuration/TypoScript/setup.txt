@@ -1,0 +1,12 @@
+
+plugin.tx_subscriptions_subscriptions {
+	view {
+		templateRootPaths.0 = {$plugin.tx_subscriptions_subscriptions.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_subscriptions_subscriptions.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_subscriptions_subscriptions.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_subscriptions_subscriptions.persistence.storagePid}
+	}
+}
+

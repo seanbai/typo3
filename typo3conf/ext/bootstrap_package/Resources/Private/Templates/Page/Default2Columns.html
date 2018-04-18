@@ -8,9 +8,12 @@
         <div class="section--pri">
             <div class="container--small">
                 <div class="grid grid--gutter-40">
-                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
-
-                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}" />
+                    <div class=" grid__66 page-primary  js-eq-height" >
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+                    </div>
+                    <div class="grid__33 page-secondary js-sticky-col   js-eq-height" >
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}" />
+                    </div>
                 </div>
             </div>
         </div>

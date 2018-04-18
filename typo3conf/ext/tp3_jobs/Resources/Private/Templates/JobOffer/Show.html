@@ -19,7 +19,9 @@
                             <!-- {* Pre list *} -->
                             <div class="detail-list">
                                 <ul>
-                                    <li>Job area - Commercial</li> 
+                                    <li>Job area - {jobOffers.category}</li> 
+                                    <li>Hours - <f:if condition='{jobOffers.hours}=0'><f:then>Full time</f:then><f:else>Part time</f:else></f:if></li> 
+                                    <li>Location - {jobOffers.station}</li> 
                                 </ul>
                             </div>
                             <!-- {* Paragraph *} -->

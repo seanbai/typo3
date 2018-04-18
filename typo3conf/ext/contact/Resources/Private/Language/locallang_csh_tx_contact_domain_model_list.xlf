@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-04-18T09:38:48Z" product-name="contact">
+		<header/>
+		<body>
+			<trans-unit id="tx_contact_domain_model_contact">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contact.description">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="firstname.description">
+				<source>firstname</source>
+			</trans-unit>
+			<trans-unit id="lastname.description">
+				<source>lastname</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="subject.description">
+				<source>subject</source>
+			</trans-unit>
+			<trans-unit id="message.description">
+				<source>message</source>
+			</trans-unit>
+			<trans-unit id="createtime.description">
+				<source>createtime</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

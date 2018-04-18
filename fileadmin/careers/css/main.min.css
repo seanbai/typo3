@@ -4320,6 +4320,26 @@ hr:last-child {
 	text-indent: -9999em
 }
 
+.filter--list__link.job-is-active {
+	color: #603
+}
+.filter--list__link.job-is-active:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 125px;
+	background-image: url(/fileadmin/careers/image/icon-sprite.svg);
+	background-repeat: no-repeat;
+	background-position: 44.29530201342282% 70.74829931972789%;
+	width: 17px;
+	height: 13px;
+	text-indent: -9999em
+}
+
 .filter--list__link span {
 	font-family: Open Sans,Helvetica,Arial,sans-serif;
 	font-weight: 300;
@@ -4338,7 +4358,16 @@ hr:last-child {
 }
 
 .filter--list__item--large {
-	padding: 20px 0
+	padding: 20px 0;
+}
+.station-filter--list__item {
+	border-top: 1px solid #e6e6e6;
+	padding: 10px 0
+}
+.station-filter--list__item--large {
+        padding: 20px 0;
+        width: 33%;
+        float: left;
 }
 
 @media (max-width:1023px) {

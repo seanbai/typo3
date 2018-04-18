@@ -39,9 +39,7 @@ return [
             'showitem' => '
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 header,
-                bodytext,
-                media,
-                mediaorient,
+                link,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
@@ -177,6 +175,25 @@ return [
                 'type' => 'input',
                 'size' => 50,
                 'eval' => 'trim,required'
+            ],
+        ],
+        'link' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:carousel_item.link',
+            'config' => [
+                'type' => 'input',
+                'renderType' => 'inputLink',
+                'size' => 50,
+                'max' => 1024,
+                'eval' => 'trim',
+                'fieldControl' => [
+                    'linkPopup' => [
+                        'options' => [
+                            'title' => 'LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:carousel_item.link',
+                        ],
+                    ],
+                ],
+                'softref' => 'typolink'
             ],
         ],
         'bodytext' => [

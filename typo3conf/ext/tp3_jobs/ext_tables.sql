@@ -18,6 +18,9 @@ CREATE TABLE tx_tp3jobs_domain_model_joboffer (
 	contactaddress varchar(255) DEFAULT '' NOT NULL,
 	contacttel varchar(255) DEFAULT '' NOT NULL,
 	contactmail varchar(255) DEFAULT '' NOT NULL,
+
+        station  int(11) DEFAULT '0' NOT NULL,
+        hours  int(11) DEFAULT '0' NOT NULL,
         
         category  int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

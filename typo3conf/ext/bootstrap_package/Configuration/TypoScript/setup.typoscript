@@ -231,6 +231,10 @@ page {
                     isTrue = {$page.theme.meta.navigationValue}
                 }
             }
+            60 = BK2K\BootstrapPackage\DataProcessing\RootProcessor
+            60 {
+                as = rootid
+            }
         }
 
         ################

@@ -8,7 +8,7 @@
                     {item.title}
                 </f:link.action>
             </h2>
-            <p class="list__item__byline">Commercial ‐Full time ‐Culemborg</p>
+            <p class="list__item__byline">{item.category} ‐<f:if condition='{item.hours}==0'><f:then>Full time</f:then><f:else>Part time</f:else></f:if> ‐{item.station}</p>
         </div>
     </div>
     

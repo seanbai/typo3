@@ -31,8 +31,7 @@ return [
             'showitem' => '
                 sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, descr, tasks, qualification,
                 --div--;LLL:EXT:tp3_jobs/Resources/Private/Language/locallang_db.xlf:user, username, useremail,
-                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime,
-                --div--;LLL:EXT:tp3_jobs/Resources/Private/Language/locallang_db.xlf:categories, category,
+                --div--;LLL:EXT:tp3_jobs/Resources/Private/Language/locallang_db.xlf:categories, category, station, hours,
                 '
             ],
     ],
@@ -254,6 +253,38 @@ return [
                         'expandAll' => true,
                         'showHeader' => true,
                     ]
+                ]
+            ]
+        ],
+        'station' => [
+            'label' => 'LLL:EXT:tp3_jobs/Resources/Private/Language/locallang_db.xlf:content_station',
+            'config' => [
+                'minitems' => 0,
+                'maxitems' => 1,
+                'type' => 'select',
+                'renderType' => 'selectTree',
+                'foreign_table' => 'sys_category',
+                'foreign_table_where' => 'AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC',
+                'treeConfig' => [
+                    'parentField' => 'parent',
+                    'rootUid' => '3',
+                    'appearance' => [
+                        'expandAll' => true,
+                        'showHeader' => true,
+                    ]
+                ]
+            ]
+        ],
+        'hours' => [
+            'label' => 'LLL:EXT:tp3_jobs/Resources/Private/Language/locallang_db.xlf:content_hours',
+            'config' => [
+                'minitems' => 0,
+                'maxitems' => 1,
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['Full Time', '0'],
+                    ['Part Time', '1'],
                 ]
             ]
         ]

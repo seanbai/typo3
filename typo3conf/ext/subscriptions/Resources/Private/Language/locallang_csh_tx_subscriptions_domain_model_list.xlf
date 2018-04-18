@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-01T11:37:17Z" product-name="subscriptions">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="ip.description">
+				<source>ip</source>
+			</trans-unit>
+			<trans-unit id="time.description">
+				<source>time</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

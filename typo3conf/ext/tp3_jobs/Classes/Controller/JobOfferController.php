@@ -125,13 +125,26 @@ class JobOfferController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function listAction()
     {
+        $station = $_GET['station'];
         $storagePid = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK)['persistence']['storagePid'];
         
-        $jobOffers = $this->jobOfferRepository->findOffers($storagePid > 0  ? $storagePid :  $GLOBALS["TSFE"]->page["uid"] );
+        $jobOffers = $this->jobOfferRepository->findOffers($storagePid > 0  ? $storagePid :  $GLOBALS["TSFE"]->page["uid"], $station);
         
         $jobCategoty = $this->jobOfferRepository->findCategoty();
         
+        $jobPgae = $this->jobOfferRepository->findPages($storagePid > 0  ? $storagePid :  $GLOBALS["TSFE"]->page["uid"]);
         
+        $jobStation = $this->jobOfferRepository->findStation();
+        
+       
+        if($station != 0){
+            $thisStation = $this->jobOfferRepository->thisStation($_GET['station']);
+        }
+        
+
+        $this->view->assign('thisStation', current($thisStation));
+        $this->view->assign('jobStation', $jobStation);
+        $this->view->assign('jobPgae', current($jobPgae));
         $this->view->assign('jobCategoty', $jobCategoty);
         $this->view->assign('jobOffers', $jobOffers);
     }
@@ -150,7 +163,8 @@ class JobOfferController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $jobOffer = $this->jobOfferRepository->findShow($uid);
         
         
-        $this->view->assign('jobOffers', current($jobOffer));
+        
+        $this->view->assign('jobOffers', $jobOffer);
         
     }
 
@@ -166,9 +180,10 @@ class JobOfferController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         header('Content-Type: application/json');
         
         $data = substr($_POST['data'],0,-1);
+        $station = $_POST['station'];
         
         if($data){
-            $jobOffer = $this->jobOfferRepository->findInJob($data);
+            $jobOffer = $this->jobOfferRepository->findInJob($data,$station);
         }else{
             $jobOffer = $this->jobOfferRepository->findOffers($storagePid > 0  ? $storagePid :  $GLOBALS["TSFE"]->page["uid"] );
         }

@@ -1,43 +1,32 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-<f:section name="Main">
+    <f:layout name="Default" />
+    <f:section name="Main">
 
-    <f:if condition="{records}">
-        <div class="panel-group" id="accordion-{data.uid}" role="tablist" aria-multiselectable="true">
-            <f:for each="{records}" as="record" iteration="iteration">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="accordion-heading-{data.uid}-{record.data.uid}">
-                        <h4 class="panel-title">
-                            <a class="{f:if(condition: iteration.isFirst, else:'collapsed')}" role="button" data-toggle="collapse" data-parent="#accordion-{data.uid}" href="#accordion-{data.uid}-{record.data.uid}" aria-expanded="{f:if(condition: iteration.isFirst, then: 'true', else: 'false')}" aria-controls="accordion-{data.uid}-{record.data.uid}">
-                                <span>{record.data.header}</span>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="accordion-{data.uid}-{record.data.uid}" class="panel-collapse collapse {f:if(condition: iteration.isFirst, then: 'in')}" role="tabpanel" aria-labelledby="accordion-heading-{data.uid}-{record.data.uid}">
-                        <div class="panel-body">
-
-                            <f:if condition="{record.files}">
-                                <f:then>
-                                    <div class="row">
-                                        <div class="{f:if(condition: '{record.data.mediaorient} == 0', else: 'col-md-push-6 ')}col-md-6">
-                                            <f:render partial="Media/Gallery" arguments="{files: record.files, data: record.data, settings: settings}" />
+        <f:if condition="{records}">
+            <div class="related related--slider">
+                <h3 class="related__top">Featured career</h3>
+                <div class="related__content">
+                    <div class="js-slider .gn-js-styled">
+                        <div class="flex-viewport" >
+                            <ul class="slides" style="width: 800%; transition-duration: 0s; transform: translate3d(-360px, 0px, 0px);">
+                                <f:for each="{records}" as="record" iteration="iteration">
+                                    <li class="flex-active-slide" data-thumb-alt="">
+                                        <div class="related__item">
+                                            <a href="{record.data.link}" class="related__link js-track" data-track-category="Featured careers" data-track-action="Click" data-track-label="{record.data.header}">
+                                                <h4 class="related__title">{record.data.header}</h4>
+                                            </a>
                                         </div>
-                                        <div class="{f:if(condition: '{record.data.mediaorient} == 0', else: 'col-md-pull-6 ')}col-md-6">
-                                            <f:format.html>{record.data.bodytext}</f:format.html>
-                                        </div>
-                                    </div>
-                                </f:then>
-                                <f:else>
-                                    <f:format.html>{record.data.bodytext}</f:format.html>
-                                </f:else>
-                            </f:if>
-
+                                    </li>
+                                </f:for>
+                            </ul>
                         </div>
+                        <ol class="flex-control-nav flex-control-paging"></ol>
                     </div>
                 </div>
-            </f:for>
-        </div>
-    </f:if>
-
-</f:section>
+                <div class="related__bottom">
+                    <a href="" class="button--continue">Show all careers</a>
+                </div>
+            </div>
+        </f:if>
+    </f:section>
 </html>

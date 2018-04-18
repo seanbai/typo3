@@ -47,11 +47,19 @@ class JobController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-            'uid,title', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0 AND category='.$myStoragePid. '', 'uid asc'
+            'uid,title', 'tx_tp3jobs_domain_model_joboffer', 'deleted=0 AND hidden=0 AND category='.$myStoragePid. '', 'uid asc','','0,6'
         );
-//        
-        return $GLOBALS['TYPO3_DB']->debug_lastBuiltQuery;
+        
+        
+        $page = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
+            'uid,header_link', 'tt_content', 'deleted=0 AND hidden=0 AND pages='.$GLOBALS['TSFE']->id. ''
+        );
+//       
+//        return $GLOBALS['TYPO3_DB']->debug_lastBuiltQuery;
+        
+        
         $this->view->assign('data', $data);
+        $this->view->assign('page', $page);
     }
 
 }

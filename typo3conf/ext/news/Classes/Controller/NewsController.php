@@ -378,7 +378,9 @@ class NewsController extends NewsBaseController
 
         $demand->setOrder($this->settings['orderDirection']);
         $statistics = $this->newsRepository->countByDate($demand);
-
+        
+        
+        
         $assignedValues = [
             'listPid' => ($this->settings['listPid'] ? $this->settings['listPid'] : $GLOBALS['TSFE']->id),
             'dateField' => $dateField,
@@ -389,6 +391,7 @@ class NewsController extends NewsBaseController
         ];
 
         $assignedValues = $this->emitActionSignal('NewsController', self::SIGNAL_NEWS_DATEMENU_ACTION, $assignedValues);
+        
         $this->view->assignMultiple($assignedValues);
     }
 

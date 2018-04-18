@@ -6,6 +6,7 @@ $typo3InstallDir = PATH_site;
 
 return array(
     'BK2K\\BootstrapPackage\\' => array($typo3InstallDir . 'typo3conf/ext/bootstrap_package/Classes'),
+    'DmitryDulepov\\Realurl\\' => array($typo3InstallDir . 'typo3conf/ext/realurl/Classes'),
     'FluidTYPO3\\Vhs\\' => array($typo3InstallDir . 'typo3conf/ext/vhs/Classes'),
     'GeorgRinger\\News\\' => array($typo3InstallDir . 'typo3conf/ext/news/Classes'),
     'Netresearch\\RteCKEditorImage\\' => array($typo3InstallDir . 'typo3conf/ext/rte_ckeditor_image/Classes'),
