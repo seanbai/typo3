@@ -9,9 +9,9 @@
                 <img src="<f:uri.image image='{newsItem.falMedia.0}'/>" width="440" height="280" class="module-updates__item__img" alt="">
                 <div class="shortcut__item__content">
                     <p class="shortcut__item__byline">
-                        <time datetime="{f:format.date(date:newsItem.datetime, format:'l d, Y')}">
-                            <f:format.date format="l d, Y">{newsItem.datetime}</f:format.date>
-                            <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'l d, Y')}" />
+                        <time datetime="{f:format.date(date:newsItem.datetime, format:'M d, Y')}">
+                            <f:format.date format="M d, Y">{newsItem.datetime}</f:format.date>
+                            <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'M d, Y')}" />
                         </time>
                     </p>
                     <h2 class="shortcut__item__title">

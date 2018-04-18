@@ -26,7 +26,7 @@
                     <div class=" grid__66 page-primary  js-eq-height" style="height: 1141px;">
                         <div class="cms-content">
                             <p class="meta">
-                                <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+                                <time datetime="{f:format.date(date:newsItem.datetime, format:'M d, Y'')}">
                                     <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
                                     <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
                                 </time>
@@ -43,16 +43,16 @@
                             <h2 class="widget__link__title">
                                 Sign up for jobmail!
                             </h2>
-                            <a href="https://cevalogistics.careers/ajax/jobmail" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
+                            <a href="/jobmail" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
                                 Sign up
                             </a>
                         </div>
                         <div class="card">
                             <div class="card__content">
                                 <p class="card__byline">Article by</p>
-                                <h2 class="card__title"> Dorien Sauer</h2>
+                                <h2 class="card__title">{newsItem.author}</h2>
                                 <ul class="card__list">
-                                    <li>Intern Communications</li>
+                                    <li>{newsItem.authorEmail}</li>
                                 </ul>
                             </div>
                             <div class="card__bottom">

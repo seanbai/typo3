@@ -25,7 +25,7 @@
                 <source>Default, Plugin</source>
             </trans-unit>
             <trans-unit id="backend_layout.default_2_columns_offset_right">
-                <source>Default, 2 Columns, Offset Right</source>
+                <source>Default, Text</source>
             </trans-unit>
 
             <trans-unit id="backend_layout.default_3_columns">

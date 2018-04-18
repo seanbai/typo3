@@ -102,13 +102,19 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
                         'lookUpTable' => array(
                             'table' => 'tx_news_domain_model_news',
                             'id_field' => 'uid',
-                            'alias_field' => 'uid',
+                            'alias_field' => 'title',
                             'addWhereClause' => ' AND NOT deleted',
                             'useUniqueCache' => 1,
                             'useUniqueCache_conf' => array(
                                 'strtolower' => 1,
-                                'spaceCharacter' => '-',
+                                'spaceCharacter' => '-'
                             ),
+                            'languageGetVar' => 'L',
+                            'languageExceptionUids' => '',
+                            'languageField' => 'sys_language_uid',
+                            'transOrigPointerField' => 'l10n_parent',
+                            'autoUpdate' => 1,
+                            'expireDays' => 180,
                         ),
                     ),
                 ),
