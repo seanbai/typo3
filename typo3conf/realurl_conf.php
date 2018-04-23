@@ -3,11 +3,13 @@
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
     '_DEFAULT' => array(
         'init' => array(
-            'enableCHashCache' => TRUE,
-            'appendMissingSlash' => 'ifNotFile',
-            'enableUrlDecodeCache' => TRUE,
-            'enableUrlEncodeCache' => TRUE,
-            'emptyUrlReturnValue' => \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SITE_URL'),
+            'doNotRawUrlEncodeParameterNames' => 0,
+            'enableCHashCache'                => 1,
+            'respectSimulateStaticURLs'       => 1,
+            'adminJumpToBackend'              => 0,
+            'enableUrlDecodeCache'            => 1,
+            'enableUrlEncodeCache'            => 0,
+            'appendMissingSlash'              => 'ifNotFile'
         ),
         'pagePath' => array(
             'type' => 'user',
@@ -127,7 +129,6 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
                     array(
                         'GETvar' => 'tx_tp3jobs_offers[controller]',
                         'valueMap' => array(
-                            'Products' => '',
                         ),
                         'noMatch' => 'bypass'
                     ),

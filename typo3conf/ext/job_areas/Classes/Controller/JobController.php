@@ -52,7 +52,7 @@ class JobController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
         
         
         $page = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
-            'uid,header_link', 'tt_content', 'deleted=0 AND hidden=0 AND pages='.$GLOBALS['TSFE']->id. ''
+            'uid,header_link', 'tt_content', 'deleted=0 AND hidden=0 AND pid='.$GLOBALS['TSFE']->id. ' AND list_type="jobareas_job" AND pages='.$myStoragePid.''
         );
 //       
 //        return $GLOBALS['TYPO3_DB']->debug_lastBuiltQuery;

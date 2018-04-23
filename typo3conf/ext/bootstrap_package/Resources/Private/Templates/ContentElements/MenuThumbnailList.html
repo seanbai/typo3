@@ -5,19 +5,19 @@
         <f:if condition="{menu}">
             
                 <div class="widget__dropdown">
-                    <a href="https://cevalogistics.careers/" class="widget__dropdown__title js-dropdown">
+                    <a href="/" class="widget__dropdown__title js-dropdown">
                         Select a job area
                     </a>
                     <ul class="widget__dropdown__content js-dropdown-content">
                         <f:for each="{menu}" as="page">
                             <li>
-                                <a href="https://cevalogistics.careers/job-areas/commercial" class="widget__dropdown__link js-track" data-track-category="Select jobarea" data-track-action="Click" data-track-label="Commercial">{page.data.title}</a>
+                                <f:link.page pageUid="{page.data.uid}" class="widget__dropdown__link js-track" >
+                                    {page.data.title}
+                                </f:link.page>
                             </li>
                         </f:for>
                     </ul>
                 </div>
-                
-            
         </f:if>
 
     </f:section>

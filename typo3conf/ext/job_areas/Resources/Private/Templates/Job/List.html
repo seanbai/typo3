@@ -9,11 +9,11 @@
             <div class="related__content">
                 <f:for each="{data}" as="vo">
                     <div class="related__item">
-                        <a href="{vo.uid}" class="related__link js-track" data-track-category="Related careers" data-track-action="Click" data-track-label="{vo.title}">
+                        <f:link.action pageUid="53" action="show" controller="JobOffer" pluginName="offers" extensionName="tp3jobs" arguments="{id:vo.uid}"  class="related__link js-track" >
                             <h4 class="related__title">
                                 {vo.title}
                             </h4>
-                        </a>
+                        </f:link.action>
                     </div>
                 </f:for>
             </div>

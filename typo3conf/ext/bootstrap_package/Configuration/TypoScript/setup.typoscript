@@ -426,7 +426,7 @@ page {
 #### CONFIG ####
 ################
 config {
-    absRefPrefix = auto
+    absRefPrefix = /
     no_cache = {$config.no_cache}
     pageTitleFirst = 1
     pageTitleSeparator = -
@@ -446,6 +446,8 @@ config {
 
     // Enable RealUrl
     tx_realurl_enable = 1
+    disablePrefixComment = 1
+    baseURL = /
 
     // Language Settings
     sys_language_uid = 0
