@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-19T23:36:47Z" product-name="upload_example">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_uploadexample_domain_model_example">
+				<source>Example</source>
+			</trans-unit>
+			<trans-unit id="tx_uploadexample_domain_model_example.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_uploadexample_domain_model_example.username">
+				<source>Username</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.user">
+				<source>user</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.sex">
+				<source>sex</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.profession">
+				<source>profession</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.citizenship">
+				<source>citizenship</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.phone">
+				<source>phone</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.age">
+				<source>age</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.education">
+				<source>education</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.address">
+				<source>address</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.email">
+				<source>email</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.language">
+				<source>language</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.languagelevel">
+				<source>languagelevel</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.school">
+				<source>school</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.privacy">
+				<source>privacy</source>
+			</trans-unit>
+                        <trans-unit id="tx_uploadexample_domain_model_example.content">
+				<source>content</source>
+			</trans-unit>
+
+                        <trans-unit id="tx_uploadexample_domain_model_example.image">
+				<source>Image</source>
+			</trans-unit>
+                        
+			<trans-unit id="tx_uploadexample_domain_model_example.image_collection">
+				<source>Image Collection</source>
+			</trans-unit>
+                        
+                        <trans-unit id="user.information">
+				<source>User Information</source>
+			</trans-unit>
+                        
+                        <trans-unit id="contact.us">
+				<source>Contact Us</source>
+			</trans-unit>
+                        
+                        <trans-unit id="tabs.access">
+				<source>Contact Us</source>
+			</trans-unit>
+                        
+                        
+		</body>
+	</file>
+</xliff>

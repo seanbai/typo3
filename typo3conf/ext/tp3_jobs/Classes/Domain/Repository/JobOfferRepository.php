@@ -208,4 +208,21 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
        return $data;
     }
     
+    /*     * *
+     * Returns all objects of this categoty.
+     *
+     * @return QueryResultInterface|array
+     *
+     */
+
+    public function findformtitle($uid) {
+        $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
+
+        $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
+            'uid,title', 'tx_tp3jobs_domain_model_joboffer', 'uid='.$uid
+        );
+
+        return $data;
+    }
+    
 }

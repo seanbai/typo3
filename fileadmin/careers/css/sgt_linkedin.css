@@ -1,0 +1,64 @@
+#sgt_li_searchresults	{
+	position: absolute;
+	/*margin-top: 20px;*/
+	border: 2px solid #ccc;
+	background-color: #fff;
+	width: 300px;
+	overflow: auto;
+}
+#sgt_li_searchresults .message	{
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	color: #006699;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 12px;
+}
+
+.sgt_li_row	{
+	background-color: #fff;
+	padding: 6px;
+	border-bottom: 1px dotted #aaa;
+	cursor: pointer;
+}
+.sgt_li_row_hover	{
+	background-color: #f0f0f0;
+}
+.sgt_li_row #textcontainer	{
+	font-family: Arial,Helvetica;
+	float:left;
+	width: 80%;
+	background: none;
+}
+.sgt_li_row #imgcontainer	{
+	float: right;
+	border: 1px solid #006699;
+}
+.sgt_li_row #textcontainer #name	{
+	color: #006699;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 16px !important;
+	background: none;
+}
+.sgt_li_row #textcontainer #title	{
+	color: #444;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 12px !important;
+	background: none;
+}
+#sgt_li_btnSearch,
+#sgt_li_btnSearchInd	{
+	position: relative;
+	margin-left: 4px;
+	margin-top: 2px;
+}
+#sgt_li_btnSearch	{
+	cursor: pointer;
+}
+#KAN_LINKEDIN_URL	{
+	padding-left: 20px;
+	background: #fff url(/style/sgt/images/linkedin_icon.gif) left center no-repeat;
+}

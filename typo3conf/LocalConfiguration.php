@@ -37,6 +37,7 @@ return [
             'static_info_tables' => 'a:1:{s:13:"enableManager";s:1:"0";}',
             'subscriptions' => 'a:0:{}',
             'tp3_jobs' => 'a:1:{s:5:"debug";s:1:"0";}',
+            'upload_example' => 'a:0:{}',
             'vhs' => 'a:1:{s:20:"disableAssetHandling";s:1:"0";}',
         ],
     ],

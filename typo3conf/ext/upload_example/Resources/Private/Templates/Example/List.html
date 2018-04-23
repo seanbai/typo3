@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://schema.helhum.dev/ns/fluid/ViewHelpers">
+
+    <f:layout name="Default" />
+
+    <f:section name="main">
+        <link rel="stylesheet" type="text/css" href="/fileadmin/careers/css/iframe.css">
+        <script src="fileadmin/careers/form/jquery.validate.js" type="text/javascript"></script>
+        <script src="fileadmin/careers/form/jquery.validate.messages-zh.js" type="text/javascript"></script>
+        <script src="fileadmin/careers/form/validatie.js" type="text/javascript"></script>
+
+        <f:render partial="FormErrors" arguments="{object:'newExample'}"/>
+        
+        <div class='iframe-wrap'>
+            <f:form  enctype="multipart/form-data"  name="newExample" object="{newExample}" action="create" >
+                    <div id="section--pri" class="section--pri container--small">
+                    <div class="titel">{examples.title}</div>
+                    <div class="lege_regel"></div>
+                    <div class="">标有星号 (*) 为必填</div>
+                    <div class="lege_regel"></div>
+                    <f:form.hidden property="title" value="{examples.title}"/>
+                    <f:render partial="Example/FormFields"  />
+                </div>
+            </f:form>
+        </div>
+            
+    </f:section>
+</html>

@@ -146,6 +146,9 @@ return [
         'tp3_jobs' => [
             'packagePath' => 'typo3conf/ext/tp3_jobs/',
         ],
+        'upload_example' => [
+            'packagePath' => 'typo3conf/ext/upload_example/',
+        ],
         'vhs' => [
             'packagePath' => 'typo3conf/ext/vhs/',
         ],

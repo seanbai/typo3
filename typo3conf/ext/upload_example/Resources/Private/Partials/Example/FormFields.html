@@ -1,0 +1,201 @@
+{namespace h=Helhum\UploadExample\ViewHelpers}
+
+
+
+<div class="container--small">
+    <div id="container--small" class="grid grid--gutter-40">
+        <div class="">
+            <div id="persoonlijk_contact" class="grid grid--gutter-40">
+                <div class="grid__30">
+                    <div id="persoonlijk" class="breed form__group">
+                        <div class="lege_regel"></div>
+                        <div class="kop">个人资料</div>
+                        <div class="form__group">
+                            <div class="">
+                                <div class="form__label">名称 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="username"  maxlength="30" class="form__input required"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div class="">
+                                <div class="form__label">姓名 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="user" maxlength="10" class="form__input required"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div  class="">
+                                <div class="form__label">性别 *</div>
+                                <div class="form__field" style="height: 52.8px; line-height: 52.8px">
+                                    <f:form.radio property="sex" value="male" checked="checked"/>
+                                    <label>男</label>
+                                    <f:form.radio property="sex" value="female"/>
+                                    <label>女</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div class="">
+                                <div class="form__label">专业 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="profession"  maxlength="100" class="form__input required"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__30">
+                    <div id="contact" class="breed form__group">
+                        <div class="lege_regel"></div>
+                        <div class="kop">联系方式</div>
+                        <div class="form__group">
+                            <div  class="">
+                                <div class="form__label">国籍 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="citizenship" maxlength="50" class="form__input required"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div  class="">
+                                <div class="form__label">联系电话 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="phone" maxlength="50" class="form__input required number"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div  class="">
+                                <div class="form__label">年龄 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="age"  maxlength="20" class="form__input required digits"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div class="">
+                                <div class="form__label">最高学历 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="education"  maxlength="100" class="form__input required "/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__40">
+                    <div class="breed form__group">
+                        <div class="lege_regel"></div>
+                        <div class="kop header-out"></div>
+                        <div class="form__group">
+                            <div class="">
+                                <div class="form__label">居住地址 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="address"  maxlength="100" class="form__input required "/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div  class="">
+                                <div class="form__label">邮箱地址 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="email"  maxlength="50" class="form__input required email "/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="">
+                                <div class="grid grid--gutter-40">
+                                    <div class="grid__66">
+                                        <div class="form__group">
+                                            <label for="KAN_POSTCODE" class="form__label">
+                                                语言<span class="form__required">*</span>
+                                            </label>
+                                            <div class="form__field">
+                                                <f:form.textfield property="language"   maxlength="50" class="form__input required "/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__33">
+                                        <div class="form__group">
+                                            <label for="KAN_HUISNUMMER" class="form__label">
+                                                语言程度 <span class="form__required">*</span>
+                                            </label>
+                                            <div class="form__field">
+                                                <f:form.textfield property="languagelevel"  maxlength="50" class="form__input required "/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div  class="">
+                                <div class="form__label">学校 *</div>
+                                <div class="form__field">
+                                    <f:form.textfield property="school"  maxlength="100" class="form__input required "/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <div id="overig_aanvullend" class="grid grid--gutter-40">
+                <div class="grid__50">
+                    <div id="overig" class="breed grid_pad">
+                        <div class="lege_regel"></div>
+                        <div class="kop">上传简历</div>
+                        <div class="form__label">上传简历</div>
+                        <div class="">
+                            <div class="form__group">
+                                <div class="form__field">
+                                    <div class="form__upload">
+                                        <input type="text" class="form__input js-upload-filename" id="fakeCV">	
+                                        <label class="form__upload__label" for="letter">Select file</label>
+                                        <h:form.upload property="image" class="form__upload__field js-upload required" ></h:form.upload>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lege_regel"></div>
+                    <div id="privacy" class="breed form__group">
+                        <div class="form__label">接受隐私声明<span class="form__required"> *</span></div>
+                        <div class="form__field">
+                            <f:form.checkbox property="privacy" id="KAN_PRIVACYSTATEMENT" class="form__checkbox required" value="1"/>
+                        </div>
+                        <div id="privacy_statement" class="breed form__group">
+                            <div class="">
+                                <div class="kop">隐私权声明</div>
+                                您的隐私对我们很重要。因此我们处理您的数据时非常小心,要保密。我们使用您的信息仅用于招聘目的。通过发送申请表格，您同意您的个人资料将由CEVA物流处理，将包含在我们的数据库。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__50">
+                    <div id="aanvullend" class="breed form__group">
+                        <div class="lege_regel"></div>
+                        <div class="kop">附加信息</div>
+                        <div class="form__label">内容</div>
+                        <div class="form__field">
+                            <f:form.textarea property="content" id="Overige opmerkingen" class="form__textarea form__textarea--large" style="height:306px"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div id="buttons" class="form__buttonrow--center">
+                <div class="">
+                    <input type="submit" value="Solliciteer" class="button--pri" title="Solliciteer"  id="submitprofielform">
+                </div>
+                <div class="lege_regel"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -131,6 +131,79 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
                         ),
                         'noMatch' => 'bypass'
                     ),
+                    array(
+                        'GETvar' => 'tx_tp3jobs_offers[id]',
+                        'lookUpTable' => array(
+                            'table' => 'tx_tp3jobs_domain_model_joboffer',
+                            'id_field' => 'uid',
+                            'alias_field' => 'title',
+                            'addWhereClause' => ' AND NOT deleted',
+                            'useUniqueCache' => 1,
+                            'useUniqueCache_conf' => array(
+                                'strtolower' => 1,
+                                'spaceCharacter' => '-'
+                            ),
+                            'languageGetVar' => 'L',
+                            'languageExceptionUids' => '',
+                            'languageField' => 'sys_language_uid',
+                            'transOrigPointerField' => 'l10n_parent',
+                            'autoUpdate' => 1,
+                            'expireDays' => 180,
+                        ),
+                    ),
+                    array(
+                        'GETvar' => 'tx_tp3jobs_offers[appleid]',
+                        'lookUpTable' => array(
+                            'table' => 'tx_tp3jobs_domain_model_joboffer',
+                            'id_field' => 'uid',
+                            'alias_field' => 'title',
+                            'addWhereClause' => 'AND NOT deleted',
+                            'useUniqueCache' => 1,
+                            'useUniqueCache_conf' => array(
+                                'strtolower' => 1,
+                                'spaceCharacter' => '-'
+                            ),
+                            'languageGetVar' => 'L',
+                            'languageExceptionUids' => '',
+                            'languageField' => 'sys_language_uid',
+                            'transOrigPointerField' => 'l10n_parent',
+                            'autoUpdate' => 1,
+                            'expireDays' => 180,
+                        ),
+                    ),
+                ),
+                'apply' => array(
+                    array(
+                        'GETvar' => 'tx_uploadexample_offers[action]',
+                            'valueMap' => array(
+                             ),
+                    ),
+                    array(
+                        'GETvar' => 'tx_uploadexample_offers[controller]',
+                        'valueMap' => array(
+                        ),
+                        'noMatch' => 'bypass'
+                    ),
+                    array(
+                        'GETvar' => 'tx_uploadexample_offers[appleid]',
+                        'lookUpTable' => array(
+                            'table' => 'tx_tp3jobs_domain_model_joboffer',
+                            'id_field' => 'uid',
+                            'alias_field' => 'title',
+                            'addWhereClause' => 'AND NOT deleted',
+                            'useUniqueCache' => 1,
+                            'useUniqueCache_conf' => array(
+                                'strtolower' => 1,
+                                'spaceCharacter' => '-'
+                            ),
+                            'languageGetVar' => 'L',
+                            'languageExceptionUids' => '',
+                            'languageField' => 'sys_language_uid',
+                            'transOrigPointerField' => 'l10n_parent',
+                            'autoUpdate' => 1,
+                            'expireDays' => 180,
+                        ),
+                    ),
                 ),
             ),
         ),

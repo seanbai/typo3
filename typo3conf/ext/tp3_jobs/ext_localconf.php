@@ -6,11 +6,11 @@ defined('TYPO3_MODE') || die('Access denied.');
             'Tp3.Tp3Jobs',
             'Offers',
             [
-                'JobOffer' => 'list, show, ajax'
+                'JobOffer' => 'list, show, ajax, apply, add'
             ],
             // non-cacheable actions
             [
-                'JobOffer' => 'list, show, ajax'
+                'JobOffer' => 'list, show, ajax, apply, add'
             ]
         );
 

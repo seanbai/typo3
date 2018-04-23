@@ -1,0 +1,110 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="main">
+
+        <div class="section--pri section--small">
+            <div class="container--small">
+                <div class="page-title page-title--center  ">
+                    <p class="header-color">
+                        {jobPgae.title}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section--pri">
+            <div class="container--small">
+                <div class="module-overview">
+                    <div class="grid grid--gutter-40">
+                        <div class="grid__30 module-overview__aside js-jobmail-aside">
+                            <div class="grid grid--gutter-40">
+                                <div class="grid__100 module-overview__location">
+                                    <a href="#location-filter" class="button--location js-modal-inline js-location-label js-track" data-track-category="Careers" data-track-action="Click" data-track-label="Open locations" rel="nofollow">
+                                        <f:if condition='{thisStation.uid}'>
+                                            <f:then>{thisStation.title}</f:then>
+                                            <f:else>All locations</f:else>
+                                        </f:if>
+                                    </a>
+                                </div>
+                                <div class="is-hidden">
+                                    <div id="location-filter" class="mfp-hide">
+                                        <div class="modal__main">
+                                            <div class="container--tiny">
+                                                <div class="modal__title">
+                                                    <h1 class="heading--1">Select a location</h1>
+                                                </div>
+                                                <div class="filter--list">
+                                                    <div class="grid grid--gutter-40">
+                                                        <div class="grid__33">&nbsp;</div>
+                                                        <div class="grid__33">
+                                                            <div class="filter--list__item">
+                                                                 <f:if condition='{thisStation.uid}'>
+                                                                     <f:then>
+                                                                          <a href="?station=0" class="filter--list__link " data-label="All locations" rel="nofollow">All locations</a>
+                                                                     </f:then>
+                                                                     <f:else>
+                                                                          <a href="?station=0" class="filter--list__link is-active " data-label="All locations" rel="nofollow">All locations</a>
+                                                                     </f:else>
+                                                                </f:if>
+                                                            </div>
+                                                        </div>
+                                                        <div> &nbsp;</div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter--list">
+                                                    <div class="grid grid--gutter-40">
+                                                        <div class="grid__100">
+                                                             <f:for each="{jobStation}" as="vo">
+                                                                 <f:if condition='{vo.uid} == {thisStation.uid}'>
+                                                                     <f:then>
+                                                                        <div class="station-filter--list__item station-filter--list__item--large">
+                                                                            <a href="?station={vo.uid}" class="filter--list__link job-is-active " data-label="{vo.title}" data="{vo.uid}" rel="nofollow">{vo.title}<span>({vo.count})</span></a>
+                                                                        </div>
+                                                                     </f:then>
+                                                                     <f:else>
+                                                                         <div class="station-filter--list__item station-filter--list__item--large">
+                                                                            <a href="?station={vo.uid}" class="filter--list__link  " data-label="{vo.title}" data="{vo.uid}" rel="nofollow">{vo.title}<span>({vo.count})</span></a>
+                                                                        </div>
+                                                                     </f:else>
+                                                                 </f:if>
+                                                            </f:for>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid__100 module-overview__filter">
+                                    <div class="filter js-filter module-overview__filter__desktop">
+                                        <ul class="filter__content" >
+                                            <f:for each="{jobCategoty}" as="item">
+                                                <li class="filter__item" data="{item.uid}" active="0">
+                                                    <a class="filter__link" rel="nofollow">
+                                                        <h4 class="filter__title">
+                                                            {item.title}
+                                                        </h4>
+                                                        <span class="filter__byline">
+                                                            {item.count} jobs
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </f:for>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__70 module-overview__main js-career-list" id="items">
+                            <div class="list">
+                                <f:for each="{jobOffers}" as="item">
+                                    <f:render partial="JobOffer/Item" arguments="{item:item}" />
+                                </f:for>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:section>
+</html>

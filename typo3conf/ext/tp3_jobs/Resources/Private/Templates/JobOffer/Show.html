@@ -31,10 +31,10 @@
                             <!-- {* Accordion *} -->
                             <ul class="accordion">
                                 <li class="accordion__item js-accordion is-open">
-                                    <a href="https://cevalogistics.careers/careers/vp-business-development-benelux-e24701#" class="accordion__title js-accordion-toggle">
+                                    <a href="#" class="accordion__title js-accordion-toggle">
                                         Job description
                                     </a>
-                                    <div class="accordion__content" style="max-height: none;">
+                                    <div class="accordion__content"  style='display: block; max-height: none;'>
                                         <div class="js-accordion-content">
                                             <div class="cms-content">
                                                 <f:format.html>{jobOffers.tasks}</f:format.html>
@@ -43,10 +43,10 @@
                                     </div>
                                 </li>
                                 <li class="accordion__item js-accordion is-open">
-                                    <a href="https://cevalogistics.careers/careers/vp-business-development-benelux-e24701#" class="accordion__title js-accordion-toggle">
+                                    <a href="#" class="accordion__title js-accordion-toggle">
                                         Requirements
                                     </a>
-                                    <div class="accordion__content" style="max-height: none;">
+                                    <div class="accordion__content"  style='display: block; max-height: none;'>
                                         <div class="js-accordion-content">
                                             <div class="cms-content">
                                                 <f:format.html>{jobOffers.qualification}</f:format.html>
@@ -56,7 +56,9 @@
                                 </li>
                             </ul>
                             <div class="cms-content hide-mobile">
-                                <a href="#" class="button--pri js-track" data-track-category="Careers" data-track-action="Apply" data-track-label="VP Business Development Benelux">Apply now</a>
+                                 <f:link.action pageUid="85" action="list" controller="Example" extensionName="uploadexample" arguments="{appleid:jobOffers.uid}"  class="button--pri js-track" >
+                                    Apply now
+                                </f:link.action>
                             </div>
                         </div>
                     </div>
@@ -64,7 +66,9 @@
                         <!-- {* Card *} -->
                         <div class="card js-sticky">
                             <div class="card__top">
-                                <a href="#" class="button--pri js-track" data-track-category="Careers" data-track-action="Apply" data-track-label="VP Business Development Benelux">Apply now</a>
+                                <f:link.action pageUid="85" action="list" controller="Example" extensionName="uploadexample" arguments="{appleid:jobOffers.uid}"  class="button--pri js-track" >
+                                    Apply now
+                                </f:link.action>
                             </div>
                             <div class="card__content">
                                 <p class="card__byline">
@@ -92,5 +96,6 @@
                 </div>
             </div>
         </div>
+        
     </f:section>
 </html>

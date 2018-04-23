@@ -202,9 +202,26 @@ class JobOfferController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      * 
      * @return void
      */
-    public function newAction()
+    public function applyAction()
     {
-
+        $id = $_GET['tx_tp3jobs_offers']['id'];
+        $jobOffer = $this->jobOfferRepository->findformtitle($id  ? $id : 1 );
+        
+        
+        $this->view->assign('id', $id);
+        $this->view->assign('jobOffers', $jobOffer);
+    }
+    
+    /**
+     * action add
+     * 
+     * @return void
+     */
+    public function addAction()
+    {
+        
+        
+        
     }
 
     
