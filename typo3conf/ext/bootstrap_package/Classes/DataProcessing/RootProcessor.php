@@ -64,8 +64,9 @@ class RootProcessor implements DataProcessorInterface
         $processedData['rootid'] = $GLOBALS['TSFE']->page['pid'];
         $processedData['thisid'] = $GLOBALS['TSFE']->id;
         
-       
         $processedData['domain'] = $GLOBALS['TSFE']->domain;
+        
+        $processedData['language'] = $GLOBALS['TSFE']->sys_language_uid;
         
         return $processedData;
     }

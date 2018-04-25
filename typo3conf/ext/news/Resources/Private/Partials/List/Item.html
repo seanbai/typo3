@@ -10,14 +10,16 @@
                 <div class="shortcut__item__content">
                     <p class="shortcut__item__byline">
                         <time datetime="{f:format.date(date:newsItem.datetime, format:'M d, Y')}">
-                            <f:format.date format="M d, Y">{newsItem.datetime}</f:format.date>
+                            <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
                             <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'M d, Y')}" />
                         </time>
                     </p>
                     <h2 class="shortcut__item__title">
                         {newsItem.title}
                     </h2>
-                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="shortcut__item__link js-href">Read the story</n:link>
+                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="shortcut__item__link js-href">
+                        <f:translate key="story" />
+                    </n:link>
                 </div>
             </div>
         </div>

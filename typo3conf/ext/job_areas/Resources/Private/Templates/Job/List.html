@@ -2,29 +2,25 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-    
-    
-        <div class="related js-sticky is-sticky" >
-            <h3 class="related__top">Find your career</h3>
-            <div class="related__content">
-                <f:for each="{data}" as="vo">
-                    <div class="related__item">
-                        <f:link.action pageUid="53" action="show" controller="JobOffer" pluginName="offers" extensionName="tp3jobs" arguments="{id:vo.uid}"  class="related__link js-track" >
-                            <h4 class="related__title">
-                                {vo.title}
-                            </h4>
-                        </f:link.action>
-                    </div>
-                </f:for>
-            </div>
-            <div class="related__bottom">
-                <f:link.typolink parameter="{page.header_link}" class="button--continue js-track" >
-                    Show all
-                </f:link.typolink>
-            </div>
+    <div class="related js-sticky is-sticky" >
+        <h3 class="related__top"><f:translate key="find" /></h3>
+        <div class="related__content">
+            <f:for each="{data}" as="vo">
+                <div class="related__item">
+                    <f:link.action pageUid="53" action="show" controller="JobOffer" pluginName="offers" extensionName="tp3jobs" arguments="{id:vo.uid}"  class="related__link js-track" >
+                        <h4 class="related__title">
+                            {vo.title}
+                        </h4>
+                    </f:link.action>
+                </div>
+            </f:for>
         </div>
-
-
+        <div class="related__bottom">
+            <f:link.typolink parameter="{page.header_link}" class="button--continue js-track" >
+                <f:translate key="all" />
+            </f:link.typolink>
+        </div>
+    </div>
 </f:section>
 
 

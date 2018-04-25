@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="zh"  datatype="plaintext" original="messages" date="2014-06-02T11:47:10Z" product-name="news">
+		<header/>
+		<body>
+			
+                        <trans-unit id="updates" xml:space="preserve">
+				<source>Updates</source>
+                                <target>新闻故事</target>
+			</trans-unit>
+                        
+                        <trans-unit id="jobmail" xml:space="preserve">
+				<source>Sign up for jobmail!</source>
+                                <target>注册jobmail!</target>
+			</trans-unit>
+                        
+                        <trans-unit id="signup" xml:space="preserve">
+				<source>Sign up</source>
+                                <target>注册</target>
+			</trans-unit>
+                        
+                        <trans-unit id="article" xml:space="preserve">
+				<source>Article by</source>
+                                <target>文章</target>
+			</trans-unit>
+                        <trans-unit id="share" xml:space="preserve">
+				<source>Share article</source>
+                                <target>分享文章</target>
+			</trans-unit>
+                        
+                        <trans-unit id="story" xml:space="preserve">
+				<source>Read the story</source>
+                                <target>读故事</target>
+			</trans-unit>
+                        
+                        <trans-unit id="dateFormat" xml:space="preserve">
+				<source>M d, Y</source>
+                                <target>Y-m-d</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

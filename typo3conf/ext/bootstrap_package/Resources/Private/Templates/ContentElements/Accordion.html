@@ -4,7 +4,9 @@
 
         <f:if condition="{records}">
             <div class="related related--slider">
-                <h3 class="related__top">Featured career</h3>
+                <h3 class="related__top">
+                    <f:translate key="featured" extensionName="bootstrap_package" />
+                </h3>
                 <div class="related__content">
                     <div class="js-slider .gn-js-styled">
                         <div class="flex-viewport" >
@@ -25,7 +27,7 @@
                 </div>
                 <div class="related__bottom">
                     <f:link.typolink  parameter="{data.header_link}"  class="button--continue">
-                        Show all careers
+                        <f:translate key="showallcareers" extensionName="bootstrap_package" />
                     </f:link.typolink>
                 </div>
             </div>

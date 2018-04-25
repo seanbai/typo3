@@ -1,107 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2013-09-19T09:11:39Z"
+    <file source-language="en" target-language="zh" datatype="plaintext" original="messages" date="2013-09-19T09:11:39Z"
           product-name="bootstrap_package">
         <header/>
         <body>
 
-            <trans-unit id="skiptomaincontent">
-                <source>Skip to main content</source>
-            </trans-unit>
-
-            <trans-unit id="skipnavigation">
-                <source>Skip navigation block</source>
-            </trans-unit>
-
-            <trans-unit id="scrolltop">
-                <source>Scroll to top</source>
-            </trans-unit>
-
-            <trans-unit id="linktop">
-                <source>To top</source>
-            </trans-unit>
-
-            <trans-unit id="breadcrumb">
-                <source>You are here:</source>
-            </trans-unit>
-
-            <trans-unit id="previous">
-                <source>Previous</source>
-            </trans-unit>
-
-            <trans-unit id="next">
-                <source>Next</source>
-            </trans-unit>
-
-            <trans-unit id="externalmediaunsupported">
-                <source>The external media source %s is not supported. Please provide a valid YouTube or Vimeo URL.</source>
-            </trans-unit>
-
             <trans-unit id="logistics">
                 <source>Working at CEVA Logistics</source>
+                <target>在CEVA物流工作</target>
             </trans-unit>
             
             <trans-unit id="select">
                 <source>Select a job area</source>
+                <target>选择一个工作区域</target>
             </trans-unit>
             
             <trans-unit id="featured">
                 <source>Featured career</source>
+                <target>特色职业</target>
             </trans-unit>
             
             <trans-unit id="showallcareers">
                 <source>Show all careers</source>
+                <target>显示所有职业</target>
             </trans-unit>
             
             <trans-unit id="more">
                 <source>Read more</source>
+                <target>更多</target>
             </trans-unit>
             
             <trans-unit id="story">
                 <source>Read the story</source>
+                <target>读故事</target>
             </trans-unit>
             
             <trans-unit id="jobmail">
                 <source>Sign up for jobmail</source>
+                <target>注册jobmail</target>
             </trans-unit>
             
             <trans-unit id="how">
                 <source>How far do you want to go?</source>
+                <target>你想走多远?</target>
             </trans-unit>
             
             <trans-unit id="contact">
                 <source>Contact us</source>
+                <target>联系我们</target>
             </trans-unit>
             
             <trans-unit id="privacy">
                 <source>Privacy Policy</source>
+                <target>隐私政策</target>
             </trans-unit>
             
             <trans-unit id="conditions">
                 <source>Terms and Conditions</source>
+                <target>条款和条件</target>
             </trans-unit>
-            
             
             <trans-unit id="english">
                 <source>English</source>
+                <target>英语</target>
             </trans-unit>
             
             <trans-unit id="china">
                 <source>Chinese</source>
+                <target>中文</target>
             </trans-unit>
             
             <trans-unit id="language">
                 <source>Language</source>
+                <target>语言</target>
             </trans-unit>
             
             <trans-unit id="signup">
                 <source>Sign up</source>
+                <target>注册</target>
             </trans-unit>
             
             <trans-unit id="signupfor">
                 <source>Sign up for our CEVAcancy updates</source>
+                <target>注册我们的CEVAcancy更新</target>
             </trans-unit>
-            
             
         </body>
     </file>

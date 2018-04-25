@@ -1,31 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <f:if condition="{showFooter}">
-<!--        <footer>
-            <section class="section footer-section footer-section-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '10'}" />
-                        </div>
-                        <div class="col-sm-4">
-                            <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '11'}" />
-                        </div>
-                        <div class="col-sm-4">
-                            <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '12'}" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </footer>-->
-    </f:if>
-    
+
     <f:if condition="{showFooter}">
         <div class="page-footer">
             <div class="container--small">
                 <div class="page-footer__action">
                     <div class="grid">
                         <div class="grid__50">
-                            <a href="/index.php?id=75" class="button--continue-boxed js-modal js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Jobmail">Sign up for jobmail</a>
+                            <a href="/index.php?id=75" class="button--continue-boxed js-modal js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Jobmail">
+                                <f:translate key="jobmail" extensionName="bootstrap_package" />
+                            </a>
                         </div>
                         <div class="grid__50">
                             <div class="social t-right">
@@ -37,7 +20,7 @@
                         </div>
                     </div>
                     <p class="page-footer__payoff">
-                        How far do you want to go?
+                        <f:translate key="how" extensionName="bootstrap_package" />
                     </p>
                 </div>
                 <ul class="page-footer__nav">
@@ -45,13 +28,13 @@
                         © Copyright 2018 CEVA Logistics
                     </li>
                     <li>
-                        <a href="/contact-us/" class="">Contact us</a>
+                        <a href="/contact-us/" class=""><f:translate key="contact" extensionName="bootstrap_package" /></a>
                     </li>
                     <li>
-                        <a href="/privacy-policy/" class="">Privacy Policy</a>
+                        <a href="/privacy-policy/" class=""><f:translate key="privacy" extensionName="bootstrap_package" /></a>
                     </li>
                     <li>
-                        <a href="/terms-and-conditions/" class="">Terms and Conditions</a>
+                        <a href="/terms-and-conditions/" class=""><f:translate key="conditions" extensionName="bootstrap_package" /></a>
                     </li>
                 </ul>
             </div>

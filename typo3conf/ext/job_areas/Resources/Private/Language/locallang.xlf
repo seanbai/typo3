@@ -20,6 +20,14 @@
 				<source>Access</source>
 			</trans-unit>
                        
+                       <trans-unit id="find">
+                            <source>Find your career</source>
+			</trans-unit>
+                        
+                        <trans-unit id="all">
+                            <source>Show all</source>
+			</trans-unit>
+                       
                         
 		</body>
 	</file>

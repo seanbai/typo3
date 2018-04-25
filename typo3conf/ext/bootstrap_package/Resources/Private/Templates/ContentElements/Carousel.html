@@ -23,7 +23,7 @@
                                                         {item.data.subheader}
                                                     </blockquote>
                                                     <f:link.typolink parameter="{item.data.link}" class="carousel__link js-href js-track" >
-                                                        Working at CEVA Logistics
+                                                        <f:translate key="logistics" extensionName="bootstrap_package" />
                                                     </f:link.typolink>
                                                 </div>
                                             </div>
@@ -36,21 +36,23 @@
                             <div class="container">
                                 <div class="grid grid--gutter-40">
                                     <div class="grid__66">
+                                        <f:for each="{records}" as="item" iteration="iteration">
                                         <div class="position-relative">
                                             <div class="js-carousel-content">
                                                 <div class="carousel__content js-href-click">
                                                     <h1 class="carousel__subtitle">
-                                                        Jawad El Louzati, Ocean Export Team Leader
+                                                        {item.data.header}
                                                     </h1>
                                                     <blockquote class="carousel__title">
-                                                        ‘ 5 years ago I started as an intern, now I get trained for a management position.'
+                                                        {item.data.subheader}
                                                     </blockquote>
-                                                    <a href="https://cevalogistics.careers/about-us/working-at-ceva" class="carousel__link js-href js-track" data-track-category="Carousel" data-track-action="Click" data-track-label="https://cevalogistics.careers/about-us/working-at-ceva">
-                                                        Working at CEVA Logistics
-                                                    </a>
+                                                    <f:link.typolink parameter="{item.data.link}" class="carousel__link js-href js-track" >
+                                                        <f:translate key="logistics" extensionName="bootstrap_package" />
+                                                    </f:link.typolink>
                                                 </div>
                                             </div>
                                         </div>
+                                        </f:for>
                                     </div>
                                     <div class="grid__33 float-right">
                                         <div class="position-relative">

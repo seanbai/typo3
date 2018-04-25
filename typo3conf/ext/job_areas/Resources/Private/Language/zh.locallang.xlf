@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="zh" datatype="plaintext" original="messages" date="2018-04-09T07:38:01Z" product-name="job_areas">
+		<header/>
+		<body>
+			<trans-unit id="find">
+                            <source>Find your career</source>
+                            <target>找到你的职业</target>
+			</trans-unit>
+                        
+                        <trans-unit id="all">
+                            <source>Show all</source>
+                            <target>显示所有</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

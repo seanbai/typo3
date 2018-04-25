@@ -132,6 +132,30 @@
 			<trans-unit id="newsNotFound" xml:space="preserve">
 				<source>The news record is not available anymore.</source>
 			</trans-unit>
+                        
+                        <trans-unit id="updates" xml:space="preserve">
+				<source>Updates</source>
+			</trans-unit>
+                        
+                        <trans-unit id="jobmail" xml:space="preserve">
+				<source>Sign up for jobmail!</source>
+			</trans-unit>
+                        
+                        <trans-unit id="signup" xml:space="preserve">
+				<source>Sign up</source>
+			</trans-unit>
+                        <trans-unit id="article" xml:space="preserve">
+				<source>Article by</source>
+			</trans-unit>
+                        <trans-unit id="share" xml:space="preserve">
+				<source>Share article</source>
+			</trans-unit>
+                        <trans-unit id="story" xml:space="preserve">
+				<source>Read the story</source>
+			</trans-unit>
+                        
+                       
+                        
 		</body>
 	</file>
 </xliff>

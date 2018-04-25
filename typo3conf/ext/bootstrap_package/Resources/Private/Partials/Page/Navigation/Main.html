@@ -33,14 +33,36 @@
                     <ul class="nav-top">
                         <li class="nav-top__item nav-top__item--lan">
                             <a href="/#" class="nav-top__link nav-top__link--lan hide-mobile">
-                                Language
+                                <f:translate key="language" extensionName="bootstrap_package" />
                             </a>
                             <ul class="nav-top__content">
                                 <li>
-                                    <a href="#" class="nav-top__link is-active " rel="alternate" hreflang="zh">中文</a>
+                                    <f:if condition='{language} == 0'>
+                                        <f:then>
+                                            <a href="/" class="nav-top__link  is-active" rel="alternate" hreflang="zh">
+                                                <f:translate key="china" extensionName="bootstrap_package" />
+                                            </a>
+                                        </f:then>
+                                        <f:else>
+                                            <a href="/" class="nav-top__link " rel="alternate" hreflang="zh">
+                                                <f:translate key="china" extensionName="bootstrap_package" />
+                                            </a>
+                                        </f:else>
+                                    </f:if>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-top__link " rel="alternate" hreflang="en">English</a>
+                                <f:if condition='{language} == 1'>
+                                    <f:then>
+                                        <a href="/en" class="nav-top__link is-active" rel="alternate" hreflang="en">
+                                            <f:translate key="english" extensionName="bootstrap_package" />
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <a href="/en" class="nav-top__link " rel="alternate" hreflang="en">
+                                            <f:translate key="english" extensionName="bootstrap_package" />
+                                        </a>
+                                    </f:else>
+                                </f:if>
                                 </li>
                             </ul>
                         </li>

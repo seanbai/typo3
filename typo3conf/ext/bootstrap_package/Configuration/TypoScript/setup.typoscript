@@ -453,9 +453,9 @@ config {
     sys_language_uid = 0
     sys_language_overlay = 1
     sys_language_mode = content_fallback
-    language = en
-    locale_all = en_US.UTF-8
-    htmlTag_setParams = lang="en" dir="ltr" class="no-js"
+    language = zh
+    locale_all = zh_CN.UTF-8
+    htmlTag_setParams = lang="zh" dir="ltr" class="no-js"
 
     // Compression and Concatenation of CSS and JS Files
     compressJs = {$config.compressJs}
@@ -464,3 +464,15 @@ config {
     concatenateCss = {$config.concatenateCss}
 }
 
+
+#############################
+#### LANGUAGE CONDITIONS ####
+#############################
+[globalVar = GP:L = 1]
+    config {
+        sys_language_uid = 1
+        language = en
+        locale_all = en_US.UTF-8
+        htmlTag_setParams = lang="en" dir="ltr" class="no-js"
+    }
+[global]
