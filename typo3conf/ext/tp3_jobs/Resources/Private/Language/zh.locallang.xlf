@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="zh" datatype="plaintext" original="messages" date="2018-02-17T03:02:26Z" product-name="tp3_jobs">
+		<header/>
+		<body>
+			<trans-unit id="location">
+                            <source>Select a location</source>
+                            <target>选择一个位置</target>
+			</trans-unit>
+                        <trans-unit id="jobs">
+                            <source>jobs</source>
+                            <target>工作</target>
+			</trans-unit>
+                        <trans-unit id="all">
+                            <source>All locations</source>
+                            <target>所有地点</target>
+			</trans-unit>
+                        <trans-unit id="full">
+                            <source>Full time</source>
+                            <target>全职</target>
+			</trans-unit>
+                        <trans-unit id="part">
+                            <source>Part time</source>
+                            <target>兼职</target>
+			</trans-unit>
+                        <trans-unit id="description">
+                            <source>Job description</source>
+                            <target>职位描述</target>
+			</trans-unit>
+                        <trans-unit id="requirements">
+                            <source>Requirements</source>
+                            <target>要求</target>
+			</trans-unit>
+                        <trans-unit id="apply">
+                            <source>Apply now</source>
+                            <target>现在申请</target>
+			</trans-unit>
+                        <trans-unit id="information">
+                            <source>More information</source>
+                            <target>更多信息</target>
+			</trans-unit>
+                        <trans-unit id="share">
+                            <source>Share job</source>
+                            <target>分享工作</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

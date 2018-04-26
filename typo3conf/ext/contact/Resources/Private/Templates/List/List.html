@@ -7,7 +7,7 @@
             <div class="container--small">
                 <div class="page-title page-title--center  ">
                     <h1 class="heading--1">
-                        Contact us
+                        <f:translate key="contact" />
                     </h1>
                 </div>
             </div>
@@ -19,20 +19,20 @@
                         <div class="grid__50">
                             <div class="form__group">
                                 <label for="firstname" class="form__label">
-                                    First name <span class="form__required">*</span>
+                                    <f:translate key="first" /><span class="form__required">*</span>
                                 </label>
                                 <div class="form__field">
-                                    <input type="text" name="firstname" id="firstname" class="form__input" data-parsley-required-message="Fill in your first name" required="">
+                                    <input type="text" name="firstname" id="firstname" class="form__input" data-parsley-required-message="{f:translate(key:'yourfirst')}" required="">
                                 </div>
                             </div>
                         </div>
                         <div class="grid__50">
                             <div class="form__group">
                                 <label for="lastname" class="form__label">
-                                    Last name <span class="form__required">*</span>
+                                    <f:translate key="last" /><span class="form__required">*</span>
                                 </label>
                                 <div class="form__field">
-                                    <input type="text" name="lastname" id="lastname" class="form__input" data-parsley-required-message="Fill in your last name" required="">
+                                    <input type="text" name="lastname" id="lastname" class="form__input" data-parsley-required-message="{f:translate(key:'yourlast')}" required="">
                                 </div>
                             </div>
                         </div>
@@ -41,10 +41,10 @@
                         <div class="grid__50">
                             <div class="form__group">
                                 <label for="email" class="form__label">
-                                    E-mail address <span class="form__required">*</span>
+                                    <f:translate key="mail" /><span class="form__required">*</span>
                                 </label>
                                 <div class="form__field">
-                                    <input type="email" name="email" id="email" class="form__input" data-parsley-required-message="Fill in your e-mail address" data-parsley-type-message="Fill in a valid e-mail address" required="">
+                                    <input type="email" name="email" id="email" class="form__input" data-parsley-required-message="{f:translate(key:'yourmail')}" data-parsley-type-message="{f:translate(key:'validmail')}" required="">
                                 </div>
                             </div>
                         </div>
@@ -52,10 +52,10 @@
                             <div class="form__group">
                                 <div>
                                     <label for="email" class="form__label">
-                                        Subject <span class="form__required">*</span>
+                                        <f:translate key="subject" /> <span class="form__required">*</span>
                                     </label>
                                     <div class="form__field">
-                                        <input type="text" name="subject" id="subject" class="form__input" data-parsley-required-message="Select a subject" required="">
+                                        <input type="text" name="subject" id="subject" class="form__input" data-parsley-required-message="{f:translate(key:'yoursubject')}" required="">
                                     </div>
                                 </div>
                             </div>
@@ -63,14 +63,14 @@
                     </div>
                     <div class="form__group">
                         <label for="email" class="form__label">
-                            Your message <span class="form__required">*</span>
+                            <f:translate key="message" /><span class="form__required">*</span>
                         </label>
                         <div class="form__field">
-                            <textarea name="message" id="message" class="form__textarea form__textarea--large" data-parsley-required-message="Fill in your message" required=""></textarea>
+                            <textarea name="message" id="message" class="form__textarea form__textarea--large" data-parsley-required-message="{f:translate(key:'yourmessage')}" required=""></textarea>
                         </div>
                     </div>
                     <div class="form__buttonrow--center">
-                        <button type="submit" class="button--pri js-form-submit">Submit</button>
+                        <button type="submit" class="button--pri js-form-submit"><f:translate key="submit" /></button>
                     </div>
                 </form>
             </div>

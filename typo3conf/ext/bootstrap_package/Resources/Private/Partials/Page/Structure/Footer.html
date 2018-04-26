@@ -6,9 +6,19 @@
                 <div class="page-footer__action">
                     <div class="grid">
                         <div class="grid__50">
-                            <a href="/index.php?id=75" class="button--continue-boxed js-modal js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Jobmail">
-                                <f:translate key="jobmail" extensionName="bootstrap_package" />
-                            </a>
+                            <f:if condition='{language}==0'>
+                                <f:then>
+                                    <a href="/jobmail" class="button--continue-boxed js-modal js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Jobmail">
+                                        <f:translate key="jobmail" extensionName="bootstrap_package" />
+                                    </a>
+                                </f:then>
+                                <f:else>
+                                    <a href="/en/jobmail" class="button--continue-boxed js-modal js-track" data-track-category="Footer" data-track-action="Click" data-track-label="Jobmail">
+                                        <f:translate key="jobmail" extensionName="bootstrap_package" />
+                                    </a>
+                                </f:else>
+                            </f:if>
+
                         </div>
                         <div class="grid__50">
                             <div class="social t-right">
@@ -20,22 +30,37 @@
                         </div>
                     </div>
                     <p class="page-footer__payoff">
-                        <f:translate key="how" extensionName="bootstrap_package" />
+                    <f:translate key="how" extensionName="bootstrap_package" />
                     </p>
                 </div>
                 <ul class="page-footer__nav">
                     <li>
                         © Copyright 2018 CEVA Logistics
                     </li>
-                    <li>
-                        <a href="/contact-us/" class=""><f:translate key="contact" extensionName="bootstrap_package" /></a>
-                    </li>
-                    <li>
-                        <a href="/privacy-policy/" class=""><f:translate key="privacy" extensionName="bootstrap_package" /></a>
-                    </li>
-                    <li>
-                        <a href="/terms-and-conditions/" class=""><f:translate key="conditions" extensionName="bootstrap_package" /></a>
-                    </li>
+                    <f:if condition='{language}==0'>
+                        <f:then>
+                            <li>
+                                <a href="/contact-us/" class=""><f:translate key="contact" extensionName="bootstrap_package" /></a>
+                            </li>
+                            <li>
+                                <a href="/privacy-policy/" class=""><f:translate key="privacy" extensionName="bootstrap_package" /></a>
+                            </li>
+                            <li>
+                                <a href="/terms-and-conditions/" class=""><f:translate key="conditions" extensionName="bootstrap_package" /></a>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li>
+                                <a href="/en/contact-us/" class=""><f:translate key="contact" extensionName="bootstrap_package" /></a>
+                            </li>
+                            <li>
+                                <a href="/en/privacy-policy/" class=""><f:translate key="privacy" extensionName="bootstrap_package" /></a>
+                            </li>
+                            <li>
+                                <a href="/en/terms-and-conditions/" class=""><f:translate key="conditions" extensionName="bootstrap_package" /></a>
+                            </li>
+                        </f:else>
+                    </f:if>
                 </ul>
             </div>
         </div>  

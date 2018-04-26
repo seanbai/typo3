@@ -11,13 +11,22 @@
                         <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
                         <div class="widget__link js-href-click">
                             <h2 class="widget__link__title">
-                                
                                 <f:translate key="signupfor" extensionName="bootstrap_package" />
                             </h2>
-                            <a href="/index.php?id=75" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
-  
-                                <f:translate key="signup" extensionName="bootstrap_package" />
-                            </a>
+                            <f:if condition='{language}==0'>
+                                <f:then>
+                                    <a href="/jobmail/" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
+                                        <f:translate key="signup" extensionName="bootstrap_package" />
+                                    </a>
+                                </f:then>
+                                <f:else>
+                                    <a href="/en/jobmail/" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
+                                        <f:translate key="signup" extensionName="bootstrap_package" />
+                                    </a>
+                                </f:else>
+                            </f:if>
+                          
+                            
                         </div>
                     </div>
                     <div class="grid__33 page-secondary js-sticky-col   js-eq-height" >

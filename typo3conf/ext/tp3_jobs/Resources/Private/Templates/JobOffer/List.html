@@ -30,7 +30,7 @@
                                         <div class="modal__main">
                                             <div class="container--tiny">
                                                 <div class="modal__title">
-                                                    <h1 class="heading--1">Select a location</h1>
+                                                    <h1 class="heading--1"><f:translate key="location" /></h1>
                                                 </div>
                                                 <div class="filter--list">
                                                     <div class="grid grid--gutter-40">
@@ -39,10 +39,10 @@
                                                             <div class="filter--list__item">
                                                                  <f:if condition='{thisStation.uid}'>
                                                                      <f:then>
-                                                                          <a href="?station=0" class="filter--list__link " data-label="All locations" rel="nofollow">All locations</a>
+                                                                          <a href="?station=0" class="filter--list__link " data-label="All locations" rel="nofollow"><f:translate key="all" /></a>
                                                                      </f:then>
                                                                      <f:else>
-                                                                          <a href="?station=0" class="filter--list__link is-active " data-label="All locations" rel="nofollow">All locations</a>
+                                                                          <a href="?station=0" class="filter--list__link is-active " data-label="All locations" rel="nofollow"><f:translate key="all" /></a>
                                                                      </f:else>
                                                                 </f:if>
                                                             </div>
@@ -84,7 +84,7 @@
                                                             {item.title}
                                                         </h4>
                                                         <span class="filter__byline">
-                                                            {item.count} jobs
+                                                            {item.count} <f:translate key="jobs" />
                                                         </span>
                                                     </a>
                                                 </li>
@@ -136,9 +136,7 @@
                         $("#items .list").html($(data).find('#items .list').html());
                     }
                 });
-                    
             });
-           
         </script>
     </f:section>
 </html>

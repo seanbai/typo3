@@ -1,16 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-	  xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
-	  data-namespace-typo3-fluid="true">
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
+      data-namespace-typo3-fluid="true">
 
-<f:layout name="Detail" />
+    <f:layout name="Detail" />
 
-<!--
-	=====================
-		News/Detail.html
--->
+    <!--
+            =====================
+                    News/Detail.html
+    -->
 
-<f:section name="content">
+    <f:section name="content">
         <div class="section--pri section--small">
             <div class="container--small">
                 <div class="page-title  ">
@@ -32,20 +32,29 @@
                                 </time>
                             </p>
                         </div>
-                        
+
                         <div class="cms-content">
                             <f:format.html>{newsItem.bodytext}</f:format.html>
                         </div>
                     </div>
-                    
+
                     <div class="grid__33 page-secondary js-sticky-col   js-eq-height" style="height: 1141px;">
                         <div class="widget__link js-href-click ">
                             <h2 class="widget__link__title">
                                 <f:translate key="jobmail" />
                             </h2>
-                            <a href="/jobmail" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
-                                <f:translate key="signup" />
-                            </a>
+                            <f:if condition='{syslanguage}==0'>
+                                <f:then>
+                                    <a href="/jobmail" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
+                                        <f:translate key="signup" />
+                                    </a>
+                                </f:then>
+                                <f:else>
+                                    <a href="/en/jobmail" class="widget__link__anchor js-href js-modal js-track" data-track-category="Jobmail" data-track-action="Click" data-track-label="Open">
+                                        <f:translate key="signup" />
+                                    </a> 
+                                </f:else>
+                            </f:if>
                         </div>
                         <div class="card">
                             <div class="card__content">
@@ -74,8 +83,8 @@
                 </div>
             </div>
         </div>
-    
-    
-	
-</f:section>
+
+
+
+    </f:section>
 </html>

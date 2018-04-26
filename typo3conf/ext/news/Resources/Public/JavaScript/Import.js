@@ -76,7 +76,6 @@ define([
                         console.log('done');
                         runCounter = 1;
                     }
-
                 },
                 error: function (response) {
                     var r = $.parseJSON(response.responseText);

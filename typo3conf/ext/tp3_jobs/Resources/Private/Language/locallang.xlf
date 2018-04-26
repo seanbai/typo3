@@ -39,6 +39,37 @@
 			<trans-unit id="tx_tp3jobs_domain_model_joboffer.contactmail">
 				<source>Contactmail</source>
 			</trans-unit>
+                        <trans-unit id="location">
+				<source>Select a location</source>
+			</trans-unit>
+                        <trans-unit id="jobs">
+				<source>jobs</source>
+			</trans-unit>
+                        <trans-unit id="all">
+				<source>All locations</source>
+			</trans-unit>
+                        <trans-unit id="full">
+				<source>Full time</source>
+			</trans-unit>
+                        <trans-unit id="part">
+				<source>Part time</source>
+			</trans-unit>
+                        <trans-unit id="description">
+				<source>Job description</source>
+			</trans-unit>
+                        <trans-unit id="requirements">
+				<source>Requirements</source>
+			</trans-unit>
+                        <trans-unit id="apply">
+				<source>Apply now</source>
+			</trans-unit>
+                        <trans-unit id="information">
+				<source>More information</source>
+			</trans-unit>
+                        <trans-unit id="share">
+				<source>Share job</source>
+			</trans-unit>
+                        
 		</body>
 	</file>
 </xliff>

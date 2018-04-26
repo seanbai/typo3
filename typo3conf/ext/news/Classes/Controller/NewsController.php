@@ -302,8 +302,12 @@ class NewsController extends NewsBaseController
         ];
 
         $assignedValues = $this->emitActionSignal('NewsController', self::SIGNAL_NEWS_DETAIL_ACTION, $assignedValues);
+        
+        $syslanguage = $GLOBALS['TSFE']->sys_language_uid;
+        
         $this->view->assignMultiple($assignedValues);
-
+        $this->view->assign('syslanguage', $syslanguage);
+        
         Page::setRegisterProperties($this->settings['detail']['registerProperties'], $news);
         if (!is_null($news) && is_a($news, 'GeorgRinger\\News\\Domain\\Model\\News')) {
             Cache::addCacheTagsByNewsRecords([$news]);

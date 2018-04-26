@@ -1,106 +1,109 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-19T23:36:47Z" product-name="upload_example">
+	<file source-language="en" target-language="zh"  datatype="plaintext" original="messages" date="2014-02-19T23:36:47Z" product-name="upload_example">
 		<header/>
 		<body>
-
-			<trans-unit id="tx_uploadexample_domain_model_example">
-				<source>Example Objekt</source>
-			</trans-unit>
-			<trans-unit id="tx_uploadexample_domain_model_example.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_uploadexample_domain_model_example.image">
-				<source>Image</source>
-			</trans-unit>
-			
-			<trans-unit id="tx_uploadexample_domain_model_example.image_collection">
-				<source>Image Collection</source>
-			</trans-unit>
-
-			<trans-unit id="tx_uploadexample_domain_model_news">
-				<source>News</source>
-			</trans-unit>
-			<trans-unit id="tx_uploadexample_domain_model_news.additional_field">
-				<source>Additional Field</source>
-			</trans-unit>
-                        
                         <trans-unit id="required">
 				<source>Marked with an asterisk (*) is required</source>
+                                <target>标有星号（*）的为必填项</target>
 			</trans-unit>
                         <trans-unit id="information">
 				<source>Personal Information</source>
+                                <target>个人资料</target>
 			</trans-unit>
                         <trans-unit id="name">
 				<source>name</source>
+                                <target>名称</target>
 			</trans-unit>
                         <trans-unit id="user">
 				<source>username</source>
+                                <target>姓名</target>
 			</trans-unit>
                         <trans-unit id="sex">
 				<source>gender</source>
+                                <target>性别</target>
 			</trans-unit>
                         <trans-unit id="profession">
 				<source>profession</source>
+                                <target>专业</target>
 			</trans-unit>
                         <trans-unit id="contactinformation">
 				<source>Contact information</source>
+                                <target>联系方式</target>
 			</trans-unit>
                         <trans-unit id="citizenship">
 				<source>Country of Citizenship</source>
+                                <target>国籍</target>
 			</trans-unit>
                         <trans-unit id="phone">
 				<source>contact number</source>
+                                <target>联系电话</target>
 			</trans-unit>
                         <trans-unit id="age">
 				<source>age</source>
+                                <target>年龄</target>
 			</trans-unit>
                         <trans-unit id="education">
 				<source>highest education</source>
+                                <target>最高学历</target>
 			</trans-unit>
                         <trans-unit id="address">
 				<source>Address</source>
+                                <target>居住地址</target>
 			</trans-unit>
                         <trans-unit id="email">
 				<source>E-mail</source>
+                                <target>邮箱地址</target>
 			</trans-unit>
                         <trans-unit id="language">
 				<source>Language</source>
+                                <target>语言</target>
 			</trans-unit>
                         <trans-unit id="languagelevel">
 				<source>Language level</source>
+                                <target>语言程度</target>
 			</trans-unit>
                         <trans-unit id="school">
 				<source>SCHOOL</source>
+                                <target>学校</target>
 			</trans-unit>
                         <trans-unit id="uploadfile">
 				<source>Upload resume</source>
+                                <target>上传简历</target>
 			</trans-unit>
                         <trans-unit id="file">
 				<source>Select file</source>
+                                <target>Select file</target>
 			</trans-unit>
                         <trans-unit id="privacy">
 				<source>Accept privacy statement</source>
+                                <target>接受隐私声明</target>
 			</trans-unit>
                         <trans-unit id="statement">
 				<source>Privacy statement</source>
+                                <target>隐私权声明</target>
 			</trans-unit>
                         <trans-unit id="privacycontent">
 				<source>Your privacy is important to us. So we are very careful when dealing with your data and we need to keep it confidential. We use your information for recruitment purposes only. By sending an application form, you agree that your personal data will be processed by CEVA Logistics and will be included in our database.</source>
+                                <target>您的隐私对我们很重要。因此我们处理您的数据时非常小心,要保密。我们使用您的信息仅用于招聘目的。通过发送申请表格，您同意您的个人资料将由CEVA物流处理，将包含在我们的数据库。</target>
 			</trans-unit>
                         <trans-unit id="extra">
 				<source>extra information</source>
+                                <target>附加信息</target>
 			</trans-unit>
                         <trans-unit id="content">
 				<source>content</source>
+                                <target>内容</target>
 			</trans-unit>
                         <trans-unit id="male">
 				<source>Male</source>
+                                <target>男</target>
 			</trans-unit>
                         <trans-unit id="female">
-				<source>Female</source>
+                                <source>Female</source>
+                                <target>女</target>
 			</trans-unit>
-			
+
 		</body>
 	</file>
 </xliff>
