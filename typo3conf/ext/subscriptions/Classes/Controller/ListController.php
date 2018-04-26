@@ -56,7 +56,7 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $EMail['pid'] = 76;
-        $EMail['email'] = $_POST['email'];
+        $EMail['title'] = $_POST['email'];
         $EMail['job_language'] = $_POST['language'];
         $EMail['time'] = time();
         $EMail['ip'] = $_SERVER["REMOTE_ADDR"];
@@ -64,7 +64,6 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
         
         $md5 = md5(md5($_POST['email']));
 
-        
         $time = date("M d, Y");
         if ($GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('uid', 'tx_subscriptions_domain_model_list', 'deleted=0 AND email="'. $_POST['email'] . '"')) {
             $uriBuilder = $this->uriBuilder;
@@ -74,8 +73,8 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
             $this->redirectToUri($uri, 0, 404);
         } else {
             $mail = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Mail\\MailMessage');
-            $mail->setFrom(array('18380475407@163.com' => 'Sean'));
-            $mail->setTo(array('370064123@qq.com' => 'Bai'));
+            $mail->setFrom(array('18380475407@163.com' => 'Ceva'));
+            $mail->setTo(array($_POST['email'] => 'everyone'));
             $mail->setSubject('CEVA Logistics Jobmail subscription');
 
             $mail->setBody(
