@@ -1092,7 +1092,7 @@ body {
 		background: #fff;
 		padding: 15px;
 		border: 1px solid #e6e6e6;
-		min-width: 140px;
+		min-width: 100px;
 		max-height: 0;
 		overflow: hidden;
 		opacity: 0;
@@ -1100,8 +1100,18 @@ body {
 		transition: all .2s;
 		z-index: 1
 	}
-
+        
+        .nav-top__item--lan .en {
+		min-width: 140px;
+	}
+        
+        
 	.nav-top__item--lan .nav-top__content .nav-top__link {
+		padding: 5px 0;
+		margin-left: 0
+	}
+        
+        .nav-top__item--lan .nav-top__content_en .nav-top__link {
 		padding: 5px 0;
 		margin-left: 0
 	}
@@ -1290,7 +1300,7 @@ body {
 	}
 
 	.nav-top__link--lan {
-		padding-right: 20px
+		padding-right: 40px
 	}
 
 	.nav-top__link--lan.is-active,.nav-top__link--lan:hover {

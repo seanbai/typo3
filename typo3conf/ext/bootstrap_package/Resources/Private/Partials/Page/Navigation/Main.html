@@ -43,7 +43,14 @@
                             <a href="/#" class="nav-top__link nav-top__link--lan hide-mobile">
                                 <f:translate key="language" extensionName="bootstrap_package" />
                             </a>
-                            <ul class="nav-top__content">
+                            <f:if condition="{language} == 0">
+                                <f:then>
+                                    <ul class="nav-top__content">
+                                </f:then>
+                                <f:else>
+                                    <ul class="nav-top__content en">
+                                </f:else>
+                            </f:if>
                                 <li>
                                     <f:if condition='{language} == 0'>
                                         <f:then>
