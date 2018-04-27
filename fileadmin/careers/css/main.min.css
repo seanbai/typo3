@@ -4293,7 +4293,8 @@ hr:last-child {
 	padding: 10px 0;
 	color: #903;
 	-webkit-transition: all .2s;
-	transition: all .2s
+	transition: all .2s;
+        text-align: center;
 }
 
 .filter--list__link:hover {
@@ -4341,7 +4342,7 @@ hr:last-child {
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-	right: 125px;
+	right: 25px;
 	background-image: url(/fileadmin/careers/image/icon-sprite.svg);
 	background-repeat: no-repeat;
 	background-position: 44.29530201342282% 70.74829931972789%;

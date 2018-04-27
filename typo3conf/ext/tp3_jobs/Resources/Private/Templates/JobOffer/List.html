@@ -39,10 +39,10 @@
                                                             <div class="filter--list__item">
                                                                  <f:if condition='{thisStation.uid}'>
                                                                      <f:then>
-                                                                          <a href="?station=0" class="filter--list__link " data-label="All locations" rel="nofollow"><f:translate key="all" /></a>
+                                                                         <f:link.page pageUid="53" additionalParams="{station: 0}" noCacheHash='1' class="filter--list__link " rel="nofollow" ><f:translate key="all" /></f:link.page>
                                                                      </f:then>
                                                                      <f:else>
-                                                                          <a href="?station=0" class="filter--list__link is-active " data-label="All locations" rel="nofollow"><f:translate key="all" /></a>
+                                                                         <f:link.page pageUid="53" additionalParams="{station: 0}" noCacheHash='1' class="filter--list__link is-active" rel="nofollow"><f:translate key="all" /></f:link.page>
                                                                      </f:else>
                                                                 </f:if>
                                                             </div>
@@ -57,12 +57,16 @@
                                                                  <f:if condition='{vo.uid} == {thisStation.uid}'>
                                                                      <f:then>
                                                                         <div class="station-filter--list__item station-filter--list__item--large">
-                                                                            <a href="?station={vo.uid}" class="filter--list__link job-is-active " data-label="{vo.title}" data="{vo.uid}" rel="nofollow">{vo.title}<span>({vo.count})</span></a>
+                                                                            <f:link.page pageUid="53" additionalParams="{station: vo.uid}" noCacheHash='1' class="filter--list__link job-is-active"  rel="nofollow" >
+                                                                                {vo.title}<span>({vo.count})</span>
+                                                                            </f:link.page>
                                                                         </div>
                                                                      </f:then>
                                                                      <f:else>
                                                                          <div class="station-filter--list__item station-filter--list__item--large">
-                                                                            <a href="?station={vo.uid}" class="filter--list__link  " data-label="{vo.title}" data="{vo.uid}" rel="nofollow">{vo.title}<span>({vo.count})</span></a>
+                                                                            <f:link.page pageUid="53" additionalParams="{station: vo.uid}" noCacheHash='1' class="filter--list__link "  rel="nofollow" >
+                                                                                {vo.title}<span>({vo.count})</span>
+                                                                            </f:link.page>
                                                                         </div>
                                                                      </f:else>
                                                                  </f:if>

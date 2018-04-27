@@ -142,7 +142,7 @@ class JobOfferController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         }
         
 
-        $this->view->assign('thisStation', current($thisStation));
+        $this->view->assign('thisStation', $thisStation);
         $this->view->assign('jobStation', $jobStation);
         $this->view->assign('jobPgae', current($jobPgae));
         $this->view->assign('jobCategoty', $jobCategoty);

@@ -68,6 +68,20 @@ class RootProcessor implements DataProcessorInterface
         
         $processedData['language'] = $GLOBALS['TSFE']->sys_language_uid;
         
+        
+        // Set the target variable
+        $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration);
+        $processedData['data']['url'] = $_SERVER["REQUEST_URI"];
+        if(strpos($processedData['data']['url'], "en")){
+            $processedData['data']['languageurl']=str_replace("/en","",$processedData['data']['url']);
+        }else{
+            $processedData['data']['languageurl']="/en".$processedData['data']['url'];
+        }
+
+        if (!empty($targetVariableName)) {
+            $processedData[$targetVariableName] = $processedData['data'];
+        }
+        
         return $processedData;
     }
 }

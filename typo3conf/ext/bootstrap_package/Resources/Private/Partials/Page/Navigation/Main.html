@@ -54,12 +54,12 @@
                                 <li>
                                     <f:if condition='{language} == 0'>
                                         <f:then>
-                                            <a href="/" class="nav-top__link  is-active" rel="alternate" hreflang="zh">
+                                            <a  class="nav-top__link  is-active" rel="alternate" hreflang="zh">
                                                 <f:translate key="china" extensionName="bootstrap_package" />
                                             </a>
                                         </f:then>
                                         <f:else>
-                                            <a href="/" class="nav-top__link " rel="alternate" hreflang="zh">
+                                            <a href="{rootid.languageurl}" class="nav-top__link " rel="alternate" hreflang="zh">
                                                 <f:translate key="china" extensionName="bootstrap_package" />
                                             </a>
                                         </f:else>
@@ -68,12 +68,12 @@
                                 <li>
                                 <f:if condition='{language} == 1'>
                                     <f:then>
-                                        <a href="/en/" class="nav-top__link is-active" rel="alternate" hreflang="en">
+                                        <a  class="nav-top__link is-active" rel="alternate" hreflang="en">
                                             <f:translate key="english" extensionName="bootstrap_package" />
                                         </a>
                                     </f:then>
                                     <f:else>
-                                        <a href="/en/" class="nav-top__link " rel="alternate" hreflang="en">
+                                        <a href="{rootid.languageurl}" class="nav-top__link " rel="alternate" hreflang="en">
                                             <f:translate key="english" extensionName="bootstrap_package" />
                                         </a>
                                     </f:else>
