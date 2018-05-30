@@ -1,0 +1,38 @@
+{namespace importr=HDNET\Importr\ViewHelpers}
+<f:layout name="Backend" />
+
+
+
+<f:section name="Content">
+	<h1>
+		<f:translate key="LLL:EXT:importr/Resources/Private/Language/locallang.xlf:importr" />
+	</h1>
+
+	<f:form action="create" class="form-inline">
+		<f:form.hidden name="filepath" value="{filepath}" />
+		<f:form.hidden name="strategy" value="{strategy}" />
+		Import file <b>{filepath}</b> with the strategy <b>{strategy.title}</b>!
+		<f:form.submit value="Importieren" class="btn btn-default" />
+	</f:form>
+
+	<h1>Preview</h1>
+
+	<script type="text/javascript" src="{f:uri.resource(path:'JavaScript/Components/Table.js')}"></script>
+	<script type="text/javascript">
+		var dataTest = eval("{preview -> importr:json()}");
+	</script>
+	<script type="text/javascript">    /*<![CDATA[*/
+	Ext.onReady(function () {
+		var t = new HDNET.Importr.Table({
+			storeData: dataTest,
+			title: 'Preview your data',
+			height: 500
+		});
+		t.render('grid');
+	});
+	/*]]>*/</script>
+	<div id="grid"></div>
+
+</f:section>
+
+

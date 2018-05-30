@@ -1,0 +1,37 @@
+<f:layout name="Backend"/>
+
+<f:section name="IconButtons">
+
+</f:section>
+
+<f:section name="Content">
+	<h1>
+		<f:translate key="LLL:EXT:importr/Resources/Private/Language/locallang.xlf:importr"/>
+	</h1>
+        
+        
+	<f:if condition="{folder}">
+		<f:then>
+			<f:if condition="{f:count(subject '{folder}')} > 0">
+				<f:then>
+					<f:form action="imports" class="form-inline">
+						Import file
+						<f:form.select options="{folder}" name="identifier" class="form-control"/>
+						<f:form.submit value="Weiter" class="btn btn-default"/>
+					</f:form>
+				</f:then>
+				<f:else>
+					<p style="color: red;">There are no files in the current folder</p>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<p style="color: red;">Please select a folder in the foldertree to start the import create process.</p>
+		</f:else>
+	</f:if>
+
+
+	
+
+
+</f:section>

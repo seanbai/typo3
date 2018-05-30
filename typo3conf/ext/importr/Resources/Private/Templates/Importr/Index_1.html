@@ -1,0 +1,139 @@
+<f:layout name="Backend"/>
+
+<f:section name="IconButtons">
+
+</f:section>
+
+<f:section name="Content">
+	<h1>
+		<f:translate key="LLL:EXT:importr/Resources/Private/Language/locallang.xlf:importr"/>
+	</h1>
+
+	<f:if condition="{folder}">
+		<f:then>
+			<f:if condition="{f:count(subject '{folder}')} > 0">
+				<f:then>
+					<f:form action="import" class="form-inline">
+						Import file
+						<f:form.select options="{folder}" name="identifier" class="form-control"/>
+						<f:form.submit value="Weiter" class="btn btn-default"/>
+					</f:form>
+				</f:then>
+				<f:else>
+					<p style="color: red;">There are no files in the current folder</p>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<p style="color: red;">Please select a folder in the foldertree to start the import create process.</p>
+		</f:else>
+	</f:if>
+
+
+	<h1 class="uppercase">Imports in the last 7 Days</h1>
+	<f:form action="index" class="form-inline">
+		<f:form.submit value="Refresh" class="btn btn-default"/>
+	</f:form>
+
+	<f:for each="{imports}" as="import">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Import <strong>{import.filepath}</strong> with <strong>{import.strategy.title}</strong>
+				</h3>
+			</div>
+			<div class="panel-body">
+
+
+				<f:if condition="{import.amount}">
+
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" style="width: {import.insertedPercentage}%">
+							<f:format.number>{import.insertedPercentage}</f:format.number>
+							%
+						</div>
+						<div class="progress-bar progress-bar-info" style="width: {import.ignoredPercentage}%">
+							<f:format.number>{import.ignoredPercentage}</f:format.number>
+							%
+						</div>
+						<div class="progress-bar progress-bar-info" style="width: {import.unknownsPercentage}%">
+							<f:format.number>{import.unknownsPercentage}</f:format.number>
+							%
+						</div>
+						<div class="progress-bar progress-bar-warning" style="width: {import.updatedPercentage}%">
+							<f:format.number>{import.updatedPercentage}</f:format.number>
+							%
+						</div>
+						<div class="progress-bar progress-bar-danger" style="width: {import.errorsPercentage}%">
+							<f:format.number>{import.errorsPercentage}</f:format.number>
+							%
+						</div>
+					</div>
+
+				</f:if>
+
+				<dl class="dl-horizontal">
+					<dt>Von</dt>
+					<dd>
+						<f:format.date format="d.m.Y H:i">{import.starttime}</f:format.date>
+					</dd>
+					<dt>Bis</dt>
+					<dd>
+						<f:format.date format="d.m.Y H:i">{import.endtime}</f:format.date>
+					</dd>
+
+					<f:if condition="{import.amount}">
+						<dt>Count</dt>
+						<dd>
+							{import.percentage}% ({import.pointer} von {import.amount})
+						</dd>
+						<dt>Details</dt>
+						<dd>
+							<ul>
+								<li>Insert: {import.inserted}</li>
+								<li>Ignored: {import.ignored}</li>
+								<li>Updated: {import.updated}</li>
+								<li>Warning: {import.unknowns}</li>
+								<li>Errors: {import.errors}</li>
+							</ul>
+						</dd>
+
+					</f:if>
+					<!--<dt>Status</dt>
+					<dd>
+						<div class="row">
+							<div class="col-md-2">
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar"
+											 style="width:100%">
+										Running
+									</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-warning" role="progressbar"
+											 style="width:100%">
+										Pending
+									</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-info" role="progressbar"
+											 style="width:100%">
+										Finish
+									</div>
+								</div>
+							</div>
+						</div>
+					</dd>-->
+				</dl>
+
+			</div>
+		</div>
+	</f:for>
+
+	<h1>Legende</h1>
+
+	<span class="label label-success">Success (Insert)</span>
+	<span class="label label-info">Info (Update / Ignored)</span>
+	<span class="label label-warning">Warning</span>
+	<span class="label label-danger">Error</span>
+
+</f:section>

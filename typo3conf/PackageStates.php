@@ -131,6 +131,9 @@ return [
         'contact' => [
             'packagePath' => 'typo3conf/ext/contact/',
         ],
+        'importr' => [
+            'packagePath' => 'typo3conf/ext/importr/',
+        ],
         'job_areas' => [
             'packagePath' => 'typo3conf/ext/job_areas/',
         ],
