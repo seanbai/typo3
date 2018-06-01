@@ -20,7 +20,7 @@
                             <div class="detail-list">
                                 <ul>
                                     <li>Job area - {jobOffers.category}</li> 
-                                    <li>Hours - <f:if condition='{jobOffers.hours}=0'><f:then><f:translate key="full" /></f:then><f:else><f:translate key="part" /></f:else></f:if></li> 
+                                    <li>Hours - <f:if condition='{jobOffers.hours}==0'><f:then><f:translate key="full" /></f:then><f:else><f:translate key="part" /></f:else></f:if></li> 
                                     <li>Location - {jobOffers.station}</li> 
                                 </ul>
                             </div>

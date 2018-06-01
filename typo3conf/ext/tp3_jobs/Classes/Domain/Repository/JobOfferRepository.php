@@ -174,7 +174,7 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-            'uid,title', 'pages', 'deleted=0 AND hidden=0 AND uid='.$uid
+            'uid,title,hours', 'pages', 'deleted=0 AND hidden=0 AND uid='.$uid
         );
 
         return $data;
@@ -184,7 +184,7 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-            'uid,title', 'sys_category', 'deleted=0 AND hidden=0 AND parent=3', '', 'uid asc'
+            'uid,title,hours', 'sys_category', 'deleted=0 AND hidden=0 AND parent=3', '', 'uid asc'
         );
         
         for ($i = 0; $i < count($data); $i++) {
@@ -203,7 +203,7 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
-            'uid,title', 'sys_category', 'deleted=0 AND hidden=0 AND uid='.$uid
+            '*', 'sys_category', 'deleted=0 AND hidden=0 AND uid='.$uid
         );
        return $data;
     }
@@ -219,7 +219,7 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
-            'uid,title', 'tx_tp3jobs_domain_model_joboffer', 'uid='.$uid
+            'uid,title,hours', 'tx_tp3jobs_domain_model_joboffer', 'uid='.$uid
         );
 
         return $data;
