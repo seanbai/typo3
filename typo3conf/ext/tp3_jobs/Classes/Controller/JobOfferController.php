@@ -136,7 +136,8 @@ class JobOfferController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         
         $jobStation = $this->jobOfferRepository->findStation();
         
-       
+        
+        
         if($station != 0){
             $thisStation = $this->jobOfferRepository->thisStation($_GET['station']);
         }

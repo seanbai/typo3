@@ -184,7 +184,7 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-            'uid,title,hours', 'sys_category', 'deleted=0 AND hidden=0 AND parent=3', '', 'uid asc'
+            'uid,title', 'sys_category', 'deleted=0 AND hidden=0 AND parent=3', '', 'uid asc'
         );
         
         for ($i = 0; $i < count($data); $i++) {
