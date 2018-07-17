@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-07-04T15:27:51Z" product-name="login">
+		<header/>
+		<body>
+			<trans-unit id="tx_login_domain_model_login">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="tx_login_domain_model_login.description">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="tx_login_domain_model_login">
+				<source>Login</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

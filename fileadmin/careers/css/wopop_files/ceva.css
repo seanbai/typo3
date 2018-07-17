@@ -1,0 +1,215 @@
+body {
+    background-color: #e6e6e6;
+    margin-left: 10px !important;
+	margin-right: 10px !important;
+    padding: 0;
+}
+table,td {
+    color: #666 !important;
+}
+i {
+	font-size: 14px;
+}
+
+img#sgt_li_btnSearch {
+	display:none !important;
+}
+input#KAN_LINKEDIN_URL {
+	width: 100% !important;
+}
+select#KAN_GEWENSTEREGIO, select#KAN_FUNCTIEGR_FUNCTIEGR_ID, select#KAN_FUNCTIES_VAN {
+	height: auto !important;
+}
+/*
+.grid__50, .grid_pad {
+	padding:20px !important;
+}
+*/
+.grid__40{
+	width:300px !important;
+}
+
+ul br {
+	display:none;
+}
+.breed {
+	width:100%;
+}
+.col1 {
+	width:300px;
+}
+input#KAN_GEWENSTEFUNCTIE {
+	width:100%;
+	height:150px !important;
+}
+.hidden {
+    display: none;
+}
+.small {
+    font-size: 92%;
+}
+.large {
+    font-size: 100%;
+}
+
+.lege_regel {
+	height:15px;
+}
+
+/*
+select {
+    color: #000000;
+	width:200px;
+}
+
+input {
+    color: #000000;
+    font-size: 12px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+textarea {
+    color: #000000;
+    font-size: 12px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+	width:200px;
+}
+
+a {
+    font-size: 12px;
+    color: #990033;
+    text-decoration: underline;
+	font-weight:bold;
+}
+
+a:hover {
+    font-size: 12px;
+	color: #FF0033;
+	font-weight:bold;
+    text-decoration: none;
+}
+
+a:visited {
+    font-size: 12px;
+	font-weight:bold;
+    color: #990033;
+    text-decoration: underline;
+}
+
+h1 {
+	font-size:20px;
+    color: #990033;
+    font-family: Arial,Geneva,sans-serif;
+    font-weight: normal;
+}
+*/
+/*
+.titel {
+	font-size:20px;
+    color: #990033;
+    font-family: Arial,Geneva,sans-serif;
+    font-weight: normal;
+}
+
+h2 {
+	font-size: 12px;
+    color: #FFFFFF;
+
+    font-weight: bold;
+}
+
+.kop_overzicht {
+	font-size: 12px;
+    color: #FFFFFF;
+
+    font-weight: bold;
+	background-color:#990033;
+	height:30px;
+}
+
+.kop {
+	font-size: 12px;
+    color: #000000;
+
+    font-weight: bold;
+}
+.kopje {
+	font-size: 12px;
+    color: #000000;
+
+    font-weight: bold;
+}
+
+.button {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F8F8F8;
+	font-weight: bold;
+    background-image: -moz-linear-gradient(center top , #F8F8F8, #F1F1F1);
+	border-left: 1px solid #990033;
+	border-top: 1px solid #990033;
+	border-right: 2px solid #990033;
+	border-bottom: 2px solid #990033;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    color: #333333;
+	padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+}
+
+.button:hover {color: #FF0033;}
+.buttons:hover {color: #FF0033;}
+
+.buttons {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F8F8F8;
+	font-weight: bold;
+    background-image: -moz-linear-gradient(center top , #F8F8F8, #F1F1F1);
+	border-left: 1px solid #990033;
+	border-top: 1px solid #990033;
+	border-right: 2px solid #990033;
+	border-bottom: 2px solid #990033;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    color: #333333;
+	padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+}
+
+input[type="submit"]:hover {
+    -moz-background-clip: border;
+    -moz-background-origin: padding;
+    -moz-background-size: auto auto;
+    background-attachment: scroll;
+    background-color: #356D9F;
+    background-image: none;
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+*/
+/*
+.button {
+    color: #000000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.buttons {
+    color: #000000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+*/

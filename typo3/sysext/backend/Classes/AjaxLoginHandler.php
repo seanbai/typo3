@@ -36,6 +36,8 @@ class AjaxLoginHandler
      */
     public function loginAction(ServerRequestInterface $request, ResponseInterface $response)
     {
+
+
         if ($this->isAuthorizedBackendSession()) {
             $result = ['success' => true];
             if ($this->hasLoginBeenProcessed()) {

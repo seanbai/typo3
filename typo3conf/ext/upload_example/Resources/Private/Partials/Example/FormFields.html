@@ -1,8 +1,7 @@
 {namespace h=Helhum\UploadExample\ViewHelpers}
 
 
-
-<div class="container--small">
+<div class="container--small" xmlns:f="http://www.w3.org/1999/html">
     <div id="container--small" class="grid grid--gutter-40">
         <div class="">
             <div id="persoonlijk_contact" class="grid grid--gutter-40">
@@ -70,16 +69,18 @@
                         <div class="form__group">
                             <div  class="">
                                 <div class="form__label"><f:translate key="age" /> *</div>
-                                <div class="form__field">
-                                    <f:form.textfield property="age"  maxlength="20" class="form__input required digits"/>
+                                <div class="form__field form_select_div">
+                                    <!--<f:form.textfield property="age"  maxlength="20" class="form__input required digits"/>-->
+                                    <f:form.select property="age"  class="form__select"  options="{1: '20以下', 2: '21-30', 3: '31-40', 4: '41-50', 5: '50以上'}"></f:form.select>
                                 </div>
                             </div>
                         </div>
                         <div class="form__group">
                             <div class="">
                                 <div class="form__label"><f:translate key="education" /> *</div>
-                                <div class="form__field">
-                                    <f:form.textfield property="education"  maxlength="100" class="form__input required "/>
+                                <div class="form__field form_select_div">
+                                    <!--<f:form.textfield property="education"  maxlength="100" class="form__input required "/>-->
+                                    <f:form.select property="education"  class="form__select "  options="{0: '不要求', 1: '大专', 2: '本科', 3: '硕士', 4: '博士'}"></f:form.select>
                                 </div>
                             </div>
                         </div>

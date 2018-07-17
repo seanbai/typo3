@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+
+<f:section name="main">
+
+
+		<link href="/fileadmin/careers/css/wopop_files/style_log.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="/fileadmin/careers/css/wopop_files/style.css">
+		<link rel="stylesheet" type="text/css" href="/fileadmin/careers/css/wopop_files/userpanel.css">
+		<link rel="stylesheet" type="text/css" href="/fileadmin/careers/css/wopop_files/jquery.ui.all.css">
+
+
+
+	<div class="login_m">
+		<div class="login_boder">
+			<div class="login_padding" id="login_model">
+				<form method="POST" action="{f:uri.action(action: 'show')}" >
+					<h2>USERNAME</h2>
+					<label>
+						<input type="text" name="username" id="username" class="txt_input txt_input2" value="">
+					</label>
+					<h2>PASSWORD</h2>
+					<label>
+						<input type="password" name="password" id="userpwd" class="txt_input" value="">
+					</label>
+					<div class="rem_sub">
+						<div class="rem_sub_l"></div>
+						<label>
+							<input type="submit" class="sub_button" id="button" value="SIGN-IN" style="opacity: 0.7;">
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+
+</f:section>
+</html>

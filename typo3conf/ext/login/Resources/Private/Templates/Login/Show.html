@@ -1,0 +1,190 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+
+<f:section name="main">
+
+
+    <div class="admin_table">
+
+        <br/>
+        <br/>
+        <form method="post" action="{f:uri.action(action: 'show')}">
+            <div class="serach">
+                <div class="form__select__list">
+                    <div class="form__label">工作地点 </div>
+                    <div>
+                        <select name="local" class="form__select">
+                            <option value="0">请选择</option>
+                            <f:for each="{locale}" as="vo">
+                                <f:if condition="{vo.uid} == {data.local}">
+                                    <f:then>
+                                        <option value="{vo.uid}" selected="selected">{vo.title}</option>
+                                    </f:then>
+                                    <f:else>
+                                        <option value="{vo.uid}">{vo.title}</option>
+                                    </f:else>
+                                </f:if>
+                            </f:for>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__select__list">
+                    <div class="form__label">工作类型 </div>
+                    <div>
+                        <select name="category" class="form__select">
+                            <option value="0">请选择</option>
+                            <f:for each="{category}" as="vo">
+                                <f:if condition="{vo.uid} == {data.category}">
+                                    <f:then>
+                                        <option value="{vo.uid}" selected="selected">{vo.title}</option>
+                                    </f:then>
+                                    <f:else>
+                                        <option value="{vo.uid}">{vo.title}</option>
+                                    </f:else>
+                                </f:if>
+                            </f:for>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__select__list">
+                    <div class="form__label">年龄 </div>
+                    <div>
+                        <select name="site" class="form__select">
+                            <f:if condition="{data.site}==0">
+                                <f:then>
+                                    <option value="0" selected="selected">请选择</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="0">请选择</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.site}==1">
+                                <f:then>
+                                    <option value="1" selected="selected">20岁以下</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="1">20岁以下</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.site}==2">
+                                <f:then>
+                                    <option value="2" selected="selected">20-30</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="2">20-30</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.site}==3">
+                                <f:then>
+                                    <option value="3" selected="selected">31-40</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="3">31-40</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.site}==4">
+                                <f:then>
+                                    <option value="4" selected="selected">41-50</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="4">41-50</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.site}==5">
+                                <f:then>
+                                    <option value="5" selected="selected">50以上</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="5">50以上</option>
+                                </f:else>
+                            </f:if>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__select__list">
+                    <div class="form__label">学历 </div>
+                    <div>
+                        <select name="xueni" class="form__select">
+                            <f:if condition="{data.xueni}==0">
+                                <f:then>
+                                    <option value="0" selected="selected">不要求</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="0">不要求</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.xueni}==1">
+                                <f:then>
+                                    <option value="1" selected="selected">大专</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="1">大专</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.xueni}==2">
+                                <f:then>
+                                    <option value="2" selected="selected">本科</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="2">本科</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.xueni}==3">
+                                <f:then>
+                                    <option value="3" selected="selected">硕士</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="3">硕士</option>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{data.xueni}==4">
+                                <f:then>
+                                    <option value="4" selected="selected">博士</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="4">博士</option>
+                                </f:else>
+                            </f:if>
+                        </select>
+                    </div>
+                </div>
+                <div id="buttons" class="form__buttonrow--center">
+                    <div class="">
+                        <input type="submit" value="Solliciteer" class="button--pri" title="Solliciteer"  id="submitprofielform">
+                    </div>
+                    <div class="lege_regel"></div>
+                </div>
+            </div>
+        </form>
+
+        <br/><br/>
+        <table width="100%" cellspacing="0"  cellpadding="0" border="1">
+            <tr align="center"  height="80px" >
+                <td>姓名</td>
+                <td>工作地区</td>
+                <td>工作名称</td>
+                <td>毕业学校</td>
+                <td>年龄</td>
+                <td>学历</td>
+                <td>联系电话</td>
+                <td>详情</td>
+            </tr>
+            <f:for each="{list}" as="vo">
+                <tr align="center" height="40px" >
+                    <td>{vo.username}{vo.user}</td>
+                    <td>{vo.calost}</td>
+                    <td>{vo.title}</td>
+                    <td>{vo.school}</td>
+                    <td>{vo.age}</td>
+                    <td>{vo.education}</td>
+                    <td>{vo.phone}</td>
+                    <td><f:link.action action="new" arguments="{datauid : vo.uid}">详情</f:link.action></td>
+                </tr>
+            </f:for>
+        </table>
+
+    </div>
+
+</f:section>
+</html>

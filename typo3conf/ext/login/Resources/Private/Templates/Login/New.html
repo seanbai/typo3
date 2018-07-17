@@ -1,0 +1,78 @@
+<html
+        xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+        v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+        xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers"  data-namespace-typo3-fluid="true">
+
+
+<f:layout name="Default" />
+
+
+<f:section name="main">
+
+    <div class="admin_table" style="text-align: center;">
+
+        <h1 style="margin: 40px 0;">简历详情</h1>
+
+        <table width="100%" cellspacing="0"  cellpadding="0" border="1">
+            <tr height="40px" >
+                <td width="300px">姓名</td>
+                <td align="left" style="padding-left: 20px;" >{table.username}{table.user}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>工作名称</td>
+                <td align="left" style="padding-left: 20px;" >{table.title}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>毕业学校</td>
+                <td align="left" style="padding-left: 20px;" >{table.school}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>年龄</td>
+                <td align="left" style="padding-left: 20px;" >{table.age}</td>
+            </tr>
+            <tr align="center"  height="80px" >
+                <td>性别</td>
+                <f:if condition="{table.sex} == 'male'">
+                    <f:then><td align="left" style="padding-left: 20px;" >男</td></f:then>
+                    <f:then><td align="left" style="padding-left: 20px;" >女</td></f:then>
+                </f:if>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>学历</td>
+                <td align="left" style="padding-left: 20px;" >{table.education}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>联系电话</td>
+                <td align="left" style="padding-left: 20px;" >{table.phone}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>居住地址</td>
+                <td align="left" style="padding-left: 20px;" >{table.address}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>邮箱地址</td>
+                <td align="left" style="padding-left: 20px;" >{table.email}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>附加信息</td>
+                <td align="left" style="padding-left: 20px;" >{table.content}</td>
+            </tr>
+            <tr align="center"  height="40px" >
+                <td>附件下载</td>
+                <v:page.resources.fal table="tx_uploadexample_domain_model_example" field="image" uid="{table.uid}" as="images">
+                    <f:for each="{images}" as="image">
+                        <f:variable name="fileurl">{image.url}</f:variable>
+                    </f:for>
+                </v:page.resources.fal>
+                <f:if condition="{table.image}">
+                    <f:then><td align="left" style="padding-left: 20px;" ><a href="{fileurl}" download="{table.username}{table.user}-{time}">下载</a></td></f:then>
+                    <f:else>无</f:else>
+                </f:if>
+            </tr>
+        </table>
+    </div>
+
+
+</f:section>
+</html>

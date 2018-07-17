@@ -5087,3 +5087,35 @@ hr:last-child {
 .section--text .container--small .heading--1{
     text-align: center;
 }
+
+
+.admin_table {
+	position: relative;
+	max-width: 1480px;
+	margin: 0 auto;
+	padding: 20px 40px 40px 60px;
+	z-index: 1;
+}
+.admin_table .serach .form__group {
+	float: left;
+	margin-right: 10px;
+}
+.admin_table .serach .form__buttonrow--center{
+	padding-top: 30px;
+}
+.admin_table .serach .form__select__list {
+	width: 250px;
+	float: left;
+	margin-right: 10px;
+}
+.admin_table .serach .form__select__list .form__select{
+	width: 200px;
+}
+.admin_table .serach .form__select__list .form__customselect .form__customselect__dropdown{
+	height: 53px;
+	border: 1px solid #fff;
+}
+
+.admin_table .serach .form__select__list .form__customselect .form__select{
+	width: 250px;
+}

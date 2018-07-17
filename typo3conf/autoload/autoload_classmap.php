@@ -461,6 +461,9 @@ return array(
     'Helhum\\UploadExample\\Property\\TypeConverter\\UploadedFileReferenceConverter' => $typo3InstallDir . 'typo3conf/ext/upload_example/Classes/Property/TypeConverter/UploadedFileReferenceConverter.php',
     'Helhum\\UploadExample\\ViewHelpers\\Form\\UploadViewHelper' => $typo3InstallDir . 'typo3conf/ext/upload_example/Classes/ViewHelpers/Form/UploadViewHelper.php',
     'Job\\JobAreas\\Controller\\JobController' => $typo3InstallDir . 'typo3conf/ext/job_areas/Classes/Controller/JobController.php',
+    'Login\\Login\\Controller\\LoginController' => $typo3InstallDir . 'typo3conf/ext/login/Classes/Controller/LoginController.php',
+    'Login\\Login\\Domain\\Model\\Login' => $typo3InstallDir . 'typo3conf/ext/login/Classes/Domain/Model/Login.php',
+    'Login\\Login\\Domain\\Repository\\LoginRepository' => $typo3InstallDir . 'typo3conf/ext/login/Classes/Domain/Repository/LoginRepository.php',
     'Netresearch\\RteCKEditorImage\\Controller\\ImageRenderingController' => $typo3InstallDir . 'typo3conf/ext/rte_ckeditor_image/Classes/Controller/ImageRenderingController.php',
     'Netresearch\\RteCKEditorImage\\Controller\\SelectImageController' => $typo3InstallDir . 'typo3conf/ext/rte_ckeditor_image/Classes/Controller/SelectImageController.php',
     'Subscriptions\\Subscriptions\\Controller\\ListController' => $typo3InstallDir . 'typo3conf/ext/subscriptions/Classes/Controller/ListController.php',
@@ -469,4 +472,6 @@ return array(
     'Tp3\\Tp3Jobs\\Controller\\JobOfferController' => $typo3InstallDir . 'typo3conf/ext/tp3_jobs/Classes/Controller/JobOfferController.php',
     'Tp3\\Tp3Jobs\\Domain\\Model\\JobOffer' => $typo3InstallDir . 'typo3conf/ext/tp3_jobs/Classes/Domain/Model/JobOffer.php',
     'Tp3\\Tp3Jobs\\Domain\\Repository\\JobOfferRepository' => $typo3InstallDir . 'typo3conf/ext/tp3_jobs/Classes/Domain/Repository/JobOfferRepository.php',
+    'Useradmin\\Useradmin\\Controller\\UserController' => $typo3InstallDir . 'typo3conf/ext/useradmin/Classes/Controller/UserController.php',
+    'Useradmin\\Useradmin\\Domain\\Model\\User' => $typo3InstallDir . 'typo3conf/ext/useradmin/Classes/Domain/Model/User.php',
 );

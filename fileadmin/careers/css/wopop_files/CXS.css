@@ -1,0 +1,149 @@
+.overlay_CXS {
+	background-color: #666666;
+	filter:alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.overlay___invisible__ {
+  background-color: #666666;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+}
+
+.CXS_nw {
+	width: 9px;
+	height: 23px;
+	background: transparent url(CXS/top_left.gif) no-repeat 0 0;		
+}
+
+.CXS_n {
+	background: transparent url(CXS/top_mid.gif) repeat-x 0 0;	
+	height: 23px;
+}
+
+.CXS_ne {
+	width: 9px;
+	height: 23px;
+	background: transparent url(CXS/top_right.gif) no-repeat 0 0;		
+}
+
+.CXS_e {
+	width: 2px;
+	background: transparent url(CXS/center_right.gif) repeat-y 0 0;	
+}
+
+.CXS_w {
+	width: 2px;
+	background: transparent url(CXS/center_left.gif) repeat-y 0 0;		
+}
+
+.CXS_sw {
+	width: 9px;
+	height: 19px;
+	background: transparent url(CXS/bottom_left.gif) no-repeat 0 0;			
+}
+
+.CXS_s {
+	background: transparent url(CXS/bottom_mid.gif) repeat-x 0 0;		
+	height: 19px;
+}
+
+.CXS_se {
+	width: 9px;
+	height: 19px;
+	background: transparent url(CXS/bottom_right.gif) no-repeat 0 0;			
+}
+
+.CXS_sizer {
+	width: 9px;
+	height: 19px;
+	background: transparent url(CXS/sizer.gif) no-repeat 0 0;	
+	cursor:se-resize;	
+}
+
+.CXS_close {
+	width: 23px;
+	height: 20px;
+	background: transparent url(CXS/close.gif) no-repeat top center;			
+	position:absolute;
+	top:2px;
+	/*left:8px;*/
+	right: 8px;
+	cursor:pointer;
+	z-index:2000;
+}
+
+.CXS_minimize {
+	width: 23px;
+	height: 20px;
+	background: transparent url(CXS/minimize.gif) no-repeat top center;			
+	position:absolute;
+	top:2px;
+	/*left:28px;*/
+	right: 49px;
+	cursor:pointer;
+	z-index:2000;
+}
+
+.CXS_maximize {
+	width: 23px;
+	height: 20px;
+	background: transparent url(CXS/maximize.gif) no-repeat top center;			
+	position:absolute;
+	top:2px;
+	/*left:49px;*/
+	right: 28px;
+	cursor:pointer;
+	z-index:2000;
+}
+
+.CXS_title {
+	float:left;
+	height:14px;
+	font-size:12px;
+	text-align:left;
+	width:100%;
+	color:#000;
+}
+
+.CXS_content {
+	overflow:auto;
+	color: #000;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 12px;
+	background-color:#fff;
+}
+
+.top_draggable, .bottom_draggable {
+  cursor:move;
+}
+
+.status_bar {
+  font-size:12px;
+}
+.status_bar input{
+  font-size:12px;
+}
+/* DO NOT CHANGE THESE VALUES*/
+.dialog {
+	display: block;
+	position: absolute;
+}
+
+.dialog table.table_window  { 
+  border-collapse: collapse; 
+  border-spacing: 0; 
+  width: 100%;
+	margin: 0px;
+	padding:0px;
+}
+
+.dialog table.table_window td , .CXS table.table_window th { 
+  padding: 0; 
+}
+
+.dialog .title_window {
+  -moz-user-select:none;
+}

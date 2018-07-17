@@ -194,7 +194,6 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
             $data[$i]['count'] = $count[$i];
         }
         
-        
 //            return $GLOBALS['TYPO3_DB']->debug_lastBuiltQuery;
         return $data;
     }
@@ -219,7 +218,7 @@ class JobOfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
 
         $data = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
-            'uid,title,hours', 'tx_tp3jobs_domain_model_joboffer', 'uid='.$uid
+            'uid,title,hours,station', 'tx_tp3jobs_domain_model_joboffer', 'uid='.$uid
         );
 
         return $data;

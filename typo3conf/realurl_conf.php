@@ -26,6 +26,7 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
                 'valueMap' => array(
                     '' => '0',
                     'en' => '1',
+                    '' => '2',
                 ),
             ),
             array(
@@ -203,6 +204,19 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
                             'autoUpdate' => 1,
                             'expireDays' => 180,
                         ),
+                    ),
+                ),
+                'login' => array(
+                    array(
+                        'GETvar' => 'tx_login_login[action]',
+                        'valueMap' => array(
+                        ),
+                    ),
+                    array(
+                        'GETvar' => 'tx_login_login[controller]',
+                        'valueMap' => array(
+                        ),
+                        'noMatch' => 'bypass'
                     ),
                 ),
             ),

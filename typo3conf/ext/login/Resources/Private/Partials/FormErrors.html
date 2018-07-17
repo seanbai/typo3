@@ -1,0 +1,14 @@
+&lt;html =&quot;http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers&quot; data-namespace-typo3-fluid=&quot;true&quot;&gt;
+&lt;f:form.validationResults for=&quot;{object}&quot;&gt;
+	&lt;f:if condition=&quot;{validationResults.flattenedErrors}&quot;&gt;
+		<ul>
+		&lt;f:for each=&quot;{validationResults.flattenedErrors}&quot; key=&quot;propertyPath&quot; as=&quot;errors&quot;&gt;
+			<li>
+			{propertyPath}: <ul>
+				&lt;f:for each=&quot;{errors}&quot; as=&quot;error&quot;&gt;<li>{error}</li>&lt;/f:for&gt;
+				</ul>
+			</li>
+		&lt;/f:for&gt;</ul>
+&lt;/f:if&gt;
+&lt;/f:form.validationResults&gt;
+&lt;/html&gt;

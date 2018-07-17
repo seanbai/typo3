@@ -137,6 +137,9 @@ return [
         'job_areas' => [
             'packagePath' => 'typo3conf/ext/job_areas/',
         ],
+        'login' => [
+            'packagePath' => 'typo3conf/ext/login/',
+        ],
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',
         ],
@@ -151,6 +154,9 @@ return [
         ],
         'upload_example' => [
             'packagePath' => 'typo3conf/ext/upload_example/',
+        ],
+        'useradmin' => [
+            'packagePath' => 'typo3conf/ext/useradmin/',
         ],
         'vhs' => [
             'packagePath' => 'typo3conf/ext/vhs/',

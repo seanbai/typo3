@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-07-17T09:48:07Z" product-name="useradmin">
+		<header/>
+		<body>
+			<trans-unit id="tx_useradmin_domain_model_useradmin">
+				<source>UserAdmin</source>
+			</trans-unit>
+			<trans-unit id="tx_useradmin_domain_model_useradmin.description">
+				<source>Useradmin</source>
+			</trans-unit>
+			<trans-unit id="user.description">
+				<source>user</source>
+			</trans-unit>
+			<trans-unit id="password.description">
+				<source>password</source>
+			</trans-unit>
+			<trans-unit id="locator.description">
+				<source>locator</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

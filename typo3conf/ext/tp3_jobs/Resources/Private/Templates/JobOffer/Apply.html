@@ -11,6 +11,7 @@
             <form method="post" enctype="multipart/form-data" onkeypress="return submitOnEnter(event)" action="{f:uri.action(action: 'add')}" novalidate="novalidate">
                 <div id="section--pri" class="section--pri container--small">
                     <div class="titel">{jobOffers.title}</div>
+                    <input type="hidden" name="station"  value="{jobOffers.station}" >
                     <div class="lege_regel"></div>
                     <div class="">标有星号 (*) 为必填</div>
                     <div class="lege_regel"></div>

@@ -1,0 +1,26 @@
+&lt;html =&quot;http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers&quot; data-namespace-typo3-fluid=&quot;true&quot;&gt;
+&lt;f:layout name=&quot;Default&quot; /&gt;
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+&lt;f:section name=&quot;main&quot;&gt;
+<h1>Edit Login</h1>
+
+&lt;f:flashMessages /&gt;
+
+&lt;f:render partial=&quot;FormErrors&quot; arguments=&quot;{object:Login}&quot; /&gt;
+
+&lt;f:form action=&quot;update&quot; name=&quot;login&quot; object=&quot;{login}&quot; &gt;
+&lt;f:render partial=&quot;Login/FormFields&quot; arguments=&quot;{login:login}&quot; /&gt;
+	&lt;f:form.submit value=&quot;Save&quot; /&gt;
+
+&lt;/html&gt;

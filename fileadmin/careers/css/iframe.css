@@ -1048,7 +1048,8 @@ hr:last-child {
 	padding: 0;
 	height: 100%;
 	opacity: .001;
-	border: 1px solid transparent
+	border: 1px solid transparent;
+	height: 53px
 }
 
 .form__customselect .custom-select .btn-select {
@@ -1088,7 +1089,7 @@ hr:last-child {
 	border: 1px solid transparent;
 	border-bottom-color: #ccc;
 	color: #999;
-	transition: all .33s
+	transition: all .33s;
 }
 
 .form__customselect .form__customselect__dropdown.is-filled {
@@ -1194,4 +1195,8 @@ hr:last-child {
 	font-weight: 400;
 	line-height: 1.2;
 	padding-bottom: 5px;
+}
+
+.form_select_div {
+	height: 50px;
 }
